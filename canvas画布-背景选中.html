@@ -1,0 +1,315 @@
+<html>
+<head>
+    <title>Canvas tutorial</title>
+    <script type="text/javascript">
+
+     window.document.oncontextmenu = function() {   //整个页面屏蔽鼠标右键
+         //alert('请不要点击鼠标右键！');
+         return false;
+     }
+
+
+
+     var panelsize=60; //棋盘边长可调节
+     var hang=8,lie=12;  //棋盘行列数 可调节
+
+
+     //---------------------------------------下面是处理部分----------------------------------------------
+     //-----------scatter的点击交互和panel的点击交互，都在处理部分进行处理，然后按需反馈到画面上面-------------
+
+
+//----------------------------------------------这里需要设置一个相对完善的数据结构 用户存储信息
+     //一旦是配置或者操作导致信息的变化都需要在这个结构里面标识出来，然后再通过检查标识情况来判断是否需要绘制哪里的图形以达到目的
+
+     //先用数组存一个信息测试 记录是否被点击
+
+     var hahaha=[
+         [0,0,0,0,0,0,0,0,0,0,0,0],
+         [0,0,0,0,0,0,0,0,0,0,0,0],
+         [0,0,0,0,0,0,0,0,0,0,0,0],
+         [0,0,0,0,0,0,0,0,0,0,0,0],
+         [0,0,0,0,0,0,0,0,0,0,0,0],
+         [0,0,0,0,0,0,0,0,0,0,0,0],
+         [0,0,0,0,0,0,0,0,0,0,0,0],
+         [0,0,0,0,0,0,0,0,0,0,0,0]
+
+
+     ];
+     var nonono=[
+         [0,0,0,0,0,0,0,0,0,0,0,0],
+         [0,0,0,0,0,0,0,0,0,0,0,0],
+         [0,0,0,0,0,0,0,0,0,0,0,0],
+         [0,0,0,0,0,0,0,0,0,0,0,0],
+         [0,0,0,0,0,0,0,0,0,0,0,0],
+         [0,0,0,0,0,0,0,0,0,0,0,0],
+         [0,0,0,0,0,0,0,0,0,0,0,0],
+         [0,0,0,0,0,0,0,0,0,0,0,0]
+
+     ];
+
+
+
+
+
+
+//-------------------------------------------- 下面画了一个棋盘------------------------------------------------
+//-----------------------------点击某个框框，被点击的在对应数据结构上标记----------------------------------------
+
+
+
+//-----这个refresh只做一件事，把数据结构显示出来，重新绘图，在需要的时候被调用。
+
+
+     function refreshpanel(  )   //obj是文档元素canvas传递过来 增加效率
+     {  //画圈圈和框框
+
+         var oncanvas = document.getElementById('bbb');
+         var ctx = oncanvas.getContext('2d');
+
+
+         ctx.clearRect(0,0,1000,1000);
+
+
+         for (var i = 0; i < hang; i++)
+         {
+             for (var j = 0; j < lie; j++)
+             {
+                 ctx.fillStyle =ctx.strokeStyle = 'rgb(0,' + Math.floor(255 - 255/lie * j) + ',' +
+                     Math.floor(255 - 255/hang * i) + ')';
+
+                 ctx.beginPath();
+                 ctx.lineWidth=2;
+                 ctx.strokeRect(j * panelsize, i * panelsize, panelsize, panelsize);  //画框框
+                 ctx.closePath();
+
+
+
+                 ctx.arc(panelsize / 2 + j * panelsize  , panelsize / 2 + i * panelsize , panelsize * 0.4, 0, Math.PI * 2,true); //画圈圈
+                 ctx.stroke();
+
+
+                 // if (hahaha[i][j] != 0)
+                 //     //ctx.fillRect(i * panelsize, j * panelsize, panelsize, panelsize);
+                 //     ctx.fill();
+                 // else
+
+
+
+                  ctx.fillStyle =ctx.strokeStyle = 'rgba(0,' + Math.floor(255 - 255/lie * j) + ',' +
+                      Math.floor(255 - 255/hang * i) + ',0.5)';
+                  if(nonono[i][j]===1)
+                      ctx.fillRect(j * panelsize, i * panelsize, panelsize, panelsize);
+                 if(hahaha[i][j]===1)
+                     ctx.fillRect(j * panelsize, i * panelsize, panelsize, panelsize);
+
+
+
+
+             }
+
+
+             ctx.closePath();
+
+         }
+
+     }
+
+
+
+
+//--------------------这个函数在于不去绘制任何图形只是操作数据结构而已
+     function initcanvaspanel()
+     {  //画圈圈和框框
+
+         var oncanvas = document.getElementById('bbb');
+         var ctx = oncanvas.getContext('2d');
+
+         ctx.clearRect(0,0,800,600);
+
+         oncanvas.onmouseover = function (ev)
+         {  //鼠标进入区域
+             console.log("onmouseoverbbb");
+         };
+
+         oncanvas.onmouseout =function ()
+         {//鼠标移动出区域
+             console.log("onmouseoutbbb");
+             oncanvas.onmousemove=null;
+             // document.onmouseup =null;
+         };
+
+
+
+
+
+
+
+         oncanvas.onmousedown=function (ev)  //鼠标按下去
+         {
+             console.log("onmousedown");
+             //鼠标点下去
+             //鼠标所在的位置
+             //ev.offsetX
+             //ev.offsetY
+             var oldX = ev.offsetX;
+             var oldY = ev.offsetY;
+             var balldownX1 = Math.floor(oldX / panelsize);
+             var balldownY1 = Math.floor(oldY / panelsize);
+
+             console.log(balldownX1);
+             console.log(balldownY1);
+
+
+             nonono[balldownY1][balldownX1]=1;
+
+
+
+
+
+             document.onmousemove=function (ev)   //鼠标按下去后框选
+             {
+                 console.log("onmousemove");
+                 var oldX = ev.offsetX;
+                 var oldY = ev.offsetY;
+
+
+                 //----------------------------------------------矩形框选 任意方向矩形
+                 var ballmoveX2 = Math.floor(oldX / panelsize);
+                 var ballmoveY2 = Math.floor(oldY / panelsize);
+
+
+
+                 nonono[ballmoveY2][ballmoveX2]=1;
+                 console.log(ballmoveY2);
+                 console.log(ballmoveX2);
+
+
+
+                  var x1=Math.min(balldownX1,ballmoveX2);
+                  var x2=Math.max(balldownX1,ballmoveX2);
+                  var y1=Math.min(balldownY1,ballmoveY2);
+                  var y2=Math.max(balldownY1,ballmoveY2);
+
+
+                 //-------------------标记数组清空-----------------
+                 nonono=[
+                     [0,0,0,0,0,0,0,0,0,0,0,0],
+                     [0,0,0,0,0,0,0,0,0,0,0,0],
+                     [0,0,0,0,0,0,0,0,0,0,0,0],
+                     [0,0,0,0,0,0,0,0,0,0,0,0],
+                     [0,0,0,0,0,0,0,0,0,0,0,0],
+                     [0,0,0,0,0,0,0,0,0,0,0,0],
+                     [0,0,0,0,0,0,0,0,0,0,0,0],
+                     [0,0,0,0,0,0,0,0,0,0,0,0]
+                 ];
+
+                //把选中的格子标记在nonono里面
+
+                        for (i = x1; i <= x2; i++)
+                             for (j = y1; j <= y2; j++)
+                                     nonono[j][i] = 1;
+
+                 refreshpanel();
+
+
+              }
+
+
+
+              document.onmouseup=function (ev) //松开 有点好玩
+              {
+                  console.log("onmouseup");
+                  document.onmousemove=null;
+                  document.onmouseup =null;
+
+
+
+                  var oldX = ev.offsetX;
+                  var oldY = ev.offsetY;
+
+
+           //----------------------------------------------矩形框选 任意方向矩形
+
+                  var ballupX2 = Math.floor(oldX / panelsize);
+                  var ballupY2 = Math.floor(oldY / panelsize);
+
+
+                  //如果点击同一个格子，则取消选择
+
+
+                  // ----判断 如果点击和松开在同一个格子，则取消
+
+                   // if (balldownX1==ballupX2 && balldownY1==ballupY2)
+                   //
+                   //     if(hahaha[balldownX1][balldownY1]==1)
+                   //
+                   //         nonono[balldownX1][balldownY1]=hahaha[balldownX1][balldownY1]=0;
+
+                  //放开把nonono放入到hahaha中，并清空nonono
+                  //如果按了control就添加 否则就以选中为准
+                  if(ev.ctrlKey==1)
+                  {
+                        for (var i = 0; i < hang; i++) {
+                            for (var j = 0; j < lie; j++) {
+                                if(hahaha[i][j]+nonono[i][j]>=1)
+                                    hahaha[i][j] = 1;
+                                else
+                                    hahaha[i][j]=0;
+                                nonono[i][j] = 0;
+                    }
+                }
+            }
+                else
+                {
+                    for (var i = 0; i < hang; i++) {
+                        for (var j = 0; j < lie; j++) {
+                            //if(hahaha[i][j]+nonono[i][j]>=1)
+                            hahaha[i][j] = nonono[i][j];
+                            // else
+                            //     hahaha[i][j]=0;
+                            nonono[i][j] = 0;
+                        }
+                    }
+                }
+
+
+                     refreshpanel();//改变hahaha[]后 重绘
+
+
+                  };
+
+
+             refreshpanel();  //down函数按下去后重绘
+
+         };
+
+
+        refreshpanel();
+
+
+     }
+
+
+
+
+
+
+
+
+  //   window.setInterval(refreshpanel, 100);
+
+
+
+    </script>
+    <style type="text/css">
+        canvas { border: 1px solid black; }
+    </style>
+</head>
+<body onload="initcanvaspanel();">
+
+
+
+<canvas id="bbb" width="800" height="600"></canvas>
+
+</body>
+</html>

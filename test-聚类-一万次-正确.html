@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+
+    <script src="./echarts.js"></script>
+    <script src='./ecStat.js'></script>
+
+
+    <style>
+        canvas { border: 1px solid black; }
+
+
+
+        .button_color {
+        //background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            /*float: left;*/
+        }
+        .button0 {
+            background-color: #000000;
+        }
+        .button1 {
+            background-color: #4CAF50;
+        }
+        .button2 {
+            background-color: #008CBA;
+        }
+        .button3 {
+            background-color: #b80af4;
+        }
+        .button4 {
+            background-color: #ffffff;
+        }
+        .button0:hover {
+            background-color: #808080;
+        }
+        .button1:hover {
+            background-color: #808080;
+        }
+        .button2:hover {
+            background-color: #808080;
+        }
+        .button3:hover {
+            background-color: #808080;
+        }
+
+
+        .button4{color: black;}
+        .button4:hover {
+            background-color: #808080;
+        }
+
+
+    </style>
+
+
+
+</head>
+<body onload="initscatter()">
+<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+<div>
+    <!--//id=1 2 3 直接用户数组小标 不用判断-->
+    <button id="0" class="button_color button0" onclick="setcolorscatter(this)">Black</button>
+    <button id="1" class="button_color button1" onclick="setcolorscatter(this)">Green</button>
+    <button id="2" class="button_color button2" onclick="setcolorscatter(this)">Blue</button>
+    <button id="3" class="button_color button3" onclick="setcolorscatter(this)">red</button>
+    <button id="4" class="button_color button4" onclick="setcolorscatter(this)">打叉叉</button>
+    <button id="5" onclick="clustering()">聚类</button>
+    <button id="6" onclick="yiwanci()">一万次</button>
+
+    <!--<button class="button">Button</button>-->
+</div>
+
+
+
+<div id="main" style="width: 600px;height:600px;"></div>
+<!--<div id="main2" style="width: 800px;height:400px;"></div>-->
+
+
+
+
+
+
+<script type="text/javascript">
+
+
+    var data=[
+        [55,150,0,0,0,0,0,0],
+        [150.69046,51.464498,0,0,0,0,0,0],
+        [159.047592,57.372099,0,0,0,0,0,0],
+        [157.339382,52.207458,0,0,0,0,0,0],
+        [142.671609,51.163083,0,0,0,0,0,0],
+        [140.241563,45.427912,0,0,0,0,0,0],
+        [121.997166,327.064824,0,0,0,0,0,0],
+        [116.320598,304.840374,0,0,0,0,0,0],
+        [117.150295,322.024012,0,0,0,0,0,0],
+        [109.942341,317.328453,0,0,0,0,0,0],
+        [105.88299,321.964169,0,0,0,0,0,0],
+        [110.351574,317.596555,0,0,0,0,0,0],
+        [-1.561362,-4.171431,0,0,0,0,0,0],
+        [-2.402996,-4.477838,0,0,0,0,0,0],
+        [-3.859018,-11.224812,0,0,0,0,0,0],
+        [-2.536583,-9.680176,0,0,0,0,0,0],
+        [-1.8194,-3.972304,0,0,0,0,0,0],
+        [-3.570272,-11.201507,0,0,0,0,0,0],
+        [30.394164,418.452358,0,0,0,0,0,0],
+        [27.509516,374.52116,0,0,0,0,0,0],
+        [24.260771,375.826573,0,0,0,0,0,0],
+        [22.744671,370.248389,0,0,0,0,0,0],
+        [16.800569,375.691295,0,0,0,0,0,0],
+        [25.298232,358.987117,0,0,0,0,0,0],
+        [21.615878,362.112093,0,0,0,0,0,0],
+        [12.956019,364.975786,0,0,0,0,0,0],
+        [19.628555,373.055744,0,0,0,0,0,0],
+        [17.898227,374.87967,0,0,0,0,0,0],
+        [16.586909,359.201598,0,0,0,0,0,0],
+        [20.112179,354.405332,0,0,0,0,0,0],
+        [-4.172869,-6.390339,0,0,0,0,0,0],
+        [-1.993954,-3.57056,0,0,0,0,0,0],
+        [-4.52975,-11.478308,0,0,0,0,0,0],
+        [-4.548535,-13.777629,0,0,0,0,0,0],
+        [-2.507527,-3.410104,0,0,0,0,0,0],
+        [-1.626888,-4.066315,0,0,0,0,0,0],
+        [100.052953,297.761941,0,0,0,0,0,0],
+        [91.791815,314.373231,0,0,0,0,0,0],
+        [99.388361,317.916369,0,0,0,0,0,0],
+        [98.094529,313.999486,0,0,0,0,0,0],
+        [92.794037,298.182678,0,0,0,0,0,0],
+        [87.646806,281.625724,0,0,0,0,0,0],
+        [150.156844,50.712645,0,0,0,0,0,0],
+        [149.618626,53.842652,0,0,0,0,0,0],
+        [148.825884,45.19408,0,0,0,0,0,0],
+        [148.137343,48.655319,0,0,0,0,0,0],
+        [153.580976,51.962179,0,0,0,0,0,0],
+        [157.811129,63.248718,0,0,0,0,0,0],
+        [154.792619,53.645414,0,0,0,0,0,0],
+        [155.931306,56.441271,0,0,0,0,0,0],
+        [145.414412,51.083875,0,0,0,0,0,0],
+        [162.095547,63.373375,0,0,0,0,0,0],
+        [147.454262,52.155167,0,0,0,0,0,0],
+        [115.483677,40.869167,0,0,0,0,0,0],
+        [97.990346,313.609219,0,0,0,0,0,0],
+        [99.556905,301.500964,0,0,0,0,0,0],
+        [97.965443,318.793774,0,0,0,0,0,0],
+        [99.248272,304.854488,0,0,0,0,0,0],
+        [98.765194,319.741273,0,0,0,0,0,0],
+        [105.71661,306.655741,0,0,0,0,0,0],
+        [-2.159846,-3.894439,0,0,0,0,0,0],
+        [-3.037499,-8.964366,0,0,0,0,0,0],
+        [-1.692058,-8.988687,0,0,0,0,0,0],
+        [-2.692285,-2.148044,0,0,0,0,0,0],
+        [-3.708868,-5.186728,0,0,0,0,0,0],
+        [-4.151817,-10.873738,0,0,0,0,0,0],
+        [18.152156,355.856133,0,0,0,0,0,0],
+        [16.634607,374.938202,0,0,0,0,0,0],
+        [14.973024,372.662854,0,0,0,0,0,0],
+        [14.88571,374.148631,0,0,0,0,0,0],
+        [14.562866,373.914099,0,0,0,0,0,0],
+        [20.411485,370.941162,0,0,0,0,0,0],
+        [26.004064,387.350917,0,0,0,0,0,0],
+        [15.512353,373.183775,0,0,0,0,0,0],
+        [15.159038,368.409204,0,0,0,0,0,0],
+        [17.172259,357.555223,0,0,0,0,0,0],
+        [17.232835,377.990174,0,0,0,0,0,0],
+        [19.999033,365.833902,0,0,0,0,0,0],
+        [-3.017737,-8.79015,0,0,0,0,0,0],
+        [6.972724,1.321504,0,0,0,0,0,0],
+        [-2.797253,-3.667501,0,0,0,0,0,0],
+        [-4.242212,-10.435835,0,0,0,0,0,0],
+        [-3.569967,-1.339021,0,0,0,0,0,0],
+        [-2.751867,-4.62333,0,0,0,0,0,0],
+        [109.115005,313.60116,0,0,0,0,0,0],
+        [104.850769,317.501068,0,0,0,0,0,0],
+        [105.428696,315.324712,0,0,0,0,0,0],
+        [105.353665,323.905635,0,0,0,0,0,0],
+        [106.064045,332.98018,0,0,0,0,0,0],
+        [93.519813,264.865208,0,0,0,0,0,0],
+        [144.310737,43.860066,0,0,0,0,0,0],
+        [164.701688,57.213581,0,0,0,0,0,0],
+        [155.591202,46.544209,0,0,0,0,0,0],
+        [146.916139,47.887608,0,0,0,0,0,0],
+        [164.960957,55.727959,0,0,0,0,0,0],
+        [156.540155,46.31446,0,0,0,0,0,0]
+
+
+
+
+
+
+    ];
+
+
+
+
+        // 基于准备好的dom，初始化echarts实例
+
+        // var data = [];//数据区域缩放组件
+        var fenzu=[[],[],[],[]];
+        var zhuadaode=[[],[],[],[]];
+
+        var myChart = echarts.init(document.getElementById('main'));
+
+        var selectchange =1;
+        var deepcopy=[];
+
+
+
+
+        //------------------------聚类一万次---------------------------
+
+
+    function yiwanci()
+    {
+        for(var i=0;i<1000;i++)
+        {
+
+            clustering();
+
+            for(var n=0;n<96;n++){
+
+                data[n][data[n][2]+3]++;
+
+
+            }
+
+
+
+        }
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+    //--------------------聚类
+
+
+        function clustering(){
+
+
+            console.log('clustering');
+            var clusterNumber=4;
+
+            var result = ecStat.clustering.hierarchicalKMeans(data, clusterNumber, false);
+
+
+
+
+
+            var ordercentroids=[
+                [result.centroids[0][0],result.centroids[0][1]],
+                [result.centroids[1][0],result.centroids[1][1]],
+                [result.centroids[2][0],result.centroids[2][1]],
+                [result.centroids[3][0],result.centroids[3][1]]
+
+            ];  //复制出来加一位
+
+
+
+            for(var i=0;i<ordercentroids.length;i++)  //加一位 插入原始序号
+
+            {
+                ordercentroids[i].push(i);  //原始序号
+
+            }
+            //
+            //=---------------------排序
+
+            ordercentroids.sort(function (a,b) {
+                return a[0]-b[0];
+            });                            //按照x坐标排序 序号记录进入第四位
+
+
+            for(var i=0;i<ordercentroids.length;i++)  //加一位 插入原始序号
+
+            {
+                ordercentroids[i].push(i);  //排序后序号
+
+            }
+
+
+
+            if(ordercentroids[0][1]>ordercentroids[1][1])
+            {
+                ordercentroids[0][3]=2;
+                ordercentroids[1][3]=1;
+
+            }
+
+
+            if(ordercentroids[2][1]>ordercentroids[2][1])
+            {
+                ordercentroids[2][3]=4;
+                ordercentroids[2][3]=3;
+
+            }
+
+
+
+
+            for(var i=0;i<96;i++){
+
+       //         console.log(result.clusterAssment[i][0]);
+
+       //         data[i][2]=result.clusterAssment[i][0];
+
+
+                //-----------------以下这个循环不是人类可以理解的 如果正确了 那么分组将按照顺序赋值给原始数据的分组项
+                //-----------------如果错了 我也想不出来怎么调试了 但是不幸的是 他对了
+
+                for (var n=0; n<ordercentroids.length;n++)
+                {
+                    if (result.clusterAssment[i][0]===ordercentroids[n][2])
+                    {
+                        data[i][2]=ordercentroids[n][3]
+                    }
+
+                }
+
+            }
+
+
+
+
+
+
+            refreshscatter();
+
+
+
+
+
+        }
+
+
+
+
+        function initscatter()
+        {
+
+
+
+            //构造随机数
+            var random = function (max){
+                return ((Math.random()*max));
+            };
+
+            //将数据装载到数组中
+            // for (var i = 0; i < 25; i++) {
+            //     data.push([random(99), random(99),0]);
+            // };
+            //
+            // for ( i = 25; i < 50; i++) {
+            //     data.push([random(99), random(99),1]);
+            // };
+            //
+            // for ( i = 50; i < 75; i++) {
+            //     data.push([random(99), random(99),2]);
+            // };
+            //
+            // for ( i = 75; i < 100; i++) {
+            //     data.push([random(99), random(99),3]);
+            // };
+
+
+
+
+
+
+
+            refreshscatter();
+
+
+        }
+
+
+
+
+
+        function refreshscatter(){
+
+
+            //myChart.clear();
+
+            fenzu=[[],[],[],[],[]];
+
+            for (var i = 0; i < 96; i++){
+                fenzu[data[i][2]].push([data[i][0],data[i][1],i]);  //i表示在原数组中的位置
+            }
+
+
+
+            option = {
+
+                tooltip : {
+                    // padding: 10,
+                    trigger: 'item',
+                    //trigger: 'axis',
+                    axisPointer: {
+                        type: 'cross'
+
+                    },
+                    formatter: '{b}',
+                },
+
+                toolbox: {
+                    left: 'right',
+                    itemSize: 25,
+                    top: 5,
+                    feature: {
+                        // brush:{
+                        //     type: 'rect',
+                        //
+                        // },
+                        //
+                        // brush:{
+                        //     type: 'polygon',
+                        //
+                        // },
+
+                        dataZoom: {
+
+                        },
+                        restore: {},
+
+                    },
+
+                },
+
+
+
+                brush:
+                    {
+                        toolbox:['rect','polygon','clear'],
+
+                        brushType: 'rect',
+
+
+                        romoveOnClick:'signle'    //单击空白处清空选择
+                    },
+
+
+                xAxis: {
+                    type: 'value',
+                    //min: 'dataMin',
+                 //   max: 'dataMax',
+                    name:'FAM'
+
+
+                }
+                ,
+
+
+                yAxis:
+                    {
+                        type: 'value',
+                      //  min: 'dataMin',
+                    //    max: 'dataMax',
+                        name:'HEX'
+
+                    }
+                ,
+
+
+                dataZoom: [
+                    // 这个dataZoom组件，也控制y轴。
+
+
+                    {   // 这个dataZoom组件，也控制x轴。
+                        type: 'inside', // 这个 dataZoom 组件是 inside 型 dataZoom 组件
+                        xAxisIndex: [0]
+                        // start: 10,      // 左边在 10% 的位置。
+                        // end: 90         // 右边在 60% 的位置。
+                    },
+                    {
+                        type: 'inside',
+                        yAxisIndex: [0]
+                        // start: 10,
+                        // end: 90
+                    }
+
+
+                ],
+
+
+                series: [
+
+                    {
+                        animation: false,
+                        name: 'black',
+                        type: 'scatter',
+                        symbolSize: 20,
+                        z:'0',
+
+                        data: fenzu[0],
+
+
+                        itemStyle: {
+                            color: '#000000'
+                        },
+                       // symbol:'rect',
+
+
+
+                    },
+
+
+
+
+
+
+                    {
+                        animation: false,
+                        name:'green',
+                        type: 'scatter',
+                        symbolSize: 20,
+                        z:'0',
+
+                        data: fenzu[1],
+
+
+                        itemStyle: {
+                            color: '#4caf50'
+                        }
+
+
+
+
+
+                    },
+
+                    {
+                        animation: false,
+                        name: 'blue',
+                        type: 'scatter',
+                        symbolSize: 20,
+                        z:'0',
+
+                        data: fenzu[2],
+
+
+                        itemStyle: {
+                            color: '#008cba'
+                        }
+
+
+
+
+
+                    },
+
+                    {
+                        animation: false,
+                        name:'red',
+                        type: 'scatter',
+                        symbolSize: 16,
+                        z:'0',
+
+                        data: fenzu[3],
+
+
+                        itemStyle: {
+                            color: '#b80af4'
+                        },
+
+
+
+                    },
+
+
+                    {
+                        animation: false,
+                        name: 'chacha',
+                        type: 'scatter',
+                        symbolSize: 16,
+                        z: '0',
+
+                        data: fenzu[4],
+
+
+                        itemStyle: {
+                            color: '#ff1736'
+                        },
+
+                        symbol: 'triangle'
+
+
+                    }
+
+
+
+
+
+
+
+
+
+
+
+
+                ]
+            };
+
+
+
+            // 使用刚指定的配置项和数据显示图表。
+            myChart.setOption(option);
+
+
+        }
+
+
+
+
+
+
+        myChart.on('brushSelected', function (params) {
+            //var brushComponent = params.batch[0];
+
+            //var sum = 0; // 统计选中项的数据值的和
+           // var xuhao;
+            selectchange=1;
+            zhuadaode=params.batch[0];
+            deepcopy=[];
+
+
+
+            console.log('hahaha');
+            for (var sIdx = 0; sIdx < zhuadaode.selected.length; sIdx++) {
+                // 对于每个 series：
+                var dataIndices = zhuadaode.selected[sIdx].dataIndex;
+                //
+                for (var i = 0; i < dataIndices.length; i++) {
+                    var dataIndex = dataIndices[i];
+                    xuhao=fenzu[sIdx][dataIndex][2];
+                    console.log(xuhao);
+                    deepcopy.push(xuhao);
+                }
+            }
+
+
+            // for (i = 0; i < zhuadaode.length; i++)
+            //     console.log(zhuadaode[i]); // 显示抓到的数组下标//
+
+
+
+        });
+
+
+
+
+
+
+        //--------------------------------------点击红色的函数-----------------------------------
+        function setcolorscatter(obj)
+        {
+
+            var num=obj.id;
+
+            console.log(num);
+
+
+            //去跟新到每个点序列里面
+
+
+
+          //  selectchange=0;   //!!!!!!!!
+
+            for (i=0;i<deepcopy.length;i++) {
+                data[deepcopy[i]][2]=parseInt(num);
+                console.log(deepcopy[i]);
+
+            }
+
+
+            // for (var i = 0; i < xuanzhong.length; i++) //选中的点 第三位加上按钮值等于颜色
+            // {
+            //     data[xuanzhong[i]]=  1 + parseInt(num);
+            //
+            //
+            //
+            //     //cococo[parseInt(a / lie)][a % lie] = parseInt(num) + 1;
+            //
+            //
+            // }
+
+
+
+            refreshscatter();
+
+            // refreshpanel();
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

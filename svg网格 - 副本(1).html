@@ -1,0 +1,384 @@
+<html>
+<head>
+    <title>Canvas tutorial</title>
+    <script type="text/javascript">
+     /*   function draw(){
+            var canvas = document.getElementById('tutorial');
+            if (canvas.getContext){
+                var ctx = canvas.getContext('2d');
+            }
+        }
+*/
+
+  /*      function draw() {
+            var ctx = document.getElementById('tutorial').getContext('2d');
+            for (var i=0;i<6;i++){
+                for (var j=0;j<6;j++){
+                    ctx.fillStyle = 'rgb(' + Math.floor(255-42.5*i) + ',' +
+                        Math.floor(255-42.5*j) + ',0)';
+                    ctx.fillRect(j*25,i*25,25,25);
+                }
+            }
+        }
+
+        */
+
+     var panelsize=100; //棋盘边长可调节
+     var aclick,bclick; //保存点击坐标
+
+
+     var hang=6,lie=6;  //棋盘行列数 可调节
+
+
+
+
+
+
+
+
+     //---------------------------------------下面是处理部分----------------------------------------------
+     //-----------scatter的点击交互和panel的点击交互，都在处理部分进行处理，然后按需反馈到画面上面-------------
+
+
+//----------------------------------------------这里需要设置一个相对完善的数据结构 用户存储信息
+     //一旦是配置或者操作导致信息的变化都需要在这个结构里面标识出来，然后再通过检查标识情况来判断是否需要绘制哪里的图形以达到目的
+
+     //先用数组存一个信息测试 记录是否被点击
+
+     var hahaha=[
+         [1,1,0,0,0,0],
+         [1,1,0,0,0,0],
+         [0,0,0,0,0,0],
+         [0,0,0,0,0,0],
+         [0,0,0,0,0,0],
+         [0,0,0,0,0,0]
+
+     ];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//-------------------------------------------- 下面画了一个棋盘------------------------------------------------
+//-----------------------------点击某个框框，被点击的在对应数据结构上标记----------------------------------------
+
+
+
+
+//-----这个refresh只做一件事，把数据结构显示出来，重新绘图，在需要的时候被调用。
+
+
+     function refresh( obj )   //obj是文档元素canvas传递过来 增加效率
+     {  //画圈圈和框框
+
+        // var oncanvas = document.getElementById('tutorial');
+         var ctx = obj.getContext('2d');
+
+
+         ctx.clearRect(0,0,1000,1000);
+
+
+         for (var j = 0; j < hang; j++)
+         {
+             for (var i = 0; i < lie; i++)
+             {
+                 ctx.fillStyle =ctx.strokeStyle = 'rgb(0,' + Math.floor(255 - 255/lie * j) + ',' +
+                     Math.floor(255 - 255/hang * i) + ')';
+
+                 ctx.beginPath();
+                 ctx.lineWidth=3;
+
+               //  ctx.strokeRect(i * panelsize, j * panelsize, panelsize, panelsize);  //画框框
+
+                 ctx.closePath();
+
+
+
+
+                 ctx.arc(panelsize / 2 + i * panelsize  , panelsize / 2 + j * panelsize , panelsize * 0.4, 0, Math.PI * 2,true); //画圈圈
+
+                 if (hahaha[i][j] == 1)                               //如果被标记则取消，未标记则标记
+                     //ctx.fillRect(i * panelsize, j * panelsize, panelsize, panelsize);
+                     ctx.fill();
+                 else
+                    ctx.stroke();
+             }
+
+
+
+             ctx.closePath();
+
+         }
+
+
+         oncanvas.onmouseover = function (ev)
+         {  //鼠标进入区域
+
+
+             console.log("onmouseover");
+
+
+             //每次 画之前。应该开启新的路径
+        /*     var oldX = ev.offsetX;
+             var oldY = ev.offsetY;
+
+             console.log(oldX);
+             console.log(oldY);
+
+
+             //求选中的圆心
+             ballX = Math.floor(oldX / panelsize) * panelsize + oldX % panelsize;
+
+             ballY = Math.floor(oldY / panelsize) * panelsize + oldY % panelsize;
+
+
+             ctx.beginPath();
+             //先确认颜色
+             ctx.fillstyle = "gray";
+             ctx.arc(ballX, ballY, panelsize * 0.35, 0, Math.PI * 2, true);
+             ctx.fill();
+             ctx.closePath();
+
+
+             //让画笔移到鼠标按下的位置
+             // context.moveTo(oldX,oldY);
+*/
+
+/*
+        oncanvas.onmousemove=function (ev)
+        { //鼠标开始动
+             //鼠标所在的位置
+             //ev.offsetX
+             //ev.offsetY
+                       var oldX = ev.offsetX;
+                       var oldY = ev.offsetY;
+
+            var ballX = Math.floor(oldX / panelsize);//鼠标在第几个方块里面
+            var ballY = Math.floor(oldY / panelsize);
+
+            console.log(ballX);
+            console.log(ballY);
+
+
+
+                       ctx.beginPath();
+                       //先确认颜色
+                       ctx.fillstyle = "gray";
+                      ctx.arc(panelsize / 2 + ballX * panelsize, panelsize / 2 + ballY * panelsize, 15, 0, Math.PI * 2, true);
+                       ctx.fill();
+                       ctx.closePath();
+
+         };
+
+
+             oncanvas.onmousedown=function (ev)
+              { //鼠标点下去
+                 //鼠标所在的位置
+                 //ev.offsetX
+                 //ev.offsetY
+                 var oldX = ev.offsetX;
+                 var oldY = ev.offsetY;
+
+                 var ballX = Math.floor(oldX / panelsize);//鼠标在第几个方块里面
+                 var ballY = Math.floor(oldY / panelsize);
+
+                 console.log(ballX);
+                 console.log(ballY);
+
+a=ballX;  //用这个把按下去的方块位置保存下来
+b=ballY;
+
+
+                 ctx.beginPath();
+                 //先确认颜色
+                 ctx.fillstyle = "black";
+                 ctx.arc(panelsize / 2 + ballX * panelsize, panelsize / 2 + ballY * panelsize, 15, 0, Math.PI * 2, true);
+                 ctx.fill();
+                 ctx.closePath();
+
+             };
+
+             oncanvas.onmouseup=function (ev)
+             { //鼠标松开
+                 //鼠标所在的位置
+                 //ev.offsetX
+                 //ev.offsetY
+                 var oldX = ev.offsetX;
+                 var oldY = ev.offsetY;
+
+                 var ballX = Math.floor(oldX / panelsize);//鼠标在第几个方块里面
+                 var ballY = Math.floor(oldY / panelsize);
+
+                 console.log(ballX);
+                 console.log(ballY);
+
+
+
+                // ctx.beginPath();
+                 //先确认颜色
+
+                 ctx.clearRect( panelsize / 2+a * panelsize -15 ,  panelsize / 2+b  * panelsize -15 ,30,30); //用按下去的时候的 a b 来确定松开的清除
+               //  ctx.fillstyle = "yellow";
+                // ctx.arc(panelsize / 2 + ballX * panelsize, panelsize / 2 + ballY * panelsize, 10, 0, Math.PI * 2, false);
+                // ctx.fill("evenodd");
+                // ctx.closePath();
+
+
+             };
+
+*/
+
+
+
+
+
+
+
+
+             oncanvas.onmouseout =function ()
+             {//鼠标移动出区域
+             console.log("onmouseout");
+             oncanvas.onmousemove=null;
+            // document.onmouseup =null;
+             }
+
+
+
+
+         };
+
+
+
+
+
+     };
+
+
+
+
+
+
+
+
+     function initcanvas()
+     {  //画圈圈和框框
+
+         var oncanvas = document.getElementById('tutorial');
+         var ctx = oncanvas.getContext('2d');
+
+
+         ctx.clearRect(0,0,1000,1000);
+
+
+
+         oncanvas.onmouseover = function (ev)
+         {  //鼠标进入区域
+             console.log("onmouseover");
+         };
+
+         oncanvas.onmouseout =function ()
+         {//鼠标移动出区域
+             console.log("onmouseout");
+             oncanvas.onmousemove=null;
+             // document.onmouseup =null;
+         }
+
+
+
+
+
+
+             oncanvas.onclick=function (ev)
+             {
+                 //鼠标点下去
+                 //鼠标所在的位置
+                 //ev.offsetX
+                 //ev.offsetY
+                 var oldX = ev.offsetX;
+                 var oldY = ev.offsetY;
+
+                 var ballX = Math.floor(oldX / panelsize);//鼠标在第几个方块里面
+                 var ballY = Math.floor(oldY / panelsize);
+
+                 console.log(ballX);
+                 console.log(ballY);
+
+
+                 //判断是否已经被点击
+                 if (hahaha[ballX][ballY] == 0) {
+
+                     hahaha[ballX][ballY] = 1;
+                 }
+                 else {
+                     // ctx.clearRect( panelsize / 2+ballX * panelsize -15 ,  panelsize / 2+ballY  * panelsize -15 ,30,30);
+                     hahaha[ballX][ballY] = 0;
+                 }
+
+                 refresh( oncanvas);
+             }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        refresh(oncanvas);
+
+
+
+     };
+
+
+
+
+
+
+
+
+  //   window.setInterval(refresh, 100);
+
+
+
+    </script>
+    <style type="text/css">
+        canvas { border: 1px solid black; }
+    </style>
+</head>
+<body onload="initcanvas();">
+
+
+
+<canvas id="tutorial" width="1000" height="1000"></canvas>
+
+</body>
+</html>

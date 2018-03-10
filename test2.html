@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+
+    <style>
+        .button_color {
+            //background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            /*float: left;*/
+        }
+        .button0 {
+            background-color: #f44336;
+        }
+        .button1 {
+            background-color: #4CAF50;
+        }
+        .button2 {
+            background-color: #008CBA;
+        }
+        .button3 {
+            background-color: #000000;
+        }
+        .button0:hover {
+            background-color: #808080;
+        }
+        .button1:hover {
+             background-color: #808080;
+         }
+        .button2:hover {
+            background-color: #808080;
+        }
+        .button3:hover {
+            background-color: #808080;
+        }
+
+
+    </style>
+
+
+
+
+
+
+    <script type="text/javascript">
+
+    var tool =1;//全局选择工具 曲线或者矩形框选
+
+//这个数组表示每个点的横纵坐标，和是否被选中的标识
+        var data= [
+            [13.75,15.49,0,0,0,0],
+            [9.62,16.57,0,0,0,0],
+            [22.97,20.85,0,0,0,0],
+            [15.82,21.75,0,0,0,0],
+            [9.67,19.63,0,0,0,0],
+            [5.23,17.22,0,0,0,0],
+            [5.18,13.75,0,0,0,0],
+            [20.11,13.18,0,0,0,0],
+            [16.03,12.11,0,0,0,0],
+            [15.12,6.78,0,0,0,0],
+            [7.68,13.04,0,0,0,0],
+            [21.83,5.87,0,0,0,0],
+            [8.08,9.51,0,0,0,0],
+            [19.08,10.58,0,0,0,0],
+            [15.94,11.36,0,0,0,0],
+            [4.23,17.63,0,0,0,0],
+            [19.97,14.03,0,0,0,0],
+            [13.72,10.2,0,0,0,0],
+            [4.58,18.39,0,0,0,0],
+            [6.5,14.87,0,0,0,0],
+            [9.28,21.74,0,0,0,0],
+            [21.45,8.44,0,0,0,0],
+            [5.87,6.52,0,0,0,0],
+            [20,17.16,0,0,0,0],
+            [10.01,8.16,0,0,0,0],
+            [5.92,10.3,0,0,0,0],
+            [8.57,14.93,0,0,0,0],
+            [7.89,15.99,0,0,0,0],
+            [9.02,9.7,0,0,0,0],
+            [16.97,12.5,0,0,0,0],
+            [3.74,11.96,0,0,0,0],
+            [7.11,18.75,0,0,0,0],
+            [20.79,9.48,0,0,0,0],
+            [14.16,15.63,0,0,0,0],
+            [19.19,18.09,0,0,0,0],
+            [17.32,15.09,0,0,0,0],
+            [3.8,15.7,0,0,0,0],
+            [14.09,12.88,0,0,0,0],
+            [22.22,4.08,0,0,0,0],
+            [14.51,12.84,0,0,0,0],
+            [13.16,20.62,0,0,0,0],
+            [9.63,6.37,0,0,0,0],
+            [18.61,10.95,0,0,0,0],
+            [13.53,6.46,0,0,0,0],
+            [12.49,4.77,0,0,0,0],
+            [18.33,15.33,0,0,0,0],
+            [5.88,4.12,0,0,0,0],
+            [10.7,16.48,0,0,0,0],
+            [22.36,9.56,0,0,0,0],
+            [18.17,9.22,0,0,0,0],
+            [14.29,6.56,0,0,0,0],
+            [18.29,5.96,0,0,0,0],
+            [14.15,13.86,0,0,0,0],
+            [14.44,6.98,0,0,0,0],
+            [16.52,5.72,0,0,0,0],
+            [7.48,15.29,0,0,0,0],
+            [22.88,16.58,0,0,0,0],
+            [20.84,7.52,0,0,0,0],
+            [18.95,11.35,0,0,0,0],
+            [14.98,21.75,0,0,0,0],
+            [21.51,4.03,0,0,0,0],
+            [3.71,7.52,0,0,0,0],
+            [20.81,13.08,0,0,0,0],
+            [8.69,8.46,0,0,0,0],
+            [12.14,17.69,0,0,0,0],
+            [13,21,0,0,0,0],
+            [19.83,16.79,0,0,0,0],
+            [5.43,10.4,0,0,0,0],
+            [7.78,10.99,0,0,0,0],
+            [18.58,17.83,0,0,0,0],
+            [8.81,19.73,0,0,0,0],
+            [15.6,7.54,0,0,0,0],
+            [21.97,13.65,0,0,0,0],
+            [12.03,22.1,0,0,0,0],
+            [13.08,3.17,0,0,0,0],
+            [7.35,5.32,0,0,0,0],
+            [3.91,12.11,0,0,0,0],
+            [16.86,9.58,0,0,0,0],
+            [18.24,20.33,0,0,0,0],
+            [22.83,4.93,0,0,0,0],
+            [4.23,13.21,0,0,0,0],
+            [22.58,22.75,0,0,0,0],
+            [16.24,14.19,0,0,0,0],
+            [7.22,14.32,0,0,0,0],
+            [19.04,8.59,0,0,0,0],
+            [10.23,9.24,0,0,0,0],
+            [10.01,15.75,0,0,0,0],
+            [22.08,20.66,0,0,0,0],
+            [7.94,11.43,0,0,0,0],
+            [6.87,15.34,0,0,0,0],
+            [7.16,13.66,0,0,0,0],
+            [19.23,6.55,0,0,0,0],
+            [4.04,9.01,0,0,0,0],
+            [15.62,5.61,0,0,0,0],
+            [12.4,10.95,0,0,0,0],
+            [18.83,16.03,0,0,0,0]
+
+
+
+
+        ];
+
+
+
+//绘图函数 obj传递过来 也可重新获取一回事
+        function refresh( obj ) {
+
+
+            var ctx = obj.getContext('2d');
+
+            ctx.clearRect(0,0,1000,1000);
+
+            //画出XY轴
+            ctx.strokeStyle = "#000000";
+            ctx.beginPath();
+            ctx.moveTo(1,1);
+            ctx.lineTo(800,1);
+            ctx.moveTo(1,1);
+            ctx.lineTo(1,800);
+            ctx.stroke();
+            ctx.closePath();
+
+
+
+
+            ctx.strokeStyle = "#aaaaaa";
+            ctx.beginPath();
+            for (var a =1;a<=25;a++)
+            {
+
+                ctx.moveTo(1,a*30);
+                ctx.lineTo(800,a*30);
+
+                ctx.moveTo(a*30,1);
+                ctx.lineTo(a*30,800);
+
+            }
+            ctx.stroke();
+            ctx.closePath();
+
+
+
+
+
+
+
+
+
+
+
+
+//遍历每个点开始画画
+
+            ctx.strokeStyle = "#000000";
+            for (var a = 0; a < data.length; a++)
+            {
+                ctx.beginPath();
+                ctx.arc(data[a][0]*30,data[a][1]*30,10,0,Math.PI*2,true);
+             //   console.log(data[a][0]);
+             //   console.log(data[a][1]);
+                  //先把圈圈都画出来
+                //对每一个点重复做下面的动作 实现快速染色
+
+
+                if(data[a][3]===1) //染红
+                {
+                    ctx.fillStyle = "#f44336";
+                    ctx.fill();
+                }
+                else
+                    if(data[a][3]===2)//染绿
+
+                        {    ctx.fillStyle = "#4CAF50";
+                             ctx.fill();
+                        }
+
+                    else
+                           if(data[a][3]===3) //染蓝
+                           {
+                               ctx.fillStyle = "#008CBA";
+                               ctx.fill();
+                           }
+
+                            else
+                                if (data[a][3]===4)
+                                {
+                                    ctx.fillStyle = "#000000";
+                                    ctx.fill();
+                                }
+
+
+                                else
+                                {
+                                    ctx.strokeStyle = "#000000";
+                                    ctx.stroke();
+                                }
+
+
+
+
+
+
+                if(data[a][2] > 0)
+                {//ctx.fill();
+                    //圈定选中
+                    ctx.beginPath();
+                    ctx.strokeStyle = "#ff1736";
+                    ctx.arc(data[a][0] * 30, data[a][1] * 30, 20, 0, Math.PI * 2, true);
+                    ctx.stroke();
+                }
+                else
+                //ctx.stroke();
+                    ;
+
+
+
+                //ctx.strokeRect(50,50,200,200);
+                ctx.closePath();
+
+            }
+
+
+
+
+
+
+
+
+
+
+        }
+
+
+
+
+function initcanvas()
+{
+
+    var oncanvas = document.getElementById('aaa');
+    var ctx = oncanvas.getContext('2d');
+
+
+
+    //等待圈选----圈出部分被选中----在结构中标记出来 然后refresh
+
+    oncanvas.onmousedown=function (ev) {
+
+        console.log("onmousedown");
+        //鼠标点下去
+        //鼠标所在的位置
+        //ev.offsetX
+        //ev.offsetY
+        var mousedownX = ev.offsetX;
+        var mousedownY = ev.offsetY;
+        ctx.beginPath();
+        ctx.moveTo(mousedownX,mousedownY);
+
+        oncanvas.onmousemove=function (ev)   //鼠标按下去后框选
+        {
+           //
+            var mousemoveX = ev.offsetX;
+            var mousemoveY = ev.offsetY;
+            console.log(mousemoveX);
+            console.log(mousemoveY);
+           // ctx.beginPath();
+            if (tool===1)   //曲线选择
+            {
+
+                ctx.lineTo(ev.offsetX, ev.offsetY);
+                ctx.stroke();
+            }
+            else
+                if(tool===0)   //矩形选择
+                {
+                    refresh(oncanvas);
+//-------------判断点下去的时候和移动获得点的关系画框框
+                    ctx.beginPath();         //这个太关键了 等于是每次都清空之前所有路径重新开始一个路径 否则有微妙的bug
+
+
+
+
+                    if(mousemoveX>=mousedownX)
+                        if(mousemoveY>=mousedownY)
+                            ctx.rect(mousedownX,mousedownY,mousemoveX-mousedownX,mousemoveY-mousedownY);
+                        else
+                            ctx.rect(mousedownX,mousemoveY,mousemoveX-mousedownX,mousedownY-mousemoveY);
+                    else
+                        if(mousemoveY>=mousedownY)
+                            ctx.rect(mousemoveX,mousedownY,mousedownX-mousemoveX,mousemoveY-mousedownY);
+                        else
+                            ctx.rect(mousemoveX,mousemoveY,mousedownX-mousemoveX,mousedownY-mousemoveY);
+
+
+
+                    ctx.stroke();
+                }
+
+
+
+        };
+
+
+        document.onmouseup=function (ev) //松开 有点好玩
+        {
+
+            oncanvas.onmousemove=null;
+            document.onmousemove=null;
+            document.onmouseup =null;
+
+
+            console.log("onmouseup");
+            var mouseupX = ev.offsetX;
+            var mouseupY = ev.offsetY;
+
+
+
+            //ctx.beginPath();
+          //  ctx.rect(mousedownX,mousedownY,Math.abs(mouseupX-mousedownX),Math.abs(mouseupY-mousedownY));
+            //ctx.rect(50,50,150,150);
+
+            // ctx.moveTo(50,50);
+            //
+            //
+            // ctx.lineTo(50,200);
+            // ctx.lineTo(200,200);
+            // ctx.lineTo(200,50);
+            //
+            //
+            // ctx.closePath();
+            // //ctx.fill();
+            //
+            //
+            // ctx.stroke();
+
+
+
+            // if (xxx=ctx.isPointInPath(60,60))
+            // {
+            //     console.log("aaa");
+            //      data[7][2]=1;
+            //     console.log(data[7][2]);
+            // }
+             //ctx.stroke();
+
+
+
+            ctx.closePath();
+
+        //-------------遍历每一个点      看看在路径里面没有
+            for (var a = 0; a < data.length; a++) {
+            var aaa=Math.floor(data[a][0]*30);
+            var bbb=Math.floor(data[a][1]*30);
+                //console.log(a);
+                //console.log(bbb);
+
+                //在里面就标记出来
+                if (ctx.isPointInPath(aaa,bbb)) {
+                    data[a][2] = 1;
+                    //console.log(ctx.isPointInPath(data[a][0],data[a][1]));
+                }
+                else {
+                    data[a][2] = 0;
+                    //console.log(ctx.isPointInPath(data[a][0],data[a][1]));
+                }
+            }
+
+
+
+            refresh(oncanvas);
+
+        }
+
+      //  refresh(oncanvas);
+
+        oncanvas.onmouseout=function (ev)
+        {console.log("onmouseout");}
+
+
+    };
+
+
+
+
+
+
+
+
+    // ctx.beginPath();
+    //
+    // ctx.moveTo(50,50);
+    //
+    //
+    // ctx.lineTo(50,200);
+    // ctx.lineTo(200,200);
+    // ctx.lineTo(200,50);
+    //
+    // ctx.closePath();
+    // //ctx.fill();
+    //
+    //
+    // ctx.stroke();
+    //
+    //
+    // if (ctx.isPointInPath(60,60))
+    // {
+    //     console.log("aaa");
+    //      data[7][2]=1;
+    // }
+
+
+    refresh(oncanvas);
+
+
+
+}
+
+
+//------------------点击按钮设置成相应的颜色
+function setcolor(obj)
+{
+    var oncanvas = document.getElementById('aaa');
+    var num=obj.id;
+
+    console.log(num);
+
+
+        for (var a = 0; a < data.length; a++)
+        {
+            if(data[a][2] > 0)
+                data[a][3]=1+parseInt(num);
+
+
+        }
+
+
+
+    refresh(oncanvas);
+
+
+}
+
+
+function settool(obj)
+{
+
+    var num=obj.id;
+
+
+    tool =parseInt(num);
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+    </script>
+</head>
+
+        <body onload="initcanvas();">
+
+<!--//id=1 2 3 直接用户数组小标 不用判断-->
+        <button id="0" class="button_color button0" onclick="setcolor(this)">Red</button>
+        <button id="1" class="button_color button1" onclick="setcolor(this)">Green</button>
+        <button id="2" class="button_color button2" onclick="setcolor(this)">Blue</button>
+        <button id="3" class="button_color button3" onclick="setcolor(this)">Black</button>
+        <!--<button class="button">Button</button>-->
+<p style="clear:both">
+    <br/>
+        <button id="0"  onclick="settool(this)">矩形</button>
+        <button id="1"  onclick="settool(this)">曲线</button>
+</p>
+<br/>
+            <canvas id="aaa" width="1000" height="1000"></canvas>
+
+        </body>
+
+
+
+</html>

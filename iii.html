@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=10, user-scalable=yes" />
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.2.min.css" />
+    <style>
+        #svgDiv{
+            text-align: center;
+        }
+    </style>
+    <!--   <script type="text/javascript" src="cordova.js"></script> -->
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/SVGMagic.js"></script>
+    <script type="text/javascript" src="js/jquery.mobile-1.4.2.min.js"></script>
+    <title>Hello World</title>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            //如果浏览器不支持SVG图片，则会转为PNG
+            $('.svgimg').svgmagic();
+            $(".svgZoomBtn").click(function(){
+                //findSVGElements();
+                var zoom = $(this).attr("zoom");
+                var svgId = $(this).attr("svg");
+                var cWidth = $("#"+svgId).width();
+                var cHeight = $("#"+svgId).height();
+                if(zoom>0){
+                    cWidth += cWidth;
+                    cHeight +=  cHeight;
+                }else if(zoom<0){
+                    cWidth -= cWidth*0.5;
+                    cHeight -=  cHeight*0.5;
+                }else{
+                    //原大小
+                }
+                $("#"+svgId).width(cWidth);
+                $("#"+svgId).height(cHeight);
+            })
+
+            var obj11 = document.getElementById("inner");
+            var top11 = getTop(obj11);
+            var isIE6 = /msie 6/i.test(navigator.userAgent);
+
+            window.onscroll = function(){
+                var bodyScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                if (bodyScrollTop > top11){
+                    obj11.style.position = (isIE6) ? "absolute" : "fixed";
+                    obj11.style.top = (isIE6) ? bodyScrollTop + "px" : "0px";
+                } else {
+                    obj11.style.position = "static";
+                }
+            }
+            //findSVGElements();
+        });
+
+        function getTop(e){
+            var offset = e.offsetTop;
+            if(e.offsetParent != null) offset += getTop(e.offsetParent);
+            return offset;
+        }
+
+        function getSubDocument(embedding_element){
+            if (embedding_element.contentDocument) {
+                return embedding_element.contentDocument;
+            }else {
+                var subdoc = null;
+                try {
+                    subdoc = embedding_element.getSVGDocument();
+                } catch(e) {}
+                return subdoc;
+            }
+        }
+
+        function findSVGElements(){
+            console.log("findSVGElements");
+            var elms = document.querySelectorAll(".svgimg");
+            for (var i = 0; i < elms.length; i++){
+                var subdoc = getSubDocument(elms[i]);
+                if (subdoc){
+                    var allGNodes_ = subdoc.querySelectorAll("svg g");
+                    allGNodes = $(allGNodes_);
+                    allGNodes.each(function(){
+                        $(this).click(function(){
+                            if($(this).parent()[0].tagName=="g"){
+                                //点击了文字节点
+                                console.log("id："+$(this).attr("id"));
+                                if($(this).find("text").length>0){
+                                    console.log("文字节点："+$(this).find("text").text())
+                                }
+                                console.log("------------------------------------");
+                            }
+                        })
+                    });
+                }
+            }
+        }
+        //手机上行不通，没加载完毕也会调用
+        //window.addEventListener("load", findSVGElements, false);
+    </script>
+</head>
+<body>
+<div data-role="page" id="svgViewPage">
+    <div id="inner" style="width: 100%;background: #fff;text-align: center;">
+        <button class="svgZoomBtn" zoom="1" svg="testsvg" style="width: 20%" data-inline="true">放大</button>
+        <button class="svgZoomBtn" zoom="-1" svg="testsvg" style="width: 20%" data-inline="true">缩小</button>
+    </div>
+    <div id="svgDiv">
+        <object data="img/b.svg" type="image/svg+xml" class="svgimg" id="testsvg" onload="findSVGElements()"></object>
+    </div>
+</div>
+</body>
+</html>

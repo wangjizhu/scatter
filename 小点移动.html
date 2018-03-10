@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小圆上下左右移动</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+
+        body{
+            width: 1380px;
+            height: 720px;
+            margin:  10px auto;
+            border: 1px solid #000;
+            position: relative;
+        }
+
+        #box{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: #f00;
+            position: absolute;
+        }
+
+        .button{
+            position: absolute;
+            right: 20px;
+            bottom: 10px;
+        }
+
+        .button input{
+            width: 60px;
+            height: 30px;
+            line-height: 30px;
+            border: none ;
+            border-radius: 10px;
+            background: #f00;
+            margin-right: 10px;
+            text-align: center;
+            color: #fff;
+            font-weight: 700px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div id="box" style="left: 640px; top: 310px;"></div>
+<div class="button">
+    <input type="button" value="上" >
+    <input type="button" value="下" >
+    <input type="button" value="左" >
+    <input type="button" value="右" >
+</div>
+</body>
+<script>
+    var box=document.querySelector('#box');
+    var inputs=document.querySelectorAll('input');
+    var xSpeed=2; //x轴的速度
+    var ySpeed=2; //y轴的速度
+    var timer;
+
+    // top
+    inputs[0].onclick=function(){
+        clearInterval(timer);
+        timer=setInterval(function(){
+            ySpeed=-2;
+            xSpeed=0;
+            var y=parseInt(box.style.top)+ySpeed;
+            box.style.top=y+'px';
+            if(y<=0) clearInterval(timer);
+        },1000/60)
+    };
+
+    // bottom
+    inputs[1].onclick=function(){
+        clearInterval(timer);
+        timer=setInterval(function(){
+            ySpeed=2;
+            xSpeed=0;
+            var y=parseInt(box.style.top)+ySpeed;
+            box.style.top=y+'px';
+            if(y>=620) clearInterval(timer);
+        },1000/60)
+    };
+
+    // left
+    inputs[2].onclick=function(){
+        clearInterval(timer);
+        timer=setInterval(function(){
+            xSpeed=-2;
+            ySpeed=0;
+            var x=parseInt(box.style.left)+xSpeed;
+            box.style.left=x+'px';
+            if(x<=0) clearInterval(timer);
+        },1000/60)
+    };
+
+    //right
+    inputs[3].onclick=function(){
+        clearInterval(timer);
+        timer=setInterval(function(){
+            xSpeed=2;
+            ySpeed=0;
+            var x=parseInt(box.style.left)+xSpeed;
+            box.style.left=x+'px';
+            if(x>=1280) clearInterval(timer);
+        },1000/60)
+    };
+</script>
+</html>

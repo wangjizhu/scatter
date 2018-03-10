@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Scattertest</title>
+
+    <style>
+        canvas { border: 1px solid black; }
+
+
+
+        .button_color {
+        //background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            /*float: left;*/
+        }
+        .button0 {
+            background-color: #f44336;
+        }
+        .button1 {
+            background-color: #4CAF50;
+        }
+        .button2 {
+            background-color: #008CBA;
+        }
+        .button3 {
+            background-color: #000000;
+        }
+        .button0:hover {
+            background-color: #808080;
+        }
+        .button1:hover {
+            background-color: #808080;
+        }
+        .button2:hover {
+            background-color: #808080;
+        }
+        .button3:hover {
+            background-color: #808080;
+        }
+
+
+    </style>
+
+    <script type="text/javascript">
+        window.document.oncontextmenu = function() {   //整个页面屏蔽鼠标右键
+            return false;
+        }
+
+        //---------------------------------panel参数------------------------------
+
+        var panelsize=60; //panel棋盘边长可调节
+        var hang=8,lie=12;  //棋盘行列数 可调节
+
+
+        //先用数组存一个信息测试 记录是否被点击
+
+        var hahaha=[
+            [0,0,0,0,0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0,0,0]
+
+
+        ];//panel被选中数组
+        var nonono=[
+            [0,0,0,0,0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0,0,0]
+
+        ];//鼠标移动时候被选中临时数组
+        var cococo=[
+            [0,0,0,0,0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0,0,0]
+
+        ];//面板标记颜色
+
+
+
+
+        //----------------------------scatter参数------------------------------
+
+        var beishu=1;       //用于缩放的参数
+        var preX=0;
+
+        var preY=0;
+        var fangda=0; //标识是否放大
+        var prelocal=[
+            [0,0],
+            [0,0],
+            [0,0],
+            [0,0],
+            [0,0],
+            [0,0],
+            [0,0],
+            [0,0]
+        ];
+
+        var zuojian=0;
+
+
+        var tool =1;//全局选择工具 曲线或者矩形框选
+        //这个数组表示每个点的横纵坐标，和是否被选中的标识
+        var data= [
+            [13.75,15.49,0,0,0,0],
+            [9.62,16.57,0,0,0,0],
+            [22.97,20.85,0,0,0,0],
+            [15.82,21.75,0,0,0,0],
+            [9.67,19.63,0,0,0,0],
+            [5.23,17.22,0,0,0,0],
+            [5.18,13.75,0,0,0,0],
+            [20.11,13.18,0,0,0,0],
+            [16.03,12.11,0,0,0,0],
+            [15.12,6.78,0,0,0,0],
+            [7.68,13.04,0,0,0,0],
+            [21.83,5.87,0,0,0,0],
+            [8.08,9.51,0,0,0,0],
+            [19.08,10.58,0,0,0,0],
+            [15.94,11.36,0,0,0,0],
+            [4.23,17.63,0,0,0,0],
+            [19.97,14.03,0,0,0,0],
+            [13.72,10.2,0,0,0,0],
+            [4.58,18.39,0,0,0,0],
+            [6.5,14.87,0,0,0,0],
+            [9.28,21.74,0,0,0,0],
+            [21.45,8.44,0,0,0,0],
+            [5.87,6.52,0,0,0,0],
+            [20,17.16,0,0,0,0],
+            [10.01,8.16,0,0,0,0],
+            [5.92,10.3,0,0,0,0],
+            [8.57,14.93,0,0,0,0],
+            [7.89,15.99,0,0,0,0],
+            [9.02,9.7,0,0,0,0],
+            [16.97,12.5,0,0,0,0],
+            [3.74,11.96,0,0,0,0],
+            [7.11,18.75,0,0,0,0],
+            [20.79,9.48,0,0,0,0],
+            [14.16,15.63,0,0,0,0],
+            [19.19,18.09,0,0,0,0],
+            [17.32,15.09,0,0,0,0],
+            [3.8,15.7,0,0,0,0],
+            [14.09,12.88,0,0,0,0],
+            [22.22,4.08,0,0,0,0],
+            [14.51,12.84,0,0,0,0],
+            [13.16,20.62,0,0,0,0],
+            [9.63,6.37,0,0,0,0],
+            [18.61,10.95,0,0,0,0],
+            [13.53,6.46,0,0,0,0],
+            [12.49,4.77,0,0,0,0],
+            [18.33,15.33,0,0,0,0],
+            [5.88,4.12,0,0,0,0],
+            [10.7,16.48,0,0,0,0],
+            [22.36,9.56,0,0,0,0],
+            [18.17,9.22,0,0,0,0],
+            [14.29,6.56,0,0,0,0],
+            [18.29,5.96,0,0,0,0],
+            [14.15,13.86,0,0,0,0],
+            [14.44,6.98,0,0,0,0],
+            [16.52,5.72,0,0,0,0],
+            [7.48,15.29,0,0,0,0],
+            [22.88,16.58,0,0,0,0],
+            [20.84,7.52,0,0,0,0],
+            [18.95,11.35,0,0,0,0],
+            [14.98,21.75,0,0,0,0],
+            [21.51,4.03,0,0,0,0],
+            [3.71,7.52,0,0,0,0],
+            [20.81,13.08,0,0,0,0],
+            [8.69,8.46,0,0,0,0],
+            [12.14,17.69,0,0,0,0],
+            [13,21,0,0,0,0],
+            [19.83,16.79,0,0,0,0],
+            [5.43,10.4,0,0,0,0],
+            [7.78,10.99,0,0,0,0],
+            [18.58,17.83,0,0,0,0],
+            [8.81,19.73,0,0,0,0],
+            [15.6,7.54,0,0,0,0],
+            [21.97,13.65,0,0,0,0],
+            [12.03,22.1,0,0,0,0],
+            [13.08,3.17,0,0,0,0],
+            [7.35,5.32,0,0,0,0],
+            [3.91,12.11,0,0,0,0],
+            [16.86,9.58,0,0,0,0],
+            [18.24,20.33,0,0,0,0],
+            [22.83,4.93,0,0,0,0],
+            [4.23,13.21,0,0,0,0],
+            [22.58,22.75,0,0,0,0],
+            [16.24,14.19,0,0,0,0],
+            [7.22,14.32,0,0,0,0],
+            [19.04,8.59,0,0,0,0],
+            [10.23,9.24,0,0,0,0],
+            [10.01,15.75,0,0,0,0],
+            [22.08,20.66,0,0,0,0],
+            [7.94,11.43,0,0,0,0],
+            [6.87,15.34,0,0,0,0],
+            [7.16,13.66,0,0,0,0],
+            [19.23,6.55,0,0,0,0],
+            [4.04,9.01,0,0,0,0],
+            [15.62,5.61,0,0,0,0],
+            [12.4,10.95,0,0,0,0],
+            [18.83,16.03,0,0,0,0]
+
+
+
+
+        ];
+
+
+        //var oncanvas = document.getElementById('aaa');
+
+
+        //---------------------------------------------scatter的各个函数--------------------------
+
+        //绘图函数 obj传递过来 也可重新获取一回事
+        function refreshscatter() {
+
+            var oncanvas = document.getElementById('aaa');
+            var ctx = oncanvas.getContext('2d');
+
+        //    ctx.scale(1.6*beishu, 1.6*beishu); //按照当前倍数显示
+
+
+
+
+            if(fangda>0) {
+
+                ctx.translate(prelocal[beishu-1][0], prelocal[beishu-1][1]);
+                ctx.scale(1.6, 1.6);
+                ctx.translate(-prelocal[beishu-1][0], -prelocal[beishu-1][1]);
+            }
+
+            else
+            if(fangda<0)
+            {
+                ctx.translate(prelocal[beishu][0], prelocal[beishu][1]);
+                ctx.scale(0.625,0.625);
+                ctx.translate(-prelocal[beishu][0], -prelocal[beishu][1]);
+            }
+            console.log(beishu+'aaa');
+
+
+            fangda=0;
+
+
+
+
+
+            ctx.clearRect(0,0,1000,1000);
+
+            //画出XY轴
+            ctx.strokeStyle = "#000000";
+            ctx.beginPath();
+            ctx.moveTo(1,1);
+            ctx.lineTo(800,1);
+            ctx.moveTo(1,1);
+            ctx.lineTo(1,800);
+            ctx.stroke();
+            ctx.closePath();
+
+
+
+
+            ctx.strokeStyle = "#aaaaaa";
+            ctx.beginPath();
+            for (var a =1;a<=26;a++)
+            {
+
+                ctx.moveTo(1,a*30);
+                ctx.lineTo(800,a*30);
+
+                ctx.moveTo(a*30,1);
+                ctx.lineTo(a*30,800);
+
+            }
+            ctx.stroke();
+            ctx.closePath();
+
+
+
+
+
+
+
+
+
+
+
+
+//遍历每个点开始画画
+
+            ctx.strokeStyle = "#000000";
+            for (var a = 0; a < data.length; a++)
+            {
+                ctx.beginPath();
+                ctx.arc(data[a][0]*30,data[a][1]*30,10,0,Math.PI*2,true);
+                //   console.log(data[a][0]);
+                //   console.log(data[a][1]);
+                //先把圈圈都画出来
+                //对每一个点重复做下面的动作 实现快速染色
+
+
+                if(data[a][3]===1) //染红
+                {
+                    //console.log("hong");
+                    ctx.fillStyle = "#f44336";
+                   ctx.fill();
+                }
+                else
+                if(data[a][3]===2)//染绿
+
+                {    ctx.fillStyle = "#4CAF50";
+                    ctx.fill();
+                }
+
+                else
+                if(data[a][3]===3) //染蓝
+                {
+                    ctx.fillStyle = "#008CBA";
+                    ctx.fill();
+                }
+
+                else
+                if (data[a][3]===4)
+                {
+                    ctx.fillStyle = "#000000";
+                    ctx.fill();
+                }
+
+
+                else
+                {
+                    ctx.strokeStyle = "#000000";
+                    ctx.stroke();
+                }
+
+
+
+
+
+
+                if(data[a][2] > 0)
+                {//ctx.fill();
+                    //圈定选中
+                    ctx.beginPath();
+                    ctx.strokeStyle = "#1747ce";
+                    ctx.arc(data[a][0] * 30, data[a][1] * 30, 20, 0, Math.PI * 2, true);
+                    ctx.stroke();
+                }
+                else
+                //ctx.stroke();
+                    ;
+
+
+
+                //ctx.strokeRect(50,50,200,200);
+                ctx.closePath();
+
+            }
+
+
+
+
+
+
+
+
+
+
+        }
+
+        function initcanvasscatter()
+        {
+
+            var oncanvas = document.getElementById('aaa');
+            var ctx = oncanvas.getContext('2d');
+
+
+
+            //等待圈选----圈出部分被选中----在结构中标记出来 然后refresh
+
+            oncanvas.onmousedown=function (ev) {
+
+
+                zuojian=1;
+                console.log("onmousedown");
+                ctx.strokeStyle = "#1747ce";
+                //鼠标点下去
+                //鼠标所在的位置
+                //ev.offsetX
+                //ev.offsetY
+                var mousedownX = ev.offsetX;
+                var mousedownY = ev.offsetY;
+                ctx.beginPath();
+                ctx.moveTo(mousedownX,mousedownY);
+
+                oncanvas.onmousemove=function (ev)   //鼠标按下去后框选
+                {
+                    //
+                    var mousemoveX = ev.offsetX;
+                    var mousemoveY = ev.offsetY;
+
+                    console.log("mousemove");
+                    //console.log(mousemoveX);
+                    //console.log(mousemoveY);
+                    // ctx.beginPath();
+                    if (tool===1)   //曲线选择
+                    {
+
+                        ctx.lineTo(ev.offsetX, ev.offsetY);
+                        ctx.stroke();
+
+
+
+                    }
+                    else
+                    if(tool===0)   //矩形选择
+                    {
+                        refreshscatter();
+//-------------判断点下去的时候和移动获得点的关系画框框
+                        ctx.beginPath();         //这个太关键了 等于是每次都清空之前所有路径重新开始一个路径 否则有微妙的bug
+
+
+
+
+                        if(mousemoveX>=mousedownX)
+                            if(mousemoveY>=mousedownY)
+                                ctx.rect(mousedownX,mousedownY,mousemoveX-mousedownX,mousemoveY-mousedownY);
+                            else
+                                ctx.rect(mousedownX,mousemoveY,mousemoveX-mousedownX,mousedownY-mousemoveY);
+                        else
+                        if(mousemoveY>=mousedownY)
+                            ctx.rect(mousemoveX,mousedownY,mousedownX-mousemoveX,mousemoveY-mousedownY);
+                        else
+                            ctx.rect(mousemoveX,mousemoveY,mousedownX-mousemoveX,mousedownY-mousemoveY);
+
+
+
+                        ctx.stroke();
+                    }
+
+
+
+                };
+
+
+                document.onmouseup=function (ev) //松开 有点好玩 是document松开
+                {
+
+                    oncanvas.onmousemove=null;
+                    //document.onmousemove=null;
+                    document.onmouseup =null;
+
+
+                    console.log("onmouseup");
+                    var mouseupX = ev.offsetX;
+                    var mouseupY = ev.offsetY;
+
+
+
+                    ctx.closePath();
+
+                    //-------------遍历每一个点      看看在路径里面没有
+                    for (var a = 0; a < data.length; a++) {
+                        var aaa=Math.floor(data[a][0]*30);
+                        var bbb=Math.floor(data[a][1]*30);
+                        //console.log(a);
+                        //console.log(bbb);
+
+
+                       if(ev.ctrlKey)  //如果ctrl按下去
+                       {
+
+                           if (ctx.isPointInPath(aaa, bbb)) {
+                               data[a][2] = 1;
+                               //console.log(ctx.isPointInPath(data[a][0],data[a][1]));
+                           }
+
+
+                       }
+
+                       else          //没有按ctrl
+                           {
+
+                           //在里面就标记出来
+                           if (ctx.isPointInPath(aaa, bbb)) {
+                               data[a][2] = 1;
+                               //console.log(ctx.isPointInPath(data[a][0],data[a][1]));
+                           }
+                           else {
+                               data[a][2] = 0;
+                               //console.log(ctx.isPointInPath(data[a][0],data[a][1]));
+                           }
+
+
+                       }
+
+
+
+                    }
+
+                    scattortopanel();
+
+                    refreshscatter();
+                    refreshpanel();
+
+
+                }
+
+                //  refreshscatter();
+
+
+
+
+
+
+
+
+            };
+
+            document.onmousemove=function (ev)   //
+            {
+
+                preX = ev.offsetX;
+                preY = ev.offsetY;
+                console.log(preX);
+                console.log(preY);
+
+
+            }
+
+            oncanvas.onmouseover = function (ev) {  //鼠标进入区域
+                console.log("onmouseover");
+                //oncanvas.onmousewheel=zoom;
+               // oncanvas.onmousemove=move;
+
+            };
+
+            oncanvas.onmouseout=function (ev)
+            {
+                console.log("onmouseout");
+                //oncanvas.onmousemove = null;//出去就放了
+            }
+
+            oncanvas.onmousewheel = function (ev)
+            {//鼠标滚轮
+                var a = ev.wheelDelta;
+
+
+                //console.log(a);
+                //   console.log(ev.deltaX*ev.wheelDelta);
+                //  console.log(ev.deltaY*ev.wheelDelta);
+
+                //ctx.save();
+
+
+                //缩放同样代码 中心点不变 全世界缩放过来
+
+
+                //这里这个beishu数组实际上就是一个堆栈要记录每次放大时候的中心点信息 然后缩小的时候沿路返回
+                if (a > 0)
+                {
+
+                    if (beishu < 6)
+                    {
+                        fangda=1;
+                        prelocal[beishu][0]=preX;
+                        prelocal[beishu][1]=preY;
+                        beishu++;
+                        console.log(beishu);
+                        //        ctx.translate(-oldX, -oldY);
+                    }
+                    else
+                        fangda=0;
+                }
+                else
+                {
+
+                    if (beishu > 1)
+                    {
+                        fangda=-1;
+                        beishu--;
+                        console.log(beishu);
+                    }
+                    else
+                        fangda=0;
+
+                }
+                console.log(beishu);
+               // console.log(oldX);
+               // console.log(oldY);
+
+
+
+
+                // oncanvas.onmousemove = null;
+                // document.onmouseup =null;
+
+
+
+
+                refreshscatter();
+                //     ctx.restore();
+            }
+
+
+
+
+
+
+
+            refreshscatter();
+
+
+
+        }
+        //------------------点击按钮设置成相应的颜色
+        function setcolorscatter(obj)
+        {
+            var oncanvas = document.getElementById('aaa');
+            var num=obj.id;
+
+           // console.log(num);
+
+
+            for (var a = 0; a < data.length; a++) //选中的点 第三位加上按钮值等于颜色 同事标记panel中的点的颜色
+            {
+                if(data[a][2] > 0) {
+                    data[a][3] = 1 + parseInt(num);
+
+                    cococo[parseInt(a / lie)][a % lie] = parseInt(num) + 1;
+
+                }
+            }
+
+
+
+            refreshscatter();
+            refreshpanel();
+
+        }
+
+
+
+
+        function settool(obj)
+        {
+
+            var num=obj.id;
+            tool =parseInt(num);
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//--------------------------------------------------一下是panel各函数------------------------------------------------
+
+        function refreshpanel(  )   //obj是文档元素canvas传递过来 增加效率
+        {  //画圈圈和框框
+
+            var oncanvas = document.getElementById('bbb');
+            var ctx = oncanvas.getContext('2d');
+
+
+            ctx.clearRect(0,0,1000,1000);
+
+
+            for (var i = 0; i < hang; i++)
+            {
+                for (var j = 0; j < lie; j++)
+                {
+                    ctx.fillStyle =ctx.strokeStyle = 'rgb(0,' + Math.floor(255 - 255/lie * j) + ',' +
+                        Math.floor(255 - 255/hang * i) + ')';
+
+                    ctx.beginPath();
+                    ctx.lineWidth=2;
+                    ctx.strokeRect(j * panelsize, i * panelsize, panelsize, panelsize);  //画框框
+
+
+
+
+                    // ctx.arc(panelsize / 2 + j * panelsize  , panelsize / 2 + i * panelsize , panelsize * 0.4, 0, Math.PI * 2,true); //画圈圈
+                    // ctx.stroke();
+                    ctx.closePath();
+
+                    // if (hahaha[i][j] != 0)
+                    //     //ctx.fillRect(i * panelsize, j * panelsize, panelsize, panelsize);
+                    //     ctx.fill();
+                    // else
+
+
+                    ctx.beginPath();
+                    ctx.fillStyle =ctx.strokeStyle = 'rgba(0,' + Math.floor(255 - 255/lie * j) + ',' +
+                        Math.floor(255 - 255/hang * i) + ',0.5)';
+                    if(nonono[i][j]>0)  //选择过程中的标识
+                        ctx.fillRect(j * panelsize, i * panelsize, panelsize, panelsize);
+                    if(hahaha[i][j]>0)  //被选中
+                        ctx.fillRect(j * panelsize, i * panelsize, panelsize, panelsize);
+                    if(cococo[i][j]===1) {
+
+                        ctx.fillStyle = "#f44336";
+                        ctx.arc(panelsize / 2 + j * panelsize, panelsize / 2 + i * panelsize, panelsize * 0.4, 0, Math.PI * 2, true); //画圈圈
+                        ctx.fill();
+                    }
+                    if(cococo[i][j]===2) {
+
+                        ctx.fillStyle = "#4CAF50";
+                        ctx.arc(panelsize / 2 + j * panelsize, panelsize / 2 + i * panelsize, panelsize * 0.4, 0, Math.PI * 2, true); //画圈圈
+                        ctx.fill();
+                    }
+                    if(cococo[i][j]===3) {
+
+                        ctx.fillStyle = "#008CBA";
+                        ctx.arc(panelsize / 2 + j * panelsize, panelsize / 2 + i * panelsize, panelsize * 0.4, 0, Math.PI * 2, true); //画圈圈
+                        ctx.fill();
+                    }
+                    if(cococo[i][j]===4) {
+
+                        ctx.fillStyle = "#000000";
+                        ctx.arc(panelsize / 2 + j * panelsize, panelsize / 2 + i * panelsize, panelsize * 0.4, 0, Math.PI * 2, true); //画圈圈
+                        ctx.fill();
+                    }
+                    ctx.closePath();
+
+
+                }
+
+
+                ctx.closePath();
+
+            }
+
+        }
+
+
+
+
+        //--------------------这个函数在于不去绘制任何图形只是操作数据结构而已
+        function initcanvaspanel()
+        {  //画圈圈和框框
+
+            var oncanvas = document.getElementById('bbb');
+            var ctx = oncanvas.getContext('2d');
+
+            ctx.clearRect(0,0,800,600);
+
+            oncanvas.onmouseover = function (ev)
+            {  //鼠标进入区域
+                console.log("onmouseoverbbb");
+            };
+
+            oncanvas.onmouseout =function ()
+            {//鼠标移动出区域
+                console.log("onmouseoutbbb");
+                oncanvas.onmousemove=null;
+                // document.onmouseup =null;
+            };
+
+
+
+
+
+
+
+            oncanvas.onmousedown=function (ev)  //鼠标按下去
+            {
+                console.log("onmousedown");
+                //鼠标点下去
+                //鼠标所在的位置
+                //ev.offsetX
+                //ev.offsetY
+                var oldX = ev.offsetX;
+                var oldY = ev.offsetY;
+                var balldownX1 = Math.floor(oldX / panelsize);
+                var balldownY1 = Math.floor(oldY / panelsize);
+
+                console.log(balldownX1);
+                console.log(balldownY1);
+
+
+                nonono[balldownY1][balldownX1]=1;
+
+
+
+
+
+                document.onmousemove=function (ev)   //鼠标按下去后框选
+                {
+                    console.log("onmousemove");
+                    var oldX = ev.offsetX;
+                    var oldY = ev.offsetY;
+
+
+                    //----------------------------------------------矩形框选 任意方向矩形
+                    var ballmoveX2 = Math.floor(oldX / panelsize);
+                    var ballmoveY2 = Math.floor(oldY / panelsize);
+
+
+
+                    nonono[ballmoveY2][ballmoveX2]=1;
+                    console.log(ballmoveY2);
+                    console.log(ballmoveX2);
+
+
+
+                    var x1=Math.min(balldownX1,ballmoveX2);
+                    var x2=Math.max(balldownX1,ballmoveX2);
+                    var y1=Math.min(balldownY1,ballmoveY2);
+                    var y2=Math.max(balldownY1,ballmoveY2);
+
+
+                    //-------------------标记数组清空-----------------
+                    nonono=[
+                        [0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0]
+                    ];
+
+                    //把选中的格子标记在nonono里面
+
+                    for (i = x1; i <= x2; i++)
+                        for (j = y1; j <= y2; j++)
+                            nonono[j][i] = 1;
+
+                    refreshpanel();
+
+
+                }
+
+
+
+                document.onmouseup=function (ev) //松开 有点好玩
+                {
+                    console.log("onmouseup");
+                    document.onmousemove=null;
+                    document.onmouseup =null;
+
+
+
+                    var oldX = ev.offsetX;
+                    var oldY = ev.offsetY;
+
+
+                    //----------------------------------------------矩形框选 任意方向矩形
+
+                    var ballupX2 = Math.floor(oldX / panelsize);
+                    var ballupY2 = Math.floor(oldY / panelsize);
+
+
+                    //如果点击同一个格子，则取消选择
+
+
+                    // ----判断 如果点击和松开在同一个格子，则取消
+
+                    // if (balldownX1==ballupX2 && balldownY1==ballupY2)
+                    //
+                    //     if(hahaha[balldownX1][balldownY1]==1)
+                    //
+                    //         nonono[balldownX1][balldownY1]=hahaha[balldownX1][balldownY1]=0;
+
+                    //放开把nonono放入到hahaha中，并清空nonono
+                    //如果按了control就添加 否则就以选中为准
+                    if(ev.ctrlKey)
+                    {
+                        for (var i = 0; i < hang; i++) {
+                            for (var j = 0; j < lie; j++) {
+                                if(hahaha[i][j]+nonono[i][j]>=1)
+                                    hahaha[i][j] = 1;
+                                else
+                                    hahaha[i][j]=0;
+                                nonono[i][j] = 0;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        for (var i = 0; i < hang; i++) {
+                            for (var j = 0; j < lie; j++) {
+                                //if(hahaha[i][j]+nonono[i][j]>=1)
+                                hahaha[i][j] = nonono[i][j];
+                                // else
+                                //     hahaha[i][j]=0;
+                                nonono[i][j] = 0;
+                            }
+                        }
+                    }
+
+
+                    paneltoscatter();
+
+
+                    refreshscatter();
+                    refreshpanel();//改变hahaha[]后 重绘
+
+
+                };
+
+
+                refreshpanel();  //down函数按下去后重绘
+
+            };
+
+
+            refreshpanel();
+
+
+        }
+
+
+
+//--------------------------------------------以下是两个canvas标记部分同步分两种---------------------------------------
+        function scattortopanel()
+        {
+
+            hahaha=[
+                [0,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0,0]
+            ];  //panel先清空
+
+
+            for (var a = 0; a < data.length; a++)
+            {
+                if(data[a][2]===1)
+                    hahaha[parseInt(a/lie)][a%lie]=1;
+
+            }
+
+        }
+
+
+        function paneltoscatter()
+        {
+
+            for (var a = 0; a < data.length; a++)  //清空scattor的选择
+            {
+                data[a][2]=0;
+
+            }
+
+
+
+            for (var i = 0; i < hang; i++)
+            {
+                for (var j = 0; j < lie; j++)
+                {
+                    if(hahaha[i][j]===1)
+                    {
+                        data[lie * i + j][2] = 1;
+
+                        console.log(lie * i + j);
+
+                    }
+                }
+
+            }
+
+
+        }
+
+
+
+
+
+function initboth(){
+    initcanvasscatter();
+    initcanvaspanel();
+}
+
+
+
+
+
+
+
+
+
+    </script>
+</head>
+
+<body onload="initboth();" onselect="return false">
+<div>
+<!--//id=1 2 3 直接用户数组小标 不用判断-->
+<button id="0" class="button_color button0" onclick="setcolorscatter(this)">Red</button>
+<button id="1" class="button_color button1" onclick="setcolorscatter(this)">Green</button>
+<button id="2" class="button_color button2" onclick="setcolorscatter(this)">Blue</button>
+<button id="3" class="button_color button3" onclick="setcolorscatter(this)">Black</button>
+<!--<button class="button">Button</button>-->
+</div>
+<p style="clear:both">
+    <br/>
+    <button id="0"  onclick="settool(this)">矩形</button>
+    <button id="1"  onclick="settool(this)">曲线</button>
+</p>
+<div style="float:left;" div onmousewheel="return false;">
+<canvas id="aaa" width="800" height="800"></canvas>
+<canvas id="bbb" width="800" height="800"></canvas>
+</div>
+</body>
+
+
+
+</html>

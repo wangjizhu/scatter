@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+
+    <script src="./echarts.js"></script>
+
+
+    <style>
+        canvas { border: 1px solid black; }
+
+
+
+        .button_color {
+        //background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            /*float: left;*/
+        }
+        .button0 {
+            background-color: #b80af4;
+        }
+        .button1 {
+            background-color: #4CAF50;
+        }
+        .button2 {
+            background-color: #008CBA;
+        }
+        .button3 {
+            background-color: #000000;
+        }
+        .button4 {
+            background-color: #ffffff;
+        }
+        .button0:hover {
+            background-color: #808080;
+        }
+        .button1:hover {
+            background-color: #808080;
+        }
+        .button2:hover {
+            background-color: #808080;
+        }
+        .button3:hover {
+            background-color: #808080;
+        }
+
+
+        .button4{color: black;}
+        .button4:hover {
+            background-color: #808080;
+        }
+
+
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+<div>
+    <!--//id=1 2 3 直接用户数组小标 不用判断-->
+    <button id="0" class="button_color button0" onclick="setcolorscatter(this)">>Red</button>
+    <button id="1" class="button_color button1" onclick="setcolorscatter(this)">>Green</button>
+    <button id="2" class="button_color button2" onclick="setcolorscatter(this)">>Blue</button>
+    <button id="3" class="button_color button3" onclick="setcolorscatter(this)">>Black</button>
+    <button id="4" class="button_color button4" onclick="setcolorscatter(this)">>打叉叉</button>
+
+    <!--<button class="button">Button</button>-->
+</div>
+
+
+
+<div id="main" style="width: 600px;height:600px;"></div>
+<!--<div id="main2" style="width: 800px;height:400px;"></div>-->
+
+
+
+
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main'));
+
+
+    var zhuadaode;
+
+    // option = {
+    //     backgroundColor: '#2c343c',
+    //     series : [
+    //         {
+    //             name: '访问来源',
+    //
+    //             radius: '55%',
+    //             data:[
+    //                 {value:235, name:'视频广告'},
+    //                 {value:274, name:'联盟广告'},
+    //                 {value:310, name:'邮件营销'},
+    //                 {value:335, name:'直接访问'},
+    //                 {value:400, name:'搜索引擎'}
+    //             ],
+    //            // roseType: 'angle',
+    //             label: {
+    //                 normal: {
+    //                     textStyle: {
+    //                         color: 'rgba(255, 255, 255, 0.3)'
+    //                     }
+    //                 }
+    //             },
+    //             labelLine: {
+    //                 normal: {
+    //                     lineStyle: {
+    //                         color: 'rgba(255, 255, 255, 0.3)'
+    //                     }
+    //                 }
+    //             },
+    //             itemStyle: {
+    //                 normal: {
+    //                     color: '#c23531',
+    //                     shadowBlur: 200,
+    //                     shadowColor: 'rgba(0, 0, 0, 0.5)'
+    //                 }
+    //             },
+    //             type: 'pie'
+    //         }
+    //     ]
+    // };
+
+
+
+    // var myChart = echarts.init(document.getElementById('main'));
+
+    //第二步构造数据
+    var data1 = [];//原始数组 第三位颜色标记 根据颜色标记甩入不同目标数组里面用于series显示
+    // var data2 = [];
+    // var data3 = [];
+    //
+    //构造随机数
+
+
+
+
+
+
+    var random = function (max){
+        return ((Math.random()*max));
+    };
+
+    //将数据装载到数组中
+    for (var i = 0; i < 25; i++) {
+        data1.push([random(99), random(99),0,0]);  //前两位点坐标 [2]位置颜色 [3]实时标记是否被选中
+    }
+
+    for (var i = 25; i < 50; i++) {
+        data1.push([random(99), random(99),1,0]);
+    }
+    for (var i = 50; i < 75; i++) {
+        data1.push([random(99), random(99),2,0]);
+    }
+    for (var i = 75; i < 100; i++) {
+        data1.push([random(99), random(99),3,0]);
+    }
+
+
+
+    var clustered = [[],[],[],[]];
+
+    for (var i=0;i<data1.length;i++)
+        clustered[data1[i][2]].push([data1[i][0],data1[i][1],i]);
+
+                    //神逻辑 尤其是最后那个i在原数data1中位置，
+
+
+
+
+
+
+
+
+    option = {
+
+
+        tooltip : {
+            // padding: 10,
+             trigger: 'item',
+           // trigger: 'axis',
+            axisPointer: {
+                type: 'cross'
+            },
+
+            formatter: function (obj) {
+                var value = obj.value;
+                return 'FAM: ' + value[0] + '<br>'
+                +'HEX: ' + value[1];
+            }
+
+
+
+        },
+
+
+        toolbox: {
+            left: 'right',
+            itemSize: 25,
+            top: 5,
+            feature: {
+                // brush:{
+                //     type: 'rect',
+                //
+                // },
+                //
+                // brush:{
+                //     type: 'polygon',
+                //
+                // },
+
+
+
+                dataZoom: {
+
+                },
+                restore: {}
+
+
+
+
+
+            },
+
+
+
+
+        },
+
+
+
+        brush:
+            {
+                toolbox:['rect','polygon','clear'],
+
+                romoveOnClick:'signle'    //单击空白处清空选择
+            },
+
+
+
+        xAxis: {
+            type: 'value',
+            min: 1,
+            max: 100,
+            name:'FAM'
+
+
+        }
+        ,
+
+
+
+
+
+
+
+
+
+
+        yAxis:
+            {
+                type: 'value',
+                min: 1,
+                max: 100,
+                name:'HEX'
+
+        }
+        ,
+
+
+        dataZoom: [
+              // 这个dataZoom组件，也控制y轴。
+
+
+            {   // 这个dataZoom组件，也控制x轴。
+                type: 'inside', // 这个 dataZoom 组件是 inside 型 dataZoom 组件
+                xAxisIndex: [0]
+                // start: 10,      // 左边在 10% 的位置。
+                // end: 90         // 右边在 60% 的位置。
+            },
+            {
+                type: 'inside',
+                yAxisIndex: [0]
+                // start: 10,
+                // end: 90
+            },
+
+
+
+
+
+
+
+
+
+
+        ],
+
+
+
+
+        series: [
+            {
+
+                name:'famhex',
+                type: 'scatter',
+                symbolSize: 15,
+
+
+                data: clustered[0],
+
+
+                itemStyle: {
+                    color: '#000000'
+                }
+
+            },
+
+
+            {
+
+                name:'famhex',
+                type: 'scatter',
+                symbolSize: 15,
+
+
+                data: clustered[1],
+
+
+                itemStyle: {
+                    color: '#ff1736'
+                }
+
+            },
+
+
+            {
+
+                name:'famhex',
+                type: 'scatter',
+                symbolSize: 15,
+
+
+                data: clustered[2],
+
+
+                itemStyle: {
+                    color: '#1effe8'
+                }
+
+            },
+
+
+            {
+
+                name:'famhex',
+                type: 'scatter',
+                symbolSize: 15,
+
+
+                data: clustered[3],
+
+
+                itemStyle: {
+                    color: '#0b7e14'
+                }
+
+            }
+
+
+
+
+
+
+
+
+
+        ]
+    };
+
+
+
+
+    myChart.on('brushSelected', function (params) {
+        var brushComponent = params.batch[0];
+
+        var sum = 0; // 统计选中项的数据值的和
+
+        for (var sIdx = 0; sIdx < brushComponent.selected.length; sIdx++) {
+            // 对于每个 series：
+            var dataIndices = brushComponent.selected[sIdx].dataIndex;
+        //
+             for (var i = 0; i < dataIndices.length; i++) {
+                 var dataIndex = dataIndices[i];
+        //         sum += dataBySeries[sIdx][dataIndex];
+        //          console.log(sIdx);
+        //          console.log(dataIndex);
+                 console.log(clustered[sIdx][dataIndex][2]);
+                    data1[3]=1;
+
+
+             }
+         }
+
+        //  zhuadaode = brushComponent.selected[0].dataIndex;
+        // for (var i = 0; i < zhuadaode.length; i++)
+        // console.log(zhuadaode[i]); // 显示抓到的数组下标//
+
+
+
+    });
+
+
+
+    function setcolorscatter(obj)
+    {
+        //var oncanvas = document.getElementById('aaa');
+        var num=obj.id;
+
+        // console.log(num);
+
+
+        for (var i = 0; i < data1.length; i++) //选中的点 第三位加上按钮值等于颜色 同事标记panel中的点的颜色
+        {
+            if(data1[i][3] > 0) {
+                data[i][2] = parseInt(num);
+
+                //cococo[parseInt(a / lie)+1][a % lie+1] = parseInt(num) + 1;
+
+            }
+        }
+
+
+
+        //refreshscatter();
+        //refreshpanel();
+
+    }
+
+
+
+
+
+
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+
+
+
+
+    //--------------------------------------点击红色的函数-----------------------------------
+
+
+
+
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

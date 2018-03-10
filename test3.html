@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+
+    <style>
+        .button_color {
+            //background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            float: left;
+        }
+        .button0 {
+            background-color: #f44336;
+        }
+        .button1 {
+            background-color: #4CAF50;
+        }
+        .button2 {
+            background-color: #008CBA;
+        }
+        .button3 {
+            background-color: #000000;
+        }
+        .button0:hover {
+            background-color: #808080;
+        }
+        .button1:hover {
+             background-color: #808080;
+         }
+        .button2:hover {
+            background-color: #808080;
+        }
+        .button3:hover {
+            background-color: #808080;
+        }
+
+
+    </style>
+
+
+
+
+
+
+    <script type="text/javascript">
+
+    var tool =1;//全局选择工具 曲线或者矩形框选
+
+//这个数组表示每个点的横纵坐标，和是否被选中的标识
+        var data= [
+            [10.0,8.04,0,0,0,0],
+            [8.0,6.95,0,0,0,0],
+            [13.0,7.58,0,0,0,0],
+            [9.0,8.81,0,0,0,0],
+            [11.0,8.33,0,0,0,0],
+            [14.0,9.96,0,0,0,0],
+            [6.0,7.24,0,0,0,0],
+            [4.0,4.26,0,0,0,0],   //a[7]
+            [12.0,10.84,0,0,0,0],
+            [7.0,4.82,0,0,0,0],
+            [5.0,5.68,0,0,0,0]
+        ];
+
+
+
+//绘图函数 obj传递过来 也可重新获取一回事
+        function refresh( obj ) {
+
+
+            var ctx = obj.getContext('2d');
+
+            ctx.clearRect(0,0,1000,1000);
+
+            //画出XY轴
+            ctx.beginPath();
+            ctx.moveTo(1,1);
+            ctx.lineTo(800,1);
+            ctx.moveTo(1,1);
+            ctx.lineTo(1,800);
+            ctx.stroke();
+            ctx.closePath();
+
+
+
+
+
+
+
+
+//遍历每个点开始画画
+            for (var a = 0; a < data.length; a++)
+            {
+                ctx.beginPath();
+                ctx.arc(data[a][0]*30,data[a][1]*30,10,0,Math.PI*2,true);
+             //   console.log(data[a][0]);
+             //   console.log(data[a][1]);
+                  //先把圈圈都画出来
+                //对每一个点重复做下面的动作 实现快速染色
+
+
+                if(data[a][3]===1) //染红
+                {
+                    ctx.fillStyle = "#f44336";
+                    ctx.fill();
+                }
+                else
+                    if(data[a][3]===2)//染绿
+
+                        {    ctx.fillStyle = "#4CAF50";
+                             ctx.fill();
+                        }
+
+                    else
+                           if(data[a][3]===3) //染蓝
+                           {
+                               ctx.fillStyle = "#008CBA";
+                               ctx.fill();
+                           }
+
+                            else
+                                if (data[a][3]===4)
+                                {
+                                    ctx.fillStyle = "#000000";
+                                    ctx.fill();
+                                }
+
+
+                                else
+                                ctx.stroke();
+
+
+
+
+
+
+
+                if(data[a][2] > 0)
+                {//ctx.fill();
+                    //高亮圆心
+                    ctx.beginPath();
+                    ctx.fillStyle = "#000000";
+                    ctx.arc(data[a][0] * 30, data[a][1] * 30, 20, 0, Math.PI * 2, true);
+                    ctx.stroke();
+                }
+                else
+                //ctx.stroke();
+                    ;
+
+
+
+                //ctx.strokeRect(50,50,200,200);
+                ctx.closePath();
+
+            }
+
+
+
+
+
+
+
+
+
+
+        }
+
+
+
+
+function initcanvas()
+{
+
+    var oncanvas = document.getElementById('aaa');
+    var ctx = oncanvas.getContext('2d');
+
+
+
+    //等待圈选----圈出部分被选中----在结构中标记出来 然后refresh
+
+    oncanvas.onmousedown=function (ev) {
+
+        console.log("onmousedown");
+        //鼠标点下去
+        //鼠标所在的位置
+        //ev.offsetX
+        //ev.offsetY
+        var mousedownX = ev.offsetX;
+        var mousedownY = ev.offsetY;
+        ctx.beginPath();
+        ctx.moveTo(mousedownX,mousedownY);
+
+        document.onmousemove=function (ev)   //鼠标按下去后框选
+        {
+           // console.log("zhazhahui");
+            var mousemoveX = ev.offsetX;
+            var mousemoveY = ev.offsetY;
+
+           // ctx.beginPath();
+            if (tool===1)   //曲线选择
+            {
+
+                ctx.lineTo(ev.offsetX, ev.offsetY);
+                ctx.stroke();
+            }
+            else
+                if(tool===0)   //矩形选择
+                {
+                    refresh(oncanvas);
+//-------------判断点下去的时候和移动获得点的关系画框框
+                    ctx.beginPath();         //这个太关键了 等于是每次都清空之前所有路径重新开始一个路径 否则有微妙的bug
+                    if(mousemoveX>=mousedownX)
+                        if(mousemoveY>=mousedownY)
+                            ctx.rect(mousedownX,mousedownY,mousemoveX-mousedownX,mousemoveY-mousedownY);
+                        else
+                            ctx.rect(mousedownX,mousemoveY,mousemoveX-mousedownX,mousedownY-mousemoveY);
+                    else
+                        if(mousemoveY>=mousedownY)
+                            ctx.rect(mousemoveX,mousedownY,mousedownX-mousemoveX,mousemoveY-mousedownY);
+                        else
+                            ctx.rect(mousemoveX,mousemoveY,mousedownX-mousemoveX,mousedownY-mousemoveY);
+
+
+
+                    ctx.stroke();
+                }
+
+
+
+        };
+
+
+        document.onmouseup=function (ev) //松开 有点好玩
+        {
+            document.onmousemove=null;
+            document.onmouseup =null;
+
+
+            console.log("onmouseup");
+            var mouseupX = ev.offsetX;
+            var mouseupY = ev.offsetY;
+
+
+
+            //ctx.beginPath();
+          //  ctx.rect(mousedownX,mousedownY,Math.abs(mouseupX-mousedownX),Math.abs(mouseupY-mousedownY));
+            //ctx.rect(50,50,150,150);
+
+            // ctx.moveTo(50,50);
+            //
+            //
+            // ctx.lineTo(50,200);
+            // ctx.lineTo(200,200);
+            // ctx.lineTo(200,50);
+            //
+            //
+            // ctx.closePath();
+            // //ctx.fill();
+            //
+            //
+            // ctx.stroke();
+
+
+
+            // if (xxx=ctx.isPointInPath(60,60))
+            // {
+            //     console.log("aaa");
+            //      data[7][2]=1;
+            //     console.log(data[7][2]);
+            // }
+             //ctx.stroke();
+
+
+
+            ctx.closePath();
+
+        //-------------遍历每一个点      看看在路径里面没有
+            for (var a = 0; a < data.length; a++) {
+            var aaa=Math.floor(data[a][0]*30);
+            var bbb=Math.floor(data[a][1]*30);
+                //console.log(a);
+                //console.log(bbb);
+
+                //在里面就标记出来
+                if (ctx.isPointInPath(aaa,bbb)) {
+                    data[a][2] = 1;
+                    //console.log(ctx.isPointInPath(data[a][0],data[a][1]));
+                }
+                else {
+                    data[a][2] = 0;
+                    //console.log(ctx.isPointInPath(data[a][0],data[a][1]));
+                }
+            }
+
+
+
+            refresh(oncanvas);
+
+        }
+
+      //  refresh(oncanvas);
+
+
+
+    };
+
+
+
+
+
+
+
+
+    // ctx.beginPath();
+    //
+    // ctx.moveTo(50,50);
+    //
+    //
+    // ctx.lineTo(50,200);
+    // ctx.lineTo(200,200);
+    // ctx.lineTo(200,50);
+    //
+    // ctx.closePath();
+    // //ctx.fill();
+    //
+    //
+    // ctx.stroke();
+    //
+    //
+    // if (ctx.isPointInPath(60,60))
+    // {
+    //     console.log("aaa");
+    //      data[7][2]=1;
+    // }
+
+
+    refresh(oncanvas);
+
+
+
+}
+
+
+//------------------点击按钮设置成相应的颜色
+function setcolor(obj)
+{
+    var oncanvas = document.getElementById('aaa');
+    var num=obj.id;
+
+    console.log(num);
+
+
+        for (var a = 0; a < data.length; a++)
+        {
+            if(data[a][2] > 0)
+                data[a][3]=1+parseInt(num);
+
+
+        }
+
+
+
+    refresh(oncanvas);
+
+
+}
+
+
+function settool(obj)
+{
+
+    var num=obj.id;
+
+
+    tool =parseInt(num);
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+    </script>
+</head>
+
+        <body onload="initcanvas();">
+
+<!--//id=1 2 3 直接用户数组小标 不用判断-->
+        <button id="0" class="button_color button0" onclick="setcolor(this)">Red</button>
+        <button id="1" class="button_color button1" onclick="setcolor(this)">Green</button>
+        <button id="2" class="button_color button2" onclick="setcolor(this)">Blue</button>
+        <button id="3" class="button_color button3" onclick="setcolor(this)">Black</button>
+        <!--<button class="button">Button</button>-->
+
+        <button id="0"  onclick="settool(this)">矩形</button>
+        <button id="1"  onclick="settool(this)">曲线</button>
+
+
+            <canvas id="aaa" width="1000" height="1000"></canvas>
+
+        </body>
+
+
+
+</html>
