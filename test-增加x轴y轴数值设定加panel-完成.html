@@ -82,10 +82,8 @@
     <!--<button class="button">Button</button>-->
 </div>
 
-
-<div id="main" style="width: 600px;height:600px;"></div>
-
-
+<div style="float:left">
+    <div id="main" style="width: 600px;height:600px;"></div>
     <div style="float:left">
         <input type="range" id="myRange" value ="90" min="50" max="100" step="0.01" oninput="flitter()"/>
     </div>
@@ -102,17 +100,18 @@
             <button id="7" class="change" onclick="changX()">改变X轴</button>
     </div>
 
-<div style="clear:both">
+    <div style="clear:both">
 
     Ystart: <input type="text" id="y1" value="700"/>
     Yend: <input type="text" id="y2" value="800"/>
     <button id="8" class="change" onclick="changY()">改变Y轴</button>
+    </div>
 </div>
 
 
-
-
-
+<div style="float:left">
+    <canvas id="bbb" width="800" height="600"></canvas>
+</div>
 
 <script type="text/javascript">
 
@@ -231,20 +230,20 @@ var data=[];
 
    // 将数据装载到数组中
     for (var i = 0; i < 20; i++) {
-        data.push([random(100), random(100),0,0,0,0,0,1]);
+        data.push([random(100), random(100),5,0,0,0,0,1,0]);
     };
     for (var i = 0; i < 20; i++) {
-        data.push([random(100)+100, random(250)+700,0,0,0,0,0,1]);
+        data.push([random(100)+100, random(250)+700,5,0,0,0,0,1,0]);
     };
     for (var i = 0; i < 20; i++) {
-        data.push([random(250)+700, random(250)+700,0,0,0,0,0,1]);
+        data.push([random(250)+700, random(250)+700,5,0,0,0,0,1,0]);
     };
     for (var i = 0; i < 20; i++) {
-        data.push([random(250)+700, random(100)+100,0,0,0,0,0,1]);
+        data.push([random(250)+700, random(100)+100,5,0,0,0,0,1,0]);
     };
 
 for ( i = 0; i < 16; i++) {
-    data.push([random(990), random(990),0,0,0,0,0,1]);
+    data.push([random(990), random(990),5,0,0,0,0,1,0]);
 };
 
 
@@ -465,7 +464,6 @@ var nnn=0;
 
     //--------------------聚类
 
-
         function clustering() {
 
             var count = 0;
@@ -565,8 +563,13 @@ var nnn=0;
                 }
 
 
-                refreshscatter();
 
+
+                colorscattortopanel();
+
+
+                refreshscatter();
+                refreshpanel();
              //   console.log(nnn++);
 
 
@@ -603,22 +606,32 @@ var nnn=0;
             refreshscatter();
 
 
+            initcanvaspanel();
+
         }
-
-
-
-
 
         function refreshscatter(){
 
 //console.log('refresh');
             //myChart.clear();
+                  //0  1  2  3  4   5   6
+                  //b  g  b  r  x   n   s
+            fenzu=[[],[],[], [],[],[], []];
 
-            fenzu=[[],[],[],[],[]];
+           // var select=[];
 
             for (var i = 0; i < 96; i++){
                 fenzu[data[i][2]].push([data[i][0],data[i][1],i]);  //i表示在原数组中的位置
             }
+
+
+
+
+
+
+
+
+
 
 
 
@@ -751,25 +764,12 @@ var nnn=0;
                         z:'0',
 
                         data: fenzu[0],
-
-
                         itemStyle: {
                             color: '#000000'
                         },
                        // symbol:'rect',
 
-
-
-
-
-
-
-
                     },
-
-
-
-
 
 
                     {
@@ -787,9 +787,6 @@ var nnn=0;
                         }
 
 
-
-
-
                     },
 
                     {
@@ -805,8 +802,6 @@ var nnn=0;
                         itemStyle: {
                             color: '#008cba'
                         }
-
-
 
 
 
@@ -848,6 +843,44 @@ var nnn=0;
                         symbol: 'triangle'
 
 
+                    },
+
+                    {
+                        animation: false,
+                        name: 'none',
+                        type: 'scatter',
+                        symbolSize: 10,
+                        z: '0',
+
+                        data: fenzu[5],
+
+
+                        itemStyle: {
+                            color: '#787878'
+                        },
+
+                   //     symbol: 'triangle'
+
+
+                    },
+
+                    {
+                        animation: false,
+                        name: 'select',
+                        type: 'scatter',
+                        symbolSize: 13,
+                        z: '0',
+
+                        data: selected,
+
+
+                        itemStyle: {
+                            color: '#fff313'
+                        },
+
+                       symbol: 'circle'
+
+
                     }
 
 
@@ -871,10 +904,6 @@ var nnn=0;
 
 
         }
-
-
-
-
 
 
         myChart.on('brushSelected', function (params) {
@@ -906,11 +935,13 @@ var nnn=0;
             //     console.log(zhuadaode[i]); // 显示抓到的数组下标//
 
 
+            selectscattortopanel();
+
+
+
+
 
         });
-
-
-
 
 
 
@@ -929,10 +960,12 @@ var nnn=0;
 
           //  selectchange=0;   //!!!!!!!!
 
-            for (i=0;i<deepcopy.length;i++) {
-                data[deepcopy[i]][2]=parseInt(num);
+            for (var i=0;i<deepcopy.length;i++) {
+                var a=deepcopy[i];
+                data[a][2]=parseInt(num);
                 console.log(deepcopy[i]);
-
+                //cococo也染色
+                cococo[parseInt(a / lie)+1][a % lie+1] = parseInt(num); //点击后 颜色直接过去
             }
 
 
@@ -947,18 +980,469 @@ var nnn=0;
             //
             // }
 
-
-
             refreshscatter();
 
-            // refreshpanel();
+             refreshpanel();
+
+        }
+
+
+function colorscattortopanel() {
+
+    cococo = [
+        [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
+        [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
+        [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
+        [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
+        [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
+        [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
+        [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
+        [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
+        [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9]
+
+    ];//面板标记颜色清空
+
+
+    for (var a = 0; a < data.length; a++) {
+        {
+
+            cococo[parseInt(a / lie) + 1][a % lie + 1] = data[a][2];
+
+        }
+
+
+    }
+
+}
+
+function selectscattortopanel() {
+
+    hahaha = [
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    ];  //panel先清空
+
+
+    for (var i = 0; i < deepcopy.length; i++) {
+        {
+            var a = deepcopy[i];
+            hahaha[parseInt(a / lie) + 1][a % lie + 1] = 1;
+
+        }
+
+
+    }
+
+
+    refreshpanel();
+
+
+}
+
+
+var selected=[];
+
+
+function selectpaneltoscatter() {
+
+
+//先要清空sctter选区 不知怎么清
+
+    selected=[];
+
+
+
+
+
+
+    for (var i = 0; i < hang; i++)
+    {
+        for (var j = 0; j < lie; j++)
+        {
+            if(hahaha[i+1][j+1]==1)
+            {
+
+
+                selected.push([data[lie * i + j][0],data[lie * i + j][1]]);
+                console.log(lie * i + j);
+
+            }
+        }
+
+    }
+
+    refreshscatter();
+
+}
+
+
+var panelsize=60; //panel棋盘边长可调节
+var hang=8,lie=12;  //棋盘行列数 可调节
+var hahaha=[
+    [0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0]
+
+
+];//panel被选中数组
+var nonono=[
+    [0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0]
+
+];//鼠标移动时候被选中临时数组 加一个头标记整个行列选中
+var cococo=[
+    [9,9,9,9,9,9,9,9,9,9,9,9,9],
+    [9,9,9,9,9,9,9,9,9,9,9,9,9],
+    [9,9,9,9,9,9,9,9,9,9,9,9,9],
+    [9,9,9,9,9,9,9,9,9,9,9,9,9],
+    [9,9,9,9,9,9,9,9,9,9,9,9,9],
+    [9,9,9,9,9,9,9,9,9,9,9,9,9],
+    [9,9,9,9,9,9,9,9,9,9,9,9,9],
+    [9,9,9,9,9,9,9,9,9,9,9,9,9],
+    [9,9,9,9,9,9,9,9,9,9,9,9,9]
+
+];//面板标记颜色
+
+
+
+
+
+
+
+        function refreshpanel()   //obj是文档元素canvas传递过来 增加效率
+        {  //画圈圈和框框
+
+            var oncanvas = document.getElementById('bbb');
+            var ctx = oncanvas.getContext('2d');
+
+
+            ctx.clearRect(0,0,1000,1000);
+
+        //----------------------------画边框
+
+            for (var i = 0; i < hang; i++)
+            {
+                ctx.beginPath();
+                ctx.lineWidth=2;
+                ctx.strokeRect(0, i * panelsize+0.4*panelsize, 0.4*panelsize, panelsize);
+
+
+                if (hahaha[i][0]>0)  //如果整个行被选中
+                {
+                    ctx.fillStyle =ctx.strokeStyle = 'rgba(55,55,55,0.5)';
+
+                    ctx.fillRect(0, i * panelsize+0.4*panelsize, 0.4*panelsize, panelsize);
+
+                }
+
+                ctx.closePath();
+
+            }
+
+
+            for (var j = 0; j < lie; j++)
+            {
+
+
+                ctx.beginPath();
+                ctx.lineWidth=2;
+                ctx.strokeRect(j * panelsize+0.4*panelsize, 0, panelsize, 0.4*panelsize);
+                ctx.closePath();
+
+
+            }
+
+
+
+
+
+
+
+
+            //---------------------------画面板
+            ctx.save();
+            ctx.translate(panelsize*0.4,panelsize*0.4);
+            for (var i = 0; i < hang; i++)
+            {
+                for (var j = 0; j < lie; j++)
+                {
+                    //ctx.fillStyle =ctx.strokeStyle = 'rgb(0,' + Math.floor(255 - 255/lie * j) + ',' + Math.floor(255 - 255/hang * i) + ')';
+                    ctx.fillStyle =ctx.strokeStyle ="black";
+
+                    ctx.beginPath();
+                    ctx.lineWidth=2;
+                    ctx.strokeRect(j * panelsize, i * panelsize, panelsize, panelsize);  //画框框
+                    //出点点
+                    ctx.font ='1px 微软雅黑 bold';
+                    ctx.fillStyle = '#000000';
+                    var Ax=String.fromCharCode(64+i+1)+(j+1).toString();
+
+                    ctx.textAlign="end";
+
+                    ctx.fillText(Ax ,j * panelsize+panelsize-1, i * panelsize+panelsize-2);
+
+
+
+                    // ctx.arc(panelsize / 2 + j * panelsize  , panelsize / 2 + i * panelsize , panelsize * 0.4, 0, Math.PI * 2,true); //画圈圈
+                    // ctx.stroke();
+                    ctx.closePath();
+
+                    // if (hahaha[i][j] != 0)
+                    //     //ctx.fillRect(i * panelsize, j * panelsize, panelsize, panelsize);
+                    //     ctx.fill();
+                    // else
+
+
+                    ctx.beginPath();
+                    ctx.fillStyle =ctx.strokeStyle = 'rgba(0,' + Math.floor(255 - 255/lie * j) + ',' +
+                        Math.floor(255 - 255/hang * i) + ',0.5)';
+                    if(nonono[i+1][j+1]>0)  //选择过程中的标识
+                        ctx.fillRect(j * panelsize, i * panelsize, panelsize, panelsize);
+                    if(hahaha[i+1][j+1]>0)  //被选中
+                        ctx.fillRect(j * panelsize, i * panelsize, panelsize, panelsize);
+                    if(cococo[i+1][j+1]==0) {
+
+                        ctx.fillStyle = "#000000";
+                        ctx.arc(panelsize / 2 + j * panelsize, panelsize / 2 + i * panelsize, panelsize * 0.38, 0, Math.PI * 2, true); //画圈圈
+                        ctx.fill();
+                    }
+                    if(cococo[i+1][j+1]==1) {
+
+                        ctx.fillStyle = "#4caf50";
+                        ctx.arc(panelsize / 2 + j * panelsize, panelsize / 2 + i * panelsize, panelsize * 0.38, 0, Math.PI * 2, true); //画圈圈
+                        ctx.fill();
+                    }
+                    if(cococo[i+1][j+1]==2) {
+
+                        ctx.fillStyle = "#008cba";
+                        ctx.arc(panelsize / 2 + j * panelsize, panelsize / 2 + i * panelsize, panelsize * 0.38, 0, Math.PI * 2, true); //画圈圈
+                        ctx.fill();
+                    }
+                    if(cococo[i+1][j+1]==3) {
+
+                        ctx.fillStyle = "#b80af4";
+                        ctx.arc(panelsize / 2 + j * panelsize, panelsize / 2 + i * panelsize, panelsize * 0.38, 0, Math.PI * 2, true); //画圈圈
+                        ctx.fill();
+                    }
+                    ctx.closePath();
+
+
+                }
+
+
+                ctx.closePath();
+
+            }
+
+            ctx.restore();
+
+
+
+
+
+
 
         }
 
 
 
 
+        //--------------------这个函数在于不去绘制任何图形只是操作数据结构而已
+        function initcanvaspanel()
+        {  //画圈圈和框框
 
+            var oncanvas = document.getElementById('bbb');
+            var ctx = oncanvas.getContext('2d');
+
+            ctx.clearRect(0,0,800,600);
+
+            oncanvas.onmouseover = function (ev)
+            {  //鼠标进入区域
+                console.log("onmouseoverbbb");
+            };
+
+            oncanvas.onmouseout =function ()
+            {//鼠标移动出区域
+                console.log("onmouseoutbbb");
+                oncanvas.onmousemove=null;
+                // document.onmouseup =null;
+            };
+
+
+
+
+
+
+
+            oncanvas.onmousedown=function (ev)  //鼠标按下去
+            {
+                console.log("onmousedown");
+                //鼠标点下去
+                //鼠标所在的位置
+                //ev.offsetX
+                //ev.offsetY
+                var oldX = ev.offsetX-0.4*panelsize;
+                var oldY = ev.offsetY-0.4*panelsize;
+                var balldownX1 = Math.floor(oldX / panelsize);
+                var balldownY1 = Math.floor(oldY / panelsize);
+
+                console.log(balldownX1);
+                console.log(balldownY1);
+
+
+                nonono[balldownY1+1][balldownX1+1]=1;
+
+
+
+
+
+                oncanvas.onmousemove=function (ev)   //鼠标按下去后框选
+                {
+                    console.log("onmousemove");
+                    var oldX = ev.offsetX-0.4*panelsize;
+                    var oldY = ev.offsetY-0.4*panelsize;
+
+
+                    //----------------------------------------------矩形框选 任意方向矩形
+                    var ballmoveX2 = Math.floor(oldX / panelsize);
+                    var ballmoveY2 = Math.floor(oldY / panelsize);
+
+
+
+                    nonono[ballmoveY2+1][ballmoveX2+1]=1;
+                    console.log(ballmoveY2);
+                    console.log(ballmoveX2);
+
+
+
+                    var x1=Math.min(balldownX1,ballmoveX2);
+                    var x2=Math.max(balldownX1,ballmoveX2);
+                    var y1=Math.min(balldownY1,ballmoveY2);
+                    var y2=Math.max(balldownY1,ballmoveY2);
+
+
+                    //-------------------标记数组清空-----------------
+                    nonono=[
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0],
+                        [0,0,0,0,0,0,0,0,0,0,0,0,0]
+                    ];
+
+                    //把选中的格子标记在nonono里面
+
+                    for (i = x1; i <= x2; i++)
+                        for (j = y1; j <= y2; j++)
+                            nonono[j+1][i+1] = 1;
+
+                    refreshpanel();
+
+
+                }
+
+
+
+                oncanvas.onmouseup=function (ev) //松开 有点好玩
+                {
+                    console.log("onmouseup");
+                    oncanvas.onmousemove=null;
+                    oncanvas.onmouseup =null;
+
+
+
+                    var oldX = ev.offsetX;
+                    var oldY = ev.offsetY;
+
+
+                    //----------------------------------------------矩形框选 任意方向矩形
+
+                    var ballupX2 = Math.floor(oldX / panelsize);
+                    var ballupY2 = Math.floor(oldY / panelsize);
+
+
+                    //如果点击同一个格子，则取消选择
+
+
+                    // ----判断 如果点击和松开在同一个格子，则取消
+
+                    // if (balldownX1==ballupX2 && balldownY1==ballupY2)
+                    //
+                    //     if(hahaha[balldownX1][balldownY1]==1)
+                    //
+                    //         nonono[balldownX1][balldownY1]=hahaha[balldownX1][balldownY1]=0;
+
+                    //放开把nonono放入到hahaha中，并清空nonono
+                    //如果按了control就添加 否则就以选中为准
+                    if(ev.ctrlKey)
+                    {
+                        for (var i = 0; i < hang; i++) {
+                            for (var j = 0; j < lie; j++) {
+                                if(hahaha[i+1][j+1]+nonono[i+1][j+1]>=1)
+                                    hahaha[i+1][j+1] = 1;
+                                else
+                                    hahaha[i+1][j+1]=0;
+                                nonono[i+1][j+1] = 0;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        for (var i = 0; i < hang; i++) {
+                            for (var j = 0; j < lie; j++) {
+                                //if(hahaha[i][j]+nonono[i][j]>=1)
+                                hahaha[i+1][j+1] = nonono[i+1][j+1];
+                                // else
+                                //     hahaha[i][j]=0;
+                                nonono[i+1][j+1] = 0;
+                            }
+                        }
+                    }
+
+
+                   // paneltoscatter();
+                    selectpaneltoscatter();
+
+                 //   refreshscatter();
+                    refreshpanel();//改变hahaha[]后 重绘
+
+
+                };
+
+
+                refreshpanel();  //down函数按下去后重绘
+
+            };
+
+
+            refreshpanel();
+
+
+        }
 
 
 

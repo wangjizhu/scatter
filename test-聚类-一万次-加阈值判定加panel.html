@@ -20,7 +20,7 @@
             padding: 15px 32px;
             text-align: center;
             text-decoration: none;
-            /*display: inline-block;*/
+            display: inline-block;
             font-size: 16px;
             cursor: pointer;
             /*float: left;*/
@@ -74,10 +74,8 @@
     <button id="2" class="button_color button2" onclick="setcolorscatter(this)">Blue</button>
     <button id="3" class="button_color button3" onclick="setcolorscatter(this)">red</button>
     <button id="4" class="button_color button4" onclick="setcolorscatter(this)">打叉叉</button>
-
     <button id="5" onclick="clustering()">聚类</button>
     <button id="6" onclick="yiwanci()">一万次</button>
-
 
     <!--<button class="button">Button</button>-->
 </div>
@@ -85,31 +83,14 @@
 
 <div id="main" style="width: 600px;height:600px;"></div>
 
-
     <div style="float:left">
-        <input type="range" id="myRange" value ="90" min="50" max="100" step="0.01" oninput="flitter()"/>
+
+    <input type="range" id="myRange" value ="90" min="50" max="100" step="0.01" oninput="flitter()"/>
+    <p id="flitter">90.0%</p>
+    <!--<button oninput="flitter()">flitter</button>-->
+
+
     </div>
-    <div style="float:left">
-        <p id="flitter">90.0%</p>
-    </div>
-
-<!--<button oninput="flitter()">flitter</button>-->
-
-    <div style="clear:both">
-
-            Xstart: <input type="text" id="x1" value="700"/>
-            Xend: <input type="text" id="x2" value="800"/>
-            <button id="7" class="change" onclick="changX()">改变X轴</button>
-    </div>
-
-<div style="clear:both">
-
-    Ystart: <input type="text" id="y1" value="700"/>
-    Yend: <input type="text" id="y2" value="800"/>
-    <button id="8" class="change" onclick="changY()">改变Y轴</button>
-</div>
-
-
 
 
 
@@ -118,71 +99,6 @@
 
 
 //------------------------------------------------------------
-
-
-
-function changX()
-{
-    var x1=parseInt(document.getElementById("x1").value);
-    var x2=parseInt(document.getElementById("x2").value);
-
-
-
-    myChart.setOption({
-        dataZoom: [{
-           // type: 'value',
-            xAxisIndex: 0,
-            startValue: x1,
-            endValue: x2
-            //name:'FAM'
-
-             },
-
-            {
-            // type: 'value',
-            yAxisIndex: 0,
-
-            //name:'FAM'
-
-        }
-
-
-        ]
-        })
-
-}
-
-function changY() {
-    var y1 = parseInt(document.getElementById("y1").value);
-    var y2 = parseInt(document.getElementById("y2").value);
-
-
-    myChart.setOption({
-        dataZoom: [
-            {
-                // type: 'value',
-                xAxisIndex: 0,
-
-                //name:'FAM'
-
-            },
-
-            {
-            // type: 'value',
-            yAxisIndex: 0,
-            startValue: y1,
-            endValue: y2
-            //name:'FAM'
-            }
-
-
-        ]
-    })
-
-}
-
-
-
 
 
 function flitter() {
@@ -217,40 +133,28 @@ function flitter() {
 
     var cishu=500;
     var quanlity=0.80;
-
-
-
-
-
-
-
-var data=[];
+    var data=[];
     var random = function (max){
         return ((Math.random()*max));
     };
 
    // 将数据装载到数组中
-    for (var i = 0; i < 20; i++) {
+    for (var i = 0; i < 23; i++) {
         data.push([random(100), random(100),0,0,0,0,0,1]);
     };
-    for (var i = 0; i < 20; i++) {
+    for (var i = 0; i < 23; i++) {
         data.push([random(100)+100, random(250)+700,0,0,0,0,0,1]);
     };
-    for (var i = 0; i < 20; i++) {
+    for (var i = 0; i < 23; i++) {
         data.push([random(250)+700, random(250)+700,0,0,0,0,0,1]);
     };
-    for (var i = 0; i < 20; i++) {
+    for (var i = 0; i < 23; i++) {
         data.push([random(250)+700, random(100)+100,0,0,0,0,0,1]);
     };
 
-for ( i = 0; i < 16; i++) {
+for ( i = 0; i < 4; i++) {
     data.push([random(990), random(990),0,0,0,0,0,1]);
 };
-
-
-
-
-
 
     // var data=[
     //     [80,120,0,0,0,0,0,0],
@@ -357,25 +261,11 @@ for ( i = 0; i < 16; i++) {
     //
     // ];
 
-
-
-
         // 基于准备好的dom，初始化echarts实例
-
         // var data = [];//数据区域缩放组件
         var fenzu=[[],[],[],[]];
         var zhuadaode=[[],[],[],[]];
-
         var myChart = echarts.init(document.getElementById('main'));
-
-
-
-
-
-
-
-
-
         var selectchange =1;
         var deepcopy=[];
 
@@ -402,7 +292,6 @@ for ( i = 0; i < 16; i++) {
 
         }
     //------------------------聚类一万次---------------------------
-
 
     function yiwanci()
     {
@@ -454,17 +343,10 @@ for ( i = 0; i < 16; i++) {
 
     }
 
-
-
-
-
-
 var result;
 var ordercentroids=[];
 var nnn=0;
-
     //--------------------聚类
-
 
         function clustering() {
 
@@ -578,10 +460,12 @@ var nnn=0;
         function initscatter()
         {
 
+
+
             //构造随机数
-            // var random = function (max){
-            //     return ((Math.random()*max));
-            // };
+            var random = function (max){
+                return ((Math.random()*max));
+            };
 
             //将数据装载到数组中
             // for (var i = 0; i < 25; i++) {
@@ -600,14 +484,16 @@ var nnn=0;
             //     data.push([random(99), random(99),3]);
             // };
 
+
+
+
+
+
+
             refreshscatter();
 
 
         }
-
-
-
-
 
         function refreshscatter(){
 
@@ -653,33 +539,7 @@ var nnn=0;
                         dataZoom: {
 
                         },
-
-
-                        // myTool1: {
-                        //     show: true,
-                        //     title: '设置X轴',
-                        //     icon: 'image://http://echarts.baidu.com/images/favicon.png',
-                        //     onclick: changX
-                        //
-                        //
-                        // },
-                        //
-                        //
-                        // myTool2: {
-                        //     show: true,
-                        //     title: '设置Y轴',
-                        //     icon: 'image://http://echarts.baidu.com/images/favicon.png',
-                        //     onclick: function () {
-                        //         alert('myToolHandler2')
-                        //     }
-                        //
-                        // },
-
-
                         restore: {},
-
-
-
 
                     },
 
@@ -726,13 +586,13 @@ var nnn=0;
 
                     {   // 这个dataZoom组件，也控制x轴。
                         type: 'inside', // 这个 dataZoom 组件是 inside 型 dataZoom 组件
-                        xAxisIndex: 0
+                        xAxisIndex: [0]
                         // start: 10,      // 左边在 10% 的位置。
                         // end: 90         // 右边在 60% 的位置。
                     },
                     {
                         type: 'inside',
-                        yAxisIndex: 0
+                        yAxisIndex: [0]
                         // start: 10,
                         // end: 90
                     }
@@ -873,10 +733,6 @@ var nnn=0;
         }
 
 
-
-
-
-
         myChart.on('brushSelected', function (params) {
             //var brushComponent = params.batch[0];
 
@@ -908,10 +764,6 @@ var nnn=0;
 
 
         });
-
-
-
-
 
 
         //--------------------------------------点击红色的函数-----------------------------------
@@ -954,6 +806,9 @@ var nnn=0;
             // refreshpanel();
 
         }
+
+
+
 
 
 
