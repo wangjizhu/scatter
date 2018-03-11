@@ -75,7 +75,7 @@
     <button id="3" class="button_color button3" onclick="setcolorscatter(this)">red</button>
     <button id="4" class="button_color button4" onclick="setcolorscatter(this)">打叉叉</button>
 
-    <button id="5" onclick="clustering()">聚类</button>
+    <button id="5" onclick="clusteringonce()">聚类</button>
     <button id="6" onclick="yiwanci()">一万次</button>
 
 
@@ -451,6 +451,12 @@ for ( i = 0; i < 16; i++) {
         //refreshscatter();
 
 
+        colorscattortopanel();
+        refreshscatter();
+        refreshpanel();
+
+
+
     }
 
 
@@ -463,6 +469,27 @@ var ordercentroids=[];
 var nnn=0;
 
     //--------------------聚类
+
+function clusteringonce()
+{
+
+    clustering();
+
+
+
+
+
+    colorscattortopanel();
+    refreshscatter();
+    refreshpanel();
+
+
+
+
+}
+
+
+
 
         function clustering() {
 
@@ -565,11 +592,11 @@ var nnn=0;
 
 
 
-                colorscattortopanel();
-
-
-                refreshscatter();
-                refreshpanel();
+                // colorscattortopanel();
+                //
+                //
+                // refreshscatter();
+                // refreshpanel();
              //   console.log(nnn++);
 
 
@@ -868,14 +895,16 @@ var nnn=0;
                         animation: false,
                         name: 'select',
                         type: 'scatter',
-                        symbolSize: 13,
+                        symbolSize: 17,
                         z: '0',
 
                         data: selected,
 
 
                         itemStyle: {
-                            color: '#fff313'
+                            color: '#00c8ff',
+                            opacity:'0.5'
+
                         },
 
                        symbol: 'circle'
@@ -951,7 +980,7 @@ var nnn=0;
 
             var num=obj.id;
 
-            console.log(num);
+          //  console.log(num);
 
 
             //去跟新到每个点序列里面
@@ -959,7 +988,7 @@ var nnn=0;
 
 
           //  selectchange=0;   //!!!!!!!!
-
+                            //-----------------------------这是scattor被选中的点染色-------------
             for (var i=0;i<deepcopy.length;i++) {
                 var a=deepcopy[i];
                 data[a][2]=parseInt(num);
@@ -967,6 +996,19 @@ var nnn=0;
                 //cococo也染色
                 cococo[parseInt(a / lie)+1][a % lie+1] = parseInt(num); //点击后 颜色直接过去
             }
+
+
+
+            //-------------------panel中被选中的点也需要染色
+
+            for (var j=0;j<selected.length;j++)
+
+            {
+                data[selected[j][2]][2]=parseInt(num);   //被选中的第2位是原数据中的序号
+
+            }
+
+
 
 
             // for (var i = 0; i < xuanzhong.length; i++) //选中的点 第三位加上按钮值等于颜色
@@ -1070,7 +1112,7 @@ function selectpaneltoscatter() {
             {
 
 
-                selected.push([data[lie * i + j][0],data[lie * i + j][1]]);
+                selected.push([data[lie * i + j][0],data[lie * i + j][1],lie * i + j]); //神公式太多
                 console.log(lie * i + j);
 
             }
