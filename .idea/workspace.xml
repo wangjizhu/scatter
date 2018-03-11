@@ -2,9 +2,112 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc6ae1c1-fa5a-4119-806c-544e51897db4" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/test-聚类-一万次-加阈值判定.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/test-增加x轴y轴数值设定.html" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/ecStat(1).js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts(1).js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master(1).zip" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master.zip" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/(1).gitignore" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/(1).npmignore" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/.gitignore" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/.npmignore" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/README(1).md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/README.zh-CN(1).md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/README.zh-CN.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/build(1).sh" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/build.sh" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/dist/ecStat(1).js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/dist/ecStat.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/dist/ecStat.min(1).js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/dist/ecStat.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/img/exponential(1).png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/img/exponential.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/img/histogram(1).png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/img/histogram.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/img/linear(1).png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/img/linear.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/img/logarithmic(1).png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/img/logarithmic.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/img/polynomial(1).png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/img/polynomial.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/img/static-clustering(1).png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/img/static-clustering.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/index(1).js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/package(1).json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/src/clustering(1).js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/src/clustering.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/src/ecStat(1).js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/src/ecStat.d(1).ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/src/ecStat.d.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/src/ecStat.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/src/histogram(1).js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/src/histogram.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/src/regression(1).js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/src/regression.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/src/statistics(1).js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/src/statistics.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/src/statistics/deviation(1)(1).js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/src/statistics/deviation(1).js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/src/statistics/deviation.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/src/statistics/max(1).js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/src/statistics/max.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/src/statistics/mean(1).js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/src/statistics/mean.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/src/statistics/median(1).js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/src/statistics/median.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/src/statistics/min(1).js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/src/statistics/min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/src/statistics/quantile(1).js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/src/statistics/quantile.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/src/statistics/sampleVariance(1).js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/src/statistics/sampleVariance.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/src/statistics/sum(1).js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/src/statistics/sum.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/src/util/array(1).js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/src/util/array.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/src/util/dataPreprocess(1).js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/src/util/dataPreprocess.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/src/util/number(1).js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/src/util/number.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/src/util/range(1).js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/src/util/range.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/src/util/tickStep(1).js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/src/util/tickStep.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/test/clustering_animation(1).html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/test/clustering_animation.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/test/clustering_bikmeans(1).html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/test/clustering_bikmeans.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/test/config(1).js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/test/config.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/test/data/clustering_dataset2(1).json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/test/data/clustering_dataset2.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/test/data/regression_data0(1).json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/test/data/regression_data0.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/test/data/regression_test(1).json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/test/data/regression_test.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/test/esl(1).js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/test/esl.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/test/histogram(1).html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/test/histogram.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/test/lib/jquery.min(1).js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/test/lib/jquery.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/test/regression-polynomial(1).html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/test/regression-polynomial.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/test/regression_exponential(1).html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/test/regression_exponential.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/test/regression_linear(1).html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/test/regression_linear.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/test/regression_linearThroughOrigin(1).html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/test/regression_linearThroughOrigin.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/test/regression_logarithmic(1).html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/test/regression_logarithmic.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/webpack.config(1).js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/webpack.config.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/xxx(1).html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/echarts-stat-master/echarts-stat-master/xxx.html" afterPath="" />
       <change beforePath="$PROJECT_DIR$/test-聚类-一万次.html" afterPath="$PROJECT_DIR$/test-聚类-一万次.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -19,27 +122,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="test-聚类-一万次.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test-聚类-一万次.html">
+      <file leaf-file-name="test-增加x轴y轴数值设定.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test-增加x轴y轴数值设定.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="344" column="22" lean-forward="false" selection-start-line="344" selection-start-column="12" selection-end-line="344" selection-end-column="22" />
+            <state relative-caret-position="655">
+              <caret line="112" column="0" lean-forward="true" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
               <folding>
-                <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#3688#3701#0" expanded="false" />
-                <element signature="e#12491#13219#0" expanded="false" />
-                <element signature="e#13518#17848#0" expanded="false" />
-                <element signature="e#18322#18726#0" expanded="false" />
-                <element signature="e#19002#19694#0" expanded="false" />
+                <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test-聚类-一万次-加阈值判定.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="echarts.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/echarts.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="400">
+              <caret line="9017" column="29" lean-forward="false" selection-start-line="9017" selection-start-column="20" selection-end-line="9017" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test-聚类-一万次-加阈值判定.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test-聚类-一万次-加阈值判定.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
@@ -52,7 +160,7 @@
       <file leaf-file-name="ecStataaa.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ecStataaa.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
+            <state relative-caret-position="8034">
               <caret line="309" column="45" lean-forward="false" selection-start-line="309" selection-start-column="45" selection-end-line="309" selection-end-column="45" />
               <folding />
             </state>
@@ -70,9 +178,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>aclick</find>
-      <find>initcanvas</find>
-      <find>refresh</find>
       <find>refreshpanel</find>
       <find>tutorial</find>
       <find>bbb</find>
@@ -99,6 +204,10 @@
       <find>k</find>
       <find>data[i][2]=</find>
       <find>clustering</find>
+      <find>Zoom</find>
+      <find>restore()</find>
+      <find>toolbox</find>
+      <find>xAxis</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -122,6 +231,7 @@
         <option value="$PROJECT_DIR$/ecStat-初始质心修改.js" />
         <option value="$PROJECT_DIR$/ecStataaa.js" />
         <option value="$PROJECT_DIR$/test-聚类-一万次.html" />
+        <option value="$PROJECT_DIR$/test-增加x轴y轴数值设定.html" />
       </list>
     </option>
   </component>
@@ -232,7 +342,9 @@
       <workItem from="1520605762608" duration="5565000" />
       <workItem from="1520657182518" duration="12601000" />
       <workItem from="1520682746470" duration="13208000" />
-      <workItem from="1520733422532" duration="11717000" />
+      <workItem from="1520733422532" duration="11737000" />
+      <workItem from="1520754934526" duration="358000" />
+      <workItem from="1520759794520" duration="8717000" />
     </task>
     <task id="LOCAL-00001" summary="准备加入一个滑块">
       <created>1520695847114</created>
@@ -241,11 +353,18 @@
       <option name="project" value="LOCAL" />
       <updated>1520695847114</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="增加阈值判定 并优化kmean">
+      <created>1520746183651</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1520746183651</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="108115000" />
+    <option name="totallyTimeSpent" value="117210000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
@@ -278,7 +397,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="准备加入一个滑块" />
-    <option name="LAST_COMMIT_MESSAGE" value="准备加入一个滑块" />
+    <MESSAGE value="增加阈值判定 并优化kmean" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加阈值判定 并优化kmean" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -310,7 +430,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/test-聚类-一万次.html</url>
-          <line>170</line>
+          <line>206</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>
@@ -319,14 +439,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/混合显示1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3536">
-          <caret line="435" column="43" lean-forward="false" selection-start-line="435" selection-start-column="43" selection-end-line="435" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/缩放测试.html" />
     <entry file="file://$PROJECT_DIR$/混合显示1-scatter加ctrl-aaa.html" />
     <entry file="file://$PROJECT_DIR$/canvas画布-背景选中.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -631,7 +743,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
           <caret line="303" column="47" lean-forward="true" selection-start-line="303" selection-start-column="47" selection-end-line="303" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -666,27 +777,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ecStataaa.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
+        <state relative-caret-position="8034">
           <caret line="309" column="45" lean-forward="false" selection-start-line="309" selection-start-column="45" selection-end-line="309" selection-end-column="45" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test-聚类-一万次.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="344" column="22" lean-forward="false" selection-start-line="344" selection-start-column="12" selection-end-line="344" selection-end-column="22" />
-          <folding>
-            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#3688#3701#0" expanded="false" />
-            <element signature="e#12491#13219#0" expanded="false" />
-            <element signature="e#13518#17848#0" expanded="false" />
-            <element signature="e#18322#18726#0" expanded="false" />
-            <element signature="e#19002#19694#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -695,6 +788,38 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/echarts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="9017" column="29" lean-forward="false" selection-start-line="9017" selection-start-column="20" selection-end-line="9017" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-聚类-一万次.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="187" column="34" lean-forward="true" selection-start-line="187" selection-start-column="34" selection-end-line="187" selection-end-column="34" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#4015#4028#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-增加x轴y轴数值设定.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="655">
+          <caret line="112" column="0" lean-forward="true" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
