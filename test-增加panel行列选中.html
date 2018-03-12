@@ -75,7 +75,7 @@
     <button id="3" class="button_color button3" onclick="setcolorscatter(this)">red</button>
     <button id="4" class="button_color button4" onclick="setcolorscatter(this)">打叉叉</button>
 
-    <button id="5" onclick="clusteringonce()">聚类</button>
+    <button id="5" onclick="clustering()">聚类</button>
     <button id="6" onclick="yiwanci()">一万次</button>
 
 
@@ -117,6 +117,11 @@
 
 
 //------------------------------------------------------------
+window.onbeforeunload = function() {
+    return "确认离开当前页面吗？未保存的数据将会丢失";
+}
+
+
 
 
 
@@ -229,23 +234,23 @@ var data=[];
     };
 
    // 将数据装载到数组中
-    for (var i = 0; i < 5; i++) {
-        data.push([Math.sqrt(random(20)+100), Math.sqrt(random(20)+100),5,0,0,0,0,1,0]);
+    for (var i = 0; i < 23; i++) {
+        data.push([random(20)+100, random(20)+100,5,0,0,0,0,1,0]);
     };
-    for (var i = 0; i < 24; i++) {
-        data.push([Math.sqrt(random(100)+100), Math.sqrt(random(400)+300),5,0,0,0,0,1,0]);
+    for (var i = 0; i < 23; i++) {
+        data.push([random(20)+100, random(200)+700,5,0,0,0,0,1,0]);
     };
-    for (var i = 0; i < 43; i++) {
-        var a=random(240)
-        data.push([Math.sqrt(random(400)+300), Math.sqrt(random(400)+300),5,0,0,0,0,1,0]);
+    for (var i = 0; i < 23; i++) {
+        var a=random(140)
+        data.push([random(50)+a+500, random(50)+a+500,5,0,0,0,0,1,0]);
     };
-    for (var i = 0; i < 24; i++) {
-        data.push([Math.sqrt(random(400)+300), Math.sqrt(random(100)+100),5,0,0,0,0,1,0]);
+    for (var i = 0; i < 23; i++) {
+        data.push([random(200)+700, random(20)+100,5,0,0,0,0,1,0]);
     };
 
-// for ( i = 0; i < 4; i++) {
-//     data.push([random(990), random(990),5,0,0,0,0,1,0]);
-// };
+for ( i = 0; i < 4; i++) {
+    data.push([random(990), random(990),5,0,0,0,0,1,0]);
+};
 
 
 
@@ -452,12 +457,6 @@ var data=[];
         //refreshscatter();
 
 
-        colorscattortopanel();
-        refreshscatter();
-        refreshpanel();
-
-
-
     }
 
 
@@ -470,27 +469,6 @@ var ordercentroids=[];
 var nnn=0;
 
     //--------------------聚类
-
-function clusteringonce()
-{
-
-    clustering();
-
-
-
-
-
-    colorscattortopanel();
-    refreshscatter();
-    refreshpanel();
-
-
-
-
-}
-
-
-
 
         function clustering() {
 
@@ -564,9 +542,9 @@ function clusteringonce()
                 }
 
 
-                if (ordercentroids[2][1] > ordercentroids[3][1]) {
+                if (ordercentroids[2][1] > ordercentroids[2][1]) {
                     ordercentroids[2][3] = 3;
-                    ordercentroids[3][3] = 2;
+                    ordercentroids[2][3] = 2;
 
                 }
 
@@ -597,11 +575,11 @@ function clusteringonce()
 
 
 
-                // colorscattortopanel();
-                //
-                //
-                // refreshscatter();
-                // refreshpanel();
+                colorscattortopanel();
+
+
+                refreshscatter();
+                refreshpanel();
              //   console.log(nnn++);
 
 
@@ -899,7 +877,7 @@ function clusteringonce()
 
 
                         itemStyle: {
-                            color: '#19f8ff',
+                            color: '#a0a0a5',
 
                             opacity: 0.6
 
@@ -976,7 +954,7 @@ function clusteringonce()
 
             var num=obj.id;
 
-          //  console.log(num);
+            console.log(num);
 
 
             //去跟新到每个点序列里面
@@ -1098,7 +1076,7 @@ function selectpaneltoscatter() {
 
 
                 selected.push([data[lie * i + j][0],data[lie * i + j][1],lie * i + j]);
-                console.log(lie * i + j);
+                //console.log(lie * i + j);
 
             }
         }
@@ -1315,6 +1293,12 @@ var cococo=[
                 // document.onmouseup =null;
             };
 
+            oncanvas.onclick=function (ev)  //鼠标按下去
+            {
+                console.log("onclick");
+
+
+            };
 
 
 
@@ -1333,11 +1317,14 @@ var cococo=[
                 var balldownX1 = Math.floor(oldX / panelsize);
                 var balldownY1 = Math.floor(oldY / panelsize);
 
+
+
+                nonono[balldownY1+1][balldownX1+1]=1;
                 console.log(balldownX1);
                 console.log(balldownY1);
 
 
-                nonono[balldownY1+1][balldownX1+1]=1;
+
 
 
 
@@ -1390,7 +1377,7 @@ var cococo=[
                     refreshpanel();
 
 
-                }
+                };
 
 
 
@@ -1434,6 +1421,7 @@ var cococo=[
                                 else
                                     hahaha[i+1][j+1]=0;
                                 nonono[i+1][j+1] = 0;
+
                             }
                         }
                     }
@@ -1446,9 +1434,25 @@ var cococo=[
                                 // else
                                 //     hahaha[i][j]=0;
                                 nonono[i+1][j+1] = 0;
+                                console.log("+");
                             }
                         }
                     }
+
+
+
+
+
+                    if (balldownX1)
+                    {
+
+
+                    }
+
+
+
+
+
 
 
                    // paneltoscatter();
