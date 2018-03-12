@@ -874,22 +874,11 @@ var nnn=0;
 
                         },
 
-                       symbol: 'rect'
-
+                       //symbol: 'rect'
 
 
 
                     }
-
-
-
-
-
-
-
-
-
-
 
 
                 ]
@@ -909,14 +898,20 @@ var nnn=0;
 
             //var sum = 0; // 统计选中项的数据值的和
            // var xuhao;
+
+
             selectchange=1;
             zhuadaode=params.batch[0];
             deepcopy=[];
 
 
+          //  selected=[];
+   //         refreshscatter();
+
 
             console.log('hahaha');
-            for (var sIdx = 0; sIdx < zhuadaode.selected.length; sIdx++) {
+            for (var sIdx = 0; sIdx < zhuadaode.selected.length-1; sIdx++)   //减一的目的是吧select的序列减去
+            {
                 // 对于每个 series：
                 var dataIndices = zhuadaode.selected[sIdx].dataIndex;
                 //
