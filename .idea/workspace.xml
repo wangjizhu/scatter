@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc6ae1c1-fa5a-4119-806c-544e51897db4" name="Default" comment="增加了x y值设定">
-      <change beforePath="" afterPath="$PROJECT_DIR$/test-增加x轴y轴数值设定加panel-完成.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/test-增加x轴y轴数值设定加panel.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/test-聚类-一万次-加阈值判定加panel.html" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/test-增加x轴y轴数值设定.html" afterPath="$PROJECT_DIR$/test-增加x轴y轴数值设定.html" />
-      <change beforePath="$PROJECT_DIR$/混合显示1-scatter加ctrl-aaa--aaaaaaa.html" afterPath="$PROJECT_DIR$/混合显示1-scatter加ctrl-aaa--aaaaaaa.html" />
+      <change beforePath="$PROJECT_DIR$/d3(1).js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/d3.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/test-增加x轴y轴数值设定加panel-完成.html" afterPath="$PROJECT_DIR$/test-增加x轴y轴数值设定加panel-完成.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -24,7 +22,7 @@
       <file leaf-file-name="test-增加x轴y轴数值设定.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test-增加x轴y轴数值设定.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-576">
+            <state relative-caret-position="0">
               <caret line="579" column="0" lean-forward="false" selection-start-line="579" selection-start-column="0" selection-end-line="579" selection-end-column="0" />
               <folding>
                 <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -50,8 +48,8 @@
       <file leaf-file-name="test-增加x轴y轴数值设定加panel.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test-增加x轴y轴数值设定加panel.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="672">
-              <caret line="1074" column="0" lean-forward="true" selection-start-line="1074" selection-start-column="0" selection-end-line="1074" selection-end-column="0" />
+            <state relative-caret-position="6532">
+              <caret line="1074" column="0" lean-forward="false" selection-start-line="1074" selection-start-column="0" selection-end-line="1074" selection-end-column="0" />
               <folding>
                 <element signature="e#252#589#0" expanded="false" />
                 <element signature="e#607#657#0" expanded="false" />
@@ -93,32 +91,25 @@
       <file leaf-file-name="test-增加x轴y轴数值设定加panel-完成.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test-增加x轴y轴数值设定加panel-完成.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="混合显示1-scatter加ctrl-aaa--aaaaaaa.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/混合显示1-scatter加ctrl-aaa--aaaaaaa.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="560">
-              <caret line="1066" column="21" lean-forward="true" selection-start-line="1066" selection-start-column="21" selection-end-line="1066" selection-end-column="21" />
+            <state relative-caret-position="270">
+              <caret line="996" column="10" lean-forward="false" selection-start-line="996" selection-start-column="9" selection-end-line="996" selection-end-column="10" />
               <folding>
-                <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="e#1175#1227#0" expanded="false" />
-                <element signature="e#1444#1825#0" expanded="false" />
-                <element signature="e#1858#2238#0" expanded="false" />
-                <element signature="e#2287#2667#0" expanded="false" />
-                <element signature="e#3172#6458#0" expanded="false" />
-                <element signature="e#6691#9859#0" expanded="false" />
-                <element signature="e#9906#16130#0" expanded="false" />
-                <element signature="e#16218#16716#0" expanded="false" />
-                <element signature="e#16759#16834#0" expanded="false" />
-                <element signature="e#17037#21302#0" expanded="false" />
-                <element signature="e#26682#27321#0" expanded="false" />
-                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#5292#5305#0" expanded="false" />
+                <element signature="e#10620#10716#0" expanded="false" />
+                <element signature="e#10762#10896#0" expanded="false" />
+                <element signature="e#11359#14127#0" expanded="false" />
+                <element signature="e#14168#14929#0" expanded="false" />
+                <element signature="e#14967#14992#0" expanded="false" />
+                <element signature="e#15223#15320#0" expanded="false" />
+                <element signature="e#21552#22451#0" expanded="false" />
+                <element signature="e#22594#23427#0" expanded="false" />
+                <element signature="e#24118#24792#0" expanded="false" />
+                <element signature="e#24857#25230#0" expanded="false" />
+                <element signature="e#25309#25610#0" expanded="false" />
+                <element signature="e#25635#25935#0" expanded="false" />
+                <element signature="e#25976#26276#0" expanded="false" />
+                <element signature="e#26361#30566#0" expanded="false" />
+                <element signature="e#30669#35841#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -135,8 +126,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>refreshpanel</find>
-      <find>tutorial</find>
       <find>bbb</find>
       <find>setcolor</find>
       <find>initcanvaspanel</find>
@@ -159,12 +148,14 @@
       <find>ordercentroids</find>
       <find>k</find>
       <find>data[i][2]=</find>
-      <find>clustering</find>
       <find>Zoom</find>
       <find>toolbox</find>
       <find>restore()</find>
       <find>cococo</find>
       <find>xAxis</find>
+      <find>selected</find>
+      <find>clustering</find>
+      <find>9</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -191,6 +182,7 @@
         <option value="$PROJECT_DIR$/混合显示1-scatter加ctrl-aaa--aaaaaaa.html" />
         <option value="$PROJECT_DIR$/test-聚类-一万次-加阈值判定加panel.html" />
         <option value="$PROJECT_DIR$/test-增加x轴y轴数值设定加panel.html" />
+        <option value="$PROJECT_DIR$/test-增加x轴y轴数值设定加panel-完成.html" />
       </list>
     </option>
   </component>
@@ -304,6 +296,7 @@
       <workItem from="1520733422532" duration="11737000" />
       <workItem from="1520754934526" duration="358000" />
       <workItem from="1520759794520" duration="15641000" />
+      <workItem from="1520819922068" duration="5394000" />
     </task>
     <task id="LOCAL-00001" summary="准备加入一个滑块">
       <created>1520695847114</created>
@@ -330,7 +323,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="124134000" />
+    <option name="totallyTimeSpent" value="129528000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
@@ -403,7 +396,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/test-增加x轴y轴数值设定.html</url>
           <line>187</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
@@ -412,218 +404,38 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test3.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/混合显示1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3536">
-          <caret line="435" column="43" lean-forward="true" selection-start-line="435" selection-start-column="43" selection-end-line="435" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/canvas画布-背景选中.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1612">
-          <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="289" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13988">
-          <caret line="538" column="23" lean-forward="false" selection-start-line="538" selection-start-column="23" selection-end-line="538" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/混合显示1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3822">
-          <caret line="565" column="36" lean-forward="true" selection-start-line="564" selection-start-column="23" selection-end-line="565" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test3.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/canvas画布-背景选中.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1040">
-          <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="289" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13988">
-          <caret line="538" column="23" lean-forward="false" selection-start-line="538" selection-start-column="23" selection-end-line="538" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test3.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/混合显示1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2574">
-          <caret line="511" column="42" lean-forward="true" selection-start-line="511" selection-start-column="42" selection-end-line="511" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/canvas画布-可框选-完成(1)(1).html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8320">
-          <caret line="320" column="29" lean-forward="false" selection-start-line="320" selection-start-column="29" selection-end-line="320" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/混合显示1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="27" column="7" lean-forward="false" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4680">
-          <caret line="180" column="0" lean-forward="true" selection-start-line="180" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test3.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/canvas画布-可框选-完成(1)(1).html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8320">
-          <caret line="320" column="29" lean-forward="false" selection-start-line="320" selection-start-column="29" selection-end-line="320" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/混合显示1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="27" column="7" lean-forward="false" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="16" column="28" lean-forward="true" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test3.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/canvas画布-可框选-完成(1)(1).html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8320">
-          <caret line="320" column="29" lean-forward="false" selection-start-line="320" selection-start-column="29" selection-end-line="320" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2730">
-          <caret line="105" column="38" lean-forward="false" selection-start-line="105" selection-start-column="38" selection-end-line="105" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/混合显示1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="27" column="7" lean-forward="false" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test3.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/canvas画布-可框选-完成(1)(1).html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10114">
-          <caret line="389" column="58" lean-forward="false" selection-start-line="381" selection-start-column="4" selection-end-line="389" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6708">
-          <caret line="258" column="0" lean-forward="true" selection-start-line="258" selection-start-column="0" selection-end-line="258" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/混合显示1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="27" column="7" lean-forward="true" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/iii(1).html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1517">
-          <caret line="16" column="24" lean-forward="true" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test(1)(1).html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3420">
-          <caret line="16" column="25" lean-forward="true" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/canvas画布-可框选-完成(1)(1).html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="388" column="43" lean-forward="true" selection-start-line="388" selection-start-column="8" selection-end-line="388" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/test3.html" />
+    <entry file="file://$PROJECT_DIR$/混合显示1.html" />
+    <entry file="file://$PROJECT_DIR$/canvas画布-背景选中.html" />
+    <entry file="file://$PROJECT_DIR$/test2.html" />
+    <entry file="file://$PROJECT_DIR$/混合显示1.html" />
+    <entry file="file://$PROJECT_DIR$/test3.html" />
+    <entry file="file://$PROJECT_DIR$/canvas画布-背景选中.html" />
+    <entry file="file://$PROJECT_DIR$/test2.html" />
+    <entry file="file://$PROJECT_DIR$/test3.html" />
+    <entry file="file://$PROJECT_DIR$/混合显示1.html" />
+    <entry file="file://$PROJECT_DIR$/canvas画布-可框选-完成(1)(1).html" />
+    <entry file="file://$PROJECT_DIR$/混合显示1.html" />
+    <entry file="file://$PROJECT_DIR$/test2.html" />
+    <entry file="file://$PROJECT_DIR$/test3.html" />
+    <entry file="file://$PROJECT_DIR$/canvas画布-可框选-完成(1)(1).html" />
+    <entry file="file://$PROJECT_DIR$/混合显示1.html" />
+    <entry file="file://$PROJECT_DIR$/test2.html" />
+    <entry file="file://$PROJECT_DIR$/test3.html" />
+    <entry file="file://$PROJECT_DIR$/canvas画布-可框选-完成(1)(1).html" />
+    <entry file="file://$PROJECT_DIR$/test2.html" />
+    <entry file="file://$PROJECT_DIR$/混合显示1.html" />
+    <entry file="file://$PROJECT_DIR$/test3.html" />
+    <entry file="file://$PROJECT_DIR$/canvas画布-可框选-完成(1)(1).html" />
+    <entry file="file://$PROJECT_DIR$/test2.html" />
+    <entry file="file://$PROJECT_DIR$/混合显示1.html" />
+    <entry file="file://$PROJECT_DIR$/iii(1).html" />
+    <entry file="file://$PROJECT_DIR$/test(1)(1).html" />
+    <entry file="file://$PROJECT_DIR$/canvas画布-可框选-完成(1)(1).html" />
     <entry file="file://$PROJECT_DIR$/缩放测试.html" />
     <entry file="file://$PROJECT_DIR$/混合显示1-scatter加ctrl-aaa.html" />
-    <entry file="file://$PROJECT_DIR$/test3.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1560">
-          <caret line="60" column="32" lean-forward="false" selection-start-line="60" selection-start-column="32" selection-end-line="60" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test(2).html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11778">
-          <caret line="453" column="0" lean-forward="false" selection-start-line="453" selection-start-column="0" selection-end-line="453" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/test3.html" />
+    <entry file="file://$PROJECT_DIR$/test(2).html" />
     <entry file="file://$PROJECT_DIR$/混合显示1-scatter加ctrl.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6682">
@@ -648,62 +460,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test-就差一个点击后刷新.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5850">
-          <caret line="432" column="39" lean-forward="false" selection-start-line="432" selection-start-column="39" selection-end-line="432" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/canvas画布-背景选中.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="289" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="801">
-          <caret line="538" column="23" lean-forward="false" selection-start-line="538" selection-start-column="23" selection-end-line="538" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/混合显示1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="801">
-          <caret line="435" column="43" lean-forward="false" selection-start-line="435" selection-start-column="43" selection-end-line="435" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ecStat.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="303" column="47" lean-forward="true" selection-start-line="303" selection-start-column="47" selection-end-line="303" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test-聚类.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="95" column="13" lean-forward="false" selection-start-line="95" selection-start-column="13" selection-end-line="95" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test-聚类-成功！.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="105" column="44" lean-forward="true" selection-start-line="105" selection-start-column="44" selection-end-line="105" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test-聚类-一万次-正确.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/test-就差一个点击后刷新.html" />
+    <entry file="file://$PROJECT_DIR$/canvas画布-背景选中.html" />
+    <entry file="file://$PROJECT_DIR$/test2.html" />
+    <entry file="file://$PROJECT_DIR$/混合显示1.html" />
+    <entry file="file://$PROJECT_DIR$/ecStat.js" />
+    <entry file="file://$PROJECT_DIR$/test-聚类.html" />
+    <entry file="file://$PROJECT_DIR$/test-聚类-成功！.html" />
+    <entry file="file://$PROJECT_DIR$/test-聚类-一万次-正确.html" />
     <entry file="file://$PROJECT_DIR$/ecStat-初始质心修改.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="471">
@@ -723,74 +487,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ecStataaa.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="801">
-          <caret line="309" column="45" lean-forward="false" selection-start-line="309" selection-start-column="45" selection-end-line="309" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ecStataaa.js" />
     <entry file="file://$PROJECT_DIR$/test-聚类-一万次-加阈值判定加panel.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="541">
           <caret line="814" column="0" lean-forward="false" selection-start-line="814" selection-start-column="0" selection-end-line="814" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="e#2509#3002#0" expanded="false" />
-            <element signature="e#3680#3693#0" expanded="false" />
-            <element signature="e#8528#8862#0" expanded="false" />
-            <element signature="e#8954#9618#0" expanded="false" />
-            <element signature="e#9726#12420#0" expanded="false" />
-            <element signature="e#12461#13189#0" expanded="false" />
-            <element signature="e#13224#17902#0" expanded="false" />
-            <element signature="e#17959#18818#0" expanded="false" />
-            <element signature="e#18960#19652#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/echarts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="9017" column="29" lean-forward="false" selection-start-line="9017" selection-start-column="20" selection-end-line="9017" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test-聚类-一万次-加阈值判定.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/混合显示1-scatter加ctrl-aaa--aaaaaaa.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="1066" column="21" lean-forward="true" selection-start-line="1066" selection-start-column="21" selection-end-line="1066" selection-end-column="21" />
-          <folding>
-            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="e#1175#1227#0" expanded="false" />
-            <element signature="e#1444#1825#0" expanded="false" />
-            <element signature="e#1858#2238#0" expanded="false" />
-            <element signature="e#2287#2667#0" expanded="false" />
-            <element signature="e#3172#6458#0" expanded="false" />
-            <element signature="e#6691#9859#0" expanded="false" />
-            <element signature="e#9906#16130#0" expanded="false" />
-            <element signature="e#16218#16716#0" expanded="false" />
-            <element signature="e#16759#16834#0" expanded="false" />
-            <element signature="e#17037#21302#0" expanded="false" />
-            <element signature="e#26682#27321#0" expanded="false" />
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/echarts.js" />
+    <entry file="file://$PROJECT_DIR$/test-聚类-一万次-加阈值判定.html" />
     <entry file="file://$PROJECT_DIR$/test-增加x轴y轴数值设定.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-576">
+        <state relative-caret-position="0">
           <caret line="579" column="0" lean-forward="false" selection-start-line="579" selection-start-column="0" selection-end-line="579" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -814,8 +523,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test-增加x轴y轴数值设定加panel.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="1074" column="0" lean-forward="true" selection-start-line="1074" selection-start-column="0" selection-end-line="1074" selection-end-column="0" />
+        <state relative-caret-position="6532">
+          <caret line="1074" column="0" lean-forward="false" selection-start-line="1074" selection-start-column="0" selection-end-line="1074" selection-end-column="0" />
           <folding>
             <element signature="e#252#589#0" expanded="false" />
             <element signature="e#607#657#0" expanded="false" />
@@ -853,11 +562,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/混合显示1-scatter加ctrl-aaa--aaaaaaa.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="1066" column="21" lean-forward="false" selection-start-line="1066" selection-start-column="21" selection-end-line="1066" selection-end-column="21" />
+          <folding>
+            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="e#1175#1227#0" expanded="false" />
+            <element signature="e#1444#1825#0" expanded="false" />
+            <element signature="e#1858#2238#0" expanded="false" />
+            <element signature="e#2287#2667#0" expanded="false" />
+            <element signature="e#3172#6458#0" expanded="false" />
+            <element signature="e#6691#9859#0" expanded="false" />
+            <element signature="e#9906#16130#0" expanded="false" />
+            <element signature="e#16218#16716#0" expanded="false" />
+            <element signature="e#16759#16834#0" expanded="false" />
+            <element signature="e#17037#21302#0" expanded="false" />
+            <element signature="e#26682#27321#0" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test-增加x轴y轴数值设定加panel-完成.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="270">
+          <caret line="996" column="10" lean-forward="false" selection-start-line="996" selection-start-column="9" selection-end-line="996" selection-end-column="10" />
+          <folding>
+            <element signature="e#5292#5305#0" expanded="false" />
+            <element signature="e#10620#10716#0" expanded="false" />
+            <element signature="e#10762#10896#0" expanded="false" />
+            <element signature="e#11359#14127#0" expanded="false" />
+            <element signature="e#14168#14929#0" expanded="false" />
+            <element signature="e#14967#14992#0" expanded="false" />
+            <element signature="e#15223#15320#0" expanded="false" />
+            <element signature="e#21552#22451#0" expanded="false" />
+            <element signature="e#22594#23427#0" expanded="false" />
+            <element signature="e#24118#24792#0" expanded="false" />
+            <element signature="e#24857#25230#0" expanded="false" />
+            <element signature="e#25309#25610#0" expanded="false" />
+            <element signature="e#25635#25935#0" expanded="false" />
+            <element signature="e#25976#26276#0" expanded="false" />
+            <element signature="e#26361#30566#0" expanded="false" />
+            <element signature="e#30669#35841#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

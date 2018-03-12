@@ -627,14 +627,6 @@ var nnn=0;
 
 
 
-
-
-
-
-
-
-
-
             option = {
 
                 tooltip : {
@@ -868,17 +860,23 @@ var nnn=0;
                         animation: false,
                         name: 'select',
                         type: 'scatter',
-                        symbolSize: 13,
+                        symbolSize: 20,
                         z: '0',
 
                         data: selected,
 
 
                         itemStyle: {
-                            color: '#fff313'
+                            color: '#a0a0a5',
+
+                            opacity: 0.6
+
+
                         },
 
-                       symbol: 'circle'
+                       symbol: 'rect'
+
+
 
 
                     }
@@ -960,6 +958,10 @@ var nnn=0;
 
           //  selectchange=0;   //!!!!!!!!
 
+
+            //---------------------scatter的选择结果被染色-------------------
+
+
             for (var i=0;i<deepcopy.length;i++) {
                 var a=deepcopy[i];
                 data[a][2]=parseInt(num);
@@ -968,17 +970,19 @@ var nnn=0;
                 cococo[parseInt(a / lie)+1][a % lie+1] = parseInt(num); //点击后 颜色直接过去
             }
 
+            //---------------------------panel的选择结果也需要被染色------------------
 
-            // for (var i = 0; i < xuanzhong.length; i++) //选中的点 第三位加上按钮值等于颜色
-            // {
-            //     data[xuanzhong[i]]=  1 + parseInt(num);
+
             //
-            //
-            //
-            //     //cococo[parseInt(a / lie)][a % lie] = parseInt(num) + 1;
+            // for (var j=0;j<selected.length;j++) {
+            //     data[selected[j][2]][2]=parseInt(num);
             //
             //
             // }
+
+
+
+
 
             refreshscatter();
 
@@ -1047,19 +1051,15 @@ function selectscattortopanel() {
 }
 
 
-var selected=[];
+var selected=[]; //这个全局数组标志
 
 
 function selectpaneltoscatter() {
 
 
-//先要清空sctter选区 不知怎么清
+//先要清空sctter选区 ！！！！！
 
     selected=[];
-
-
-
-
 
 
     for (var i = 0; i < hang; i++)
@@ -1070,7 +1070,7 @@ function selectpaneltoscatter() {
             {
 
 
-                selected.push([data[lie * i + j][0],data[lie * i + j][1]]);
+                selected.push([data[lie * i + j][0],data[lie * i + j][1],lie * i + j]);
                 console.log(lie * i + j);
 
             }
