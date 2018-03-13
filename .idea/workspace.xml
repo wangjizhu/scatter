@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc6ae1c1-fa5a-4119-806c-544e51897db4" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/ecStataaa.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/test-增加panel行列选中.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/test-增加极坐标.html" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/test-增加x轴y轴数值设定加panel-完成.html" afterPath="$PROJECT_DIR$/test-增加x轴y轴数值设定加panel-完成.html" />
     </list>
@@ -22,7 +21,7 @@
       <file leaf-file-name="test-增加panel行列选中.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test-增加panel行列选中.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
+            <state relative-caret-position="26">
               <caret line="1408" column="64" lean-forward="false" selection-start-line="1408" selection-start-column="64" selection-end-line="1408" selection-end-column="64" />
               <folding>
                 <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
@@ -47,60 +46,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test-增加x轴y轴数值设定加panel-完成.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test-增加x轴y轴数值设定加panel-完成.html">
+      <file leaf-file-name="test-增加极坐标.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test-增加极坐标.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="672">
-              <caret line="1074" column="0" lean-forward="true" selection-start-line="1074" selection-start-column="0" selection-end-line="1074" selection-end-column="0" />
+            <state relative-caret-position="-489">
+              <caret line="274" column="0" lean-forward="true" selection-start-line="274" selection-start-column="0" selection-end-line="274" selection-end-column="0" />
               <folding>
-                <element signature="e#4106#4599#0" expanded="false" />
-                <element signature="e#5423#5436#0" expanded="false" />
-                <element signature="e#10751#10847#0" expanded="false" />
-                <element signature="e#14279#15040#0" expanded="false" />
-                <element signature="e#15078#15103#0" expanded="false" />
-                <element signature="e#22795#23628#0" expanded="false" />
-                <element signature="e#23662#24285#0" expanded="false" />
-                <element signature="e#24335#24782#0" expanded="false" />
-                <element signature="e#25058#25431#0" expanded="false" />
-                <element signature="e#25510#25811#0" expanded="false" />
-                <element signature="e#25836#26136#0" expanded="false" />
-                <element signature="e#26177#26477#0" expanded="false" />
-                <element signature="e#26562#30767#0" expanded="false" />
-                <element signature="e#30870#36042#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="lib.es5.d.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="lib.dom.d.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="560">
-              <caret line="1066" column="21" lean-forward="true" selection-start-line="1066" selection-start-column="21" selection-end-line="1066" selection-end-column="21" />
-              <folding>
-                <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="e#1175#1227#0" expanded="false" />
-                <element signature="e#1444#1825#0" expanded="false" />
-                <element signature="e#1858#2238#0" expanded="false" />
-                <element signature="e#2287#2667#0" expanded="false" />
-                <element signature="e#3172#6458#0" expanded="false" />
-                <element signature="e#6691#9859#0" expanded="false" />
-                <element signature="e#9906#16130#0" expanded="false" />
-                <element signature="e#16218#16716#0" expanded="false" />
-                <element signature="e#16759#16834#0" expanded="false" />
-                <element signature="e#17037#21302#0" expanded="false" />
-                <element signature="e#26682#27321#0" expanded="false" />
-                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#3237#3690#0" expanded="false" />
+                <element signature="e#3380#3686#0" expanded="false" />
+                <element signature="e#3710#4190#0" expanded="false" />
+                <element signature="e#4215#4708#0" expanded="false" />
+                <element signature="e#5985#5998#0" expanded="false" />
+                <element signature="e#10847#11181#0" expanded="false" />
+                <element signature="e#11274#12022#0" expanded="false" />
+                <element signature="e#16507#22559#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -132,7 +91,6 @@
       <find>hahaha</find>
       <find>setcol</find>
       <find>data1</find>
-      <find>data</find>
       <find>script</find>
       <find>javascript</find>
       <find>centroids</find>
@@ -144,6 +102,8 @@
       <find>restore()</find>
       <find>cococo</find>
       <find>xAxis</find>
+      <find>data</find>
+      <find>jizuobiao</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -170,6 +130,8 @@
         <option value="$PROJECT_DIR$/混合显示1-scatter加ctrl-aaa--aaaaaaa.html" />
         <option value="$PROJECT_DIR$/test-聚类-一万次-加阈值判定加panel.html" />
         <option value="$PROJECT_DIR$/test-增加x轴y轴数值设定加panel.html" />
+        <option value="$PROJECT_DIR$/test-增加x轴y轴数值设定加panel-完成.html" />
+        <option value="$PROJECT_DIR$/test-增加极坐标.html" />
       </list>
     </option>
   </component>
@@ -284,6 +246,7 @@
       <workItem from="1520733422532" duration="11737000" />
       <workItem from="1520754934526" duration="358000" />
       <workItem from="1520759794520" duration="15641000" />
+      <workItem from="1520869401859" duration="6751000" />
     </task>
     <task id="LOCAL-00001" summary="准备加入一个滑块">
       <created>1520695847114</created>
@@ -310,7 +273,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="124134000" />
+    <option name="totallyTimeSpent" value="130885000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
@@ -320,12 +283,12 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291714" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -386,13 +349,11 @@
           <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="26" />
+      <option name="time" value="27" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/混合显示1.html" />
-    <entry file="file://$PROJECT_DIR$/test3.html" />
     <entry file="file://$PROJECT_DIR$/canvas画布-背景选中.html" />
     <entry file="file://$PROJECT_DIR$/test2.html" />
     <entry file="file://$PROJECT_DIR$/test3.html" />
@@ -484,7 +445,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
           <caret line="9017" column="29" lean-forward="false" selection-start-line="9017" selection-start-column="20" selection-end-line="9017" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -492,7 +452,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -518,13 +477,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:////10.1.1.10/swap/HCS-王寄竹/384data.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:////10.1.1.10/swap/HCS-王寄竹/384data.js" />
     <entry file="file://$PROJECT_DIR$/test-增加x轴y轴数值设定.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-576">
@@ -549,18 +502,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="569">
-          <caret line="4641" column="10" lean-forward="false" selection-start-line="4641" selection-start-column="10" selection-end-line="4641" selection-end-column="10" />
+        <state relative-caret-position="27378">
+          <caret line="1066" column="21" lean-forward="false" selection-start-line="1066" selection-start-column="21" selection-end-line="1066" selection-end-column="21" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-增加x轴y轴数值设定加panel-完成.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="248" column="47" lean-forward="false" selection-start-line="248" selection-start-column="47" selection-end-line="248" selection-end-column="47" />
+          <folding>
+            <element signature="e#3658#4138#0" expanded="false" />
+            <element signature="e#4163#4656#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test-增加panel行列选中.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="1074" column="0" lean-forward="true" selection-start-line="1074" selection-start-column="0" selection-end-line="1074" selection-end-column="0" />
+        <state relative-caret-position="26">
+          <caret line="1408" column="64" lean-forward="false" selection-start-line="1408" selection-start-column="64" selection-end-line="1408" selection-end-column="64" />
           <folding>
             <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
             <element signature="e#5403#5416#0" expanded="false" />
@@ -583,19 +555,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
+    <entry file="file://$PROJECT_DIR$/test-增加极坐标.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="616" column="4" lean-forward="false" selection-start-line="616" selection-start-column="4" selection-end-line="616" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test-增加x轴y轴数值设定加panel-完成.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="-489">
+          <caret line="274" column="0" lean-forward="true" selection-start-line="274" selection-start-column="0" selection-end-line="274" selection-end-column="0" />
+          <folding>
+            <element signature="e#3237#3690#0" expanded="false" />
+            <element signature="e#3380#3686#0" expanded="false" />
+            <element signature="e#3710#4190#0" expanded="false" />
+            <element signature="e#4215#4708#0" expanded="false" />
+            <element signature="e#5985#5998#0" expanded="false" />
+            <element signature="e#10847#11181#0" expanded="false" />
+            <element signature="e#11274#12022#0" expanded="false" />
+            <element signature="e#16507#22559#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

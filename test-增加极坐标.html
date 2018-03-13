@@ -77,6 +77,8 @@
 
     <button id="5" onclick="clusteringonce()">聚类</button>
     <button id="6" onclick="yiwanci()">一万次</button>
+
+    <button id="8" onclick="dikaer()">笛卡尔</button>
     <button id="7" onclick="jizuobiao()">极坐标</button>
 
     <!--<button class="button">Button</button>-->
@@ -219,7 +221,7 @@ function flitter() {
 
 
 
-    var datajizuobiao=[];
+
 
 
 
@@ -231,47 +233,64 @@ var data=[];
     };
 
    // 将数据装载到数组中
-    for (var i = 0; i < 5; i++) {
-        data.push([random(20)+100, random(20)+100,5,0,0,0,0,1,0]);
+    for (var i = 0; i < 8; i++) {
+        data.push([random(2)+10, random(2)+10,5,0,0,0,0,1,0]);
     };
     for (var i = 0; i < 24; i++) {
-        data.push([random(100)+100, random(200)+300,5,0,0,0,0,1,0]);
+        data.push([random(10)+10, random(20)+30,5,0,0,0,0,1,0]);
     };
     for (var i = 0; i < 40; i++) {
-        var a=random(100)
-        data.push([random(100)+a+300, random(100)+a+300,5,0,0,0,0,1,0]);
+        var a=random(10)
+        data.push([random(10)+a+30, random(10)+a+30,5,0,0,0,0,1,0]);
     };
     for (var i = 0; i < 24; i++) {
-        data.push([random(200)+300, random(100)+100,5,0,0,0,0,1,0]);
+        data.push([random(20)+30, random(10)+10,5,0,0,0,0,1,0]);
     };
 
-for ( i = 0; i < 3; i++) {
-    data.push([random(200)+100, random(200)+100,5,0,0,0,0,1,0]);
-};
+
+
+
+var datadikaer=data;
+
+var datajizuobiao=[];
+{
+
+    for (var i=0;i<datadikaer.length;i++)
+    {
+        var x0=datadikaer[i][0];
+        var y0=datadikaer[i][1];
+
+        var r=Math.sqrt(x0*x0+y0*y0);
+
+        var therta=Math.atan(y0/x0)*500;
+
+        datajizuobiao.push([Math.r,therta,datadikaer[i][2],datadikaer[i][3],datadikaer[i][4],datadikaer[i][5],datadikaer[i][6],datadikaer[i][7],datadikaer[i][8]]);
+
+    }
+
+
+
+}
 
 
 
 
 
-// function jizuobiao()
-// {
-//     for (var i=0;i<data.length;i++)
-//     {
-//         var x0=data[i][0],y0=data[i][1];
-//
-//         var r=Math.sqrt(x0*x0+y0*y0);
-//         var therta=Math.atan(y0/x0);
-//         datajizuobiao.push(r,therta,data[i][2],data[i][3],data[i][4],data[i][5],data[i][6],data[i][7],data[i][8]);
-//
-//     }
-//
-//     data=datajizuobiao;
-//
-//     refreshscatter();
-//
-// }
+         function jizuobiao()
+        {
+
+            data=datajizuobiao;
+            refreshscatter();
+        }
+
+        function dikaer()
+        {
 
 
+            data=datadikaer;
+            refreshscatter();
+
+        }
 
 
 
@@ -515,6 +534,26 @@ function clusteringonce()
 }
 
 
+function jizuobiaoclustering()
+
+{
+
+    result = ecStat.clustering.hierarchicalKMeans(data, 4, false);
+
+    for (var i = 0; i < 96; i++) {
+
+
+        data[i][2] = result.clusterAssment[i][0];
+
+
+    }
+
+    refreshscatter();
+
+
+}
+
+
 
 
         function clustering() {
@@ -612,7 +651,7 @@ function clusteringonce()
 
                     for (var n = 0; n < ordercentroids.length; n++) {
                         if (result.clusterAssment[i][0] === ordercentroids[n][2]) {
-                            data[i][2] = ordercentroids[n][3]
+                            data[i][2] = ordercentroids[n][3];
                         }
 
                     }
