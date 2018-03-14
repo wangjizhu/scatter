@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bc6ae1c1-fa5a-4119-806c-544e51897db4" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/test-384的数据拉出来用.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/test-384的数据拉出来用xxxxxx.html" />
+    <list default="true" id="bc6ae1c1-fa5a-4119-806c-544e51897db4" name="Default" comment="改成3类聚类 然后升序染色 完成">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/test-改成聚成3类.html" afterPath="$PROJECT_DIR$/test-改成聚成3类.html" />
+      <change beforePath="$PROJECT_DIR$/test-384的数据拉出来用xxxxxx.html" afterPath="$PROJECT_DIR$/test-384的数据拉出来用xxxxxx.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -32,13 +30,14 @@
       <file leaf-file-name="test-384的数据拉出来用.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test-384的数据拉出来用.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="642" column="10" lean-forward="false" selection-start-line="642" selection-start-column="10" selection-end-line="642" selection-end-column="10" />
+            <state relative-caret-position="390">
+              <caret line="644" column="0" lean-forward="true" selection-start-line="644" selection-start-column="0" selection-end-line="644" selection-end-column="0" />
               <folding>
                 <element signature="e#3283#3736#0" expanded="false" />
                 <element signature="e#3756#4236#0" expanded="false" />
                 <element signature="e#4261#4859#0" expanded="false" />
                 <element signature="e#5265#5277#0" expanded="false" />
+                <element signature="e#5968#20754#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -47,8 +46,8 @@
       <file leaf-file-name="test-384的数据拉出来用xxxxxx.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test-384的数据拉出来用xxxxxx.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="639" column="38" lean-forward="true" selection-start-line="639" selection-start-column="38" selection-end-line="639" selection-end-column="38" />
+            <state relative-caret-position="-1217">
+              <caret line="654" column="0" lean-forward="true" selection-start-line="654" selection-start-column="0" selection-end-line="654" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -124,8 +123,8 @@
         <option value="$PROJECT_DIR$/test-增加panel行列选中.html" />
         <option value="$PROJECT_DIR$/test-增加x轴y轴数值设定加panel-完成.html" />
         <option value="$PROJECT_DIR$/test-改成聚成3类.html" />
-        <option value="$PROJECT_DIR$/test-384的数据拉出来用xxxxxx.html" />
         <option value="$PROJECT_DIR$/test-384的数据拉出来用.html" />
+        <option value="$PROJECT_DIR$/test-384的数据拉出来用xxxxxx.html" />
       </list>
     </option>
   </component>
@@ -244,7 +243,7 @@
       <workItem from="1520841530220" duration="13959000" />
       <workItem from="1520912262994" duration="30321000" />
       <workItem from="1520994311919" duration="4693000" />
-      <workItem from="1521006380851" duration="7413000" />
+      <workItem from="1521006380851" duration="7471000" />
     </task>
     <task id="LOCAL-00001" summary="准备加入一个滑块">
       <created>1520695847114</created>
@@ -302,15 +301,21 @@
       <option name="project" value="LOCAL" />
       <updated>1520937641372</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="改成3类聚类 然后升序染色 完成">
+      <created>1521022206374</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1521022206374</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="192777000" />
+    <option name="totallyTimeSpent" value="192835000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -649,21 +654,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test-384的数据拉出来用.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="642" column="10" lean-forward="false" selection-start-line="642" selection-start-column="10" selection-end-line="642" selection-end-column="10" />
+        <state relative-caret-position="390">
+          <caret line="644" column="0" lean-forward="true" selection-start-line="644" selection-start-column="0" selection-end-line="644" selection-end-column="0" />
           <folding>
             <element signature="e#3283#3736#0" expanded="false" />
             <element signature="e#3756#4236#0" expanded="false" />
             <element signature="e#4261#4859#0" expanded="false" />
             <element signature="e#5265#5277#0" expanded="false" />
+            <element signature="e#5968#20754#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test-384的数据拉出来用xxxxxx.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="639" column="38" lean-forward="true" selection-start-line="639" selection-start-column="38" selection-end-line="639" selection-end-column="38" />
+        <state relative-caret-position="-1217">
+          <caret line="654" column="0" lean-forward="true" selection-start-line="654" selection-start-column="0" selection-end-line="654" selection-end-column="0" />
           <folding />
         </state>
       </provider>
