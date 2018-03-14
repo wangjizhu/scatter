@@ -77,7 +77,13 @@
 
     <button id="5" onclick="clusteringonce()">聚类</button>
     <button id="6" onclick="yiwanci()">一万次</button>
+<<<<<<< HEAD
     <button id="7" onclick="jizuobiao()">极坐标</button>
+=======
+    <button id="8" onclick="dikaer()">笛卡尔</button>
+    <button id="7" onclick="jizuobiao()">极坐标</button>
+
+>>>>>>> refs/remotes/origin/master
 
     <!--<button class="button">Button</button>-->
 </div>
@@ -217,15 +223,22 @@ function flitter() {
     var cishu=500;
     var quanlity=0.80;
 
+var zuobiaoxi=0; //目前选择的状态标记0表示笛卡尔 1表示极坐标
 
 
+<<<<<<< HEAD
     var datajizuobiao=[];
 
 
 
+=======
+//------------------------一下是两个数组初始化datadikaer指向dikaer数组空间，datajizuobiao指向dikaer数组空间
+//-------------------------坐标在初始化时候算死确定不用来回算，后面分组信息在单机按钮后相互转移
+>>>>>>> refs/remotes/origin/master
 
 
 var data=[];
+var datajizuobiao=[];
     var random = function (max){
         return ((Math.random()*max));
     };
@@ -237,7 +250,11 @@ var data=[];
     for (var i = 0; i < 24; i++) {
         data.push([random(100)+100, random(200)+300,5,0,0,0,0,1,0]);
     };
+<<<<<<< HEAD
     for (var i = 0; i < 40; i++) {
+=======
+    for (var i = 0; i < 43; i++) {
+>>>>>>> refs/remotes/origin/master
         var a=random(100)
         data.push([random(100)+a+300, random(100)+a+300,5,0,0,0,0,1,0]);
     };
@@ -271,6 +288,62 @@ for ( i = 0; i < 3; i++) {
 //
 // }
 
+
+var datadikaer =data;       //datadikaer初始化
+
+for (var i=0;i<datadikaer.length;i++)    //datadikaer初始化
+{
+    r=Math.log10(Math.sqrt(datadikaer[i][0]*datadikaer[i][0]+datadikaer[i][1]*datadikaer[i][1]));
+    therta=Math.atan(datadikaer[i][1]/datadikaer[i][0]);
+
+    datajizuobiao.push([r,therta,datadikaer[i][2],datadikaer[i][3],datadikaer[i][4],datadikaer[i][5],datadikaer[i][6],datadikaer[i][7],datadikaer[i][8]]);
+
+}
+
+
+
+
+function jizuobiao()
+{
+    if (zuobiaoxi==0)
+    {
+        zuobiaoxi=1;
+
+        selected=[];  //选择清空
+
+        for (var i = 0; i < datadikaer.length; i++) {
+            for (var j = 2; j < 9; j++)
+
+                datajizuobiao[i][j] = datadikaer[i][j];
+
+        }
+
+        data = datajizuobiao;
+
+        refreshscatter();
+    }
+
+
+}
+
+function dikaer()
+{
+    if(zuobiaoxi==1) {
+
+zuobiaoxi=0;
+        selected=[];  //选择清空
+        for (var i = 0; i < datadikaer.length; i++) {
+            for (var j = 2; j < 9; j++)
+
+                datadikaer[i][j] = datajizuobiao[i][j];
+
+        }
+
+        data = datadikaer;
+
+        refreshscatter();
+    }
+}
 
 
 
@@ -762,11 +835,26 @@ function clusteringonce()
 
                 xAxis: {
                     type: 'value',
-                    //min: 'dataMin',
-                 //   max: 'dataMax',
-                    name:'FAM'
+                    scale: true,
+                    min: function(value) {
+                        return value.min-(value.max-value.min)*0.1 ;
+                    },
+                   max: function(value) {
+                       return value.max+(value.max-value.min)*0.1 ;
+                   },
+                    name:'FAM',
+                    nameLocation: 'center',
+                    nameGap: 20,
+                    nameTextStyle: {
 
 
+
+                        fontSize: 18,
+
+                        // verticalAlign: ...,
+                        // lineHeight: ...,
+
+                    }
                 }
                 ,
 
@@ -774,10 +862,25 @@ function clusteringonce()
                 yAxis:
                     {
                         type: 'value',
-                      //  min: 'dataMin',
-                    //    max: 'dataMax',
-                        name:'HEX'
+                        scale: true,
+                        min: function(value) {
+                            return value.min-(value.max-value.min)*0.1 ;
+                        },
+                        max: function(value) {
+                            return value.max+(value.max-value.min)*0.1;
+                        },
+                        name:'HEX',
+                        nameLocation: 'center',
+                        nameGap: 20,
+                        nameTextStyle: {
 
+
+                            fontSize: 18,
+
+                            // verticalAlign: ...,
+                            // lineHeight: ...,
+
+                        }
                     }
                 ,
 
@@ -788,15 +891,17 @@ function clusteringonce()
 
                     {   // 这个dataZoom组件，也控制x轴。
                         type: 'inside', // 这个 dataZoom 组件是 inside 型 dataZoom 组件
-                        xAxisIndex: 0
-                        // start: 10,      // 左边在 10% 的位置。
-                        // end: 90         // 右边在 60% 的位置。
+                        xAxisIndex: 0,
+                        filterMode: 'empty',
+                         // start: 10,      // 左边在 10% 的位置。
+                         // end: 110         // 右边在 60% 的位置。
                     },
                     {
                         type: 'inside',
-                        yAxisIndex: 0
-                        // start: 10,
-                        // end: 90
+                        yAxisIndex: 0,
+                        filterMode: 'empty',
+                         // start: 10,
+                         // end: 110
                     }
 
 
@@ -850,9 +955,9 @@ function clusteringonce()
 
                         itemStyle: {
                             color: '#008cba'
-                        }
+                        },
 
-
+                     //   symbol:'rect',
 
                     },
 
@@ -869,7 +974,7 @@ function clusteringonce()
                         itemStyle: {
                             color: '#b80af4'
                         },
-
+                    //    symbol: 'triangle'
 
 
                     },

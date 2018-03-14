@@ -75,21 +75,12 @@
     <button id="3" class="button_color button3" onclick="setcolorscatter(this)">red</button>
     <button id="4" class="button_color button4" onclick="setcolorscatter(this)">打叉叉</button>
 
-<<<<<<< HEAD
-    <button id="5" onclick="clusteringonce()">聚类</button>
-    <button id="6" onclick="yiwanci()">一万次</button>
-
-    <button id="8" onclick="dikaer()">笛卡尔</button>
-    <button id="7" onclick="jizuobiao()">极坐标</button>
-
-=======
     <button id="5" onclick="clustering()">聚类</button>
     <button id="6" onclick="yiwanci()">一万次</button>
     <button id="8" onclick="dikaer()">笛卡尔</button>
     <button id="7" onclick="jizuobiao()">极坐标</button>
 
 
->>>>>>> refs/remotes/origin/master
     <!--<button class="button">Button</button>-->
 </div>
 
@@ -228,17 +219,6 @@ function flitter() {
     var cishu=500;
     var quanlity=0.80;
 
-<<<<<<< HEAD
-
-
-
-
-
-
-
-
-var data=[];
-=======
 var zuobiaoxi=0; //目前选择的状态标记0表示笛卡尔 1表示极坐标
 
 
@@ -248,85 +228,26 @@ var zuobiaoxi=0; //目前选择的状态标记0表示笛卡尔 1表示极坐标
 
 var data=[];
 var datajizuobiao=[];
->>>>>>> refs/remotes/origin/master
     var random = function (max){
         return ((Math.random()*max));
     };
 
    // 将数据装载到数组中
-<<<<<<< HEAD
-    for (var i = 0; i < 8; i++) {
-        data.push([random(2)+10, random(2)+10,5,0,0,0,0,1,0]);
+    for (var i = 0; i < 5; i++) {
+        data.push([random(20)+10, random(20)+10,0,0,0,0,0,1]);
     };
     for (var i = 0; i < 24; i++) {
-        data.push([random(10)+10, random(20)+30,5,0,0,0,0,1,0]);
+        data.push([random(50)+100, random(20)+10,5,0,0,0,0,1]);
     };
     for (var i = 0; i < 40; i++) {
-        var a=random(10)
-        data.push([random(10)+a+30, random(10)+a+30,5,0,0,0,0,1,0]);
-    };
-    for (var i = 0; i < 24; i++) {
-        data.push([random(20)+30, random(10)+10,5,0,0,0,0,1,0]);
-    };
-
-
-
-
-var datadikaer=data;
-
-var datajizuobiao=[];
-{
-
-    for (var i=0;i<datadikaer.length;i++)
-    {
-        var x0=datadikaer[i][0];
-        var y0=datadikaer[i][1];
-
-        var r=Math.sqrt(x0*x0+y0*y0);
-
-        var therta=Math.atan(y0/x0)*500;
-
-        datajizuobiao.push([Math.r,therta,datadikaer[i][2],datadikaer[i][3],datadikaer[i][4],datadikaer[i][5],datadikaer[i][6],datadikaer[i][7],datadikaer[i][8]]);
-
-    }
-
-
-
-}
-
-
-
-
-
-         function jizuobiao()
-        {
-
-            data=datajizuobiao;
-            refreshscatter();
-        }
-
-        function dikaer()
-        {
-
-
-            data=datadikaer;
-            refreshscatter();
-
-        }
-
-=======
-    for (var i = 0; i < 5; i++) {
-        data.push([random(20)+100, random(20)+100,5,0,0,0,0,1,0]);
-    };
-    for (var i = 0; i < 24; i++) {
-        data.push([random(100)+100, random(200)+300,5,0,0,0,0,1,0]);
-    };
-    for (var i = 0; i < 43; i++) {
         var a=random(100)
-        data.push([random(100)+a+300, random(100)+a+300,5,0,0,0,0,1,0]);
+        data.push([random(20)+100, random(20)+100,5,0,0,0,0,1]);
     };
     for (var i = 0; i < 24; i++) {
-        data.push([random(200)+300, random(100)+100,5,0,0,0,0,1,0]);
+        data.push([random(20)+10, random(100)+100,5,0,0,0,0,1]);
+    };
+    for (var i = 0; i < 3; i++) {
+        data.push([random(100)+10, random(100)+10,5,0,0,0,0,1]);
     };
 
 // for ( i = 0; i < 4; i++) {
@@ -337,45 +258,70 @@ var datadikaer =data;       //datadikaer初始化
 
 for (var i=0;i<datadikaer.length;i++)    //datadikaer初始化
 {
-    r=Math.log10(Math.sqrt(datadikaer[i][0]*datadikaer[i][0]+datadikaer[i][1]*datadikaer[i][1]));
+    r=Math.log10((Math.sqrt(datadikaer[i][0]*datadikaer[i][0]+datadikaer[i][1]*datadikaer[i][1])));
     therta=Math.atan(datadikaer[i][1]/datadikaer[i][0]);
 
-    datajizuobiao.push([r,therta,datadikaer[i][2],datadikaer[i][3],datadikaer[i][4],datadikaer[i][5],datadikaer[i][6],datadikaer[i][7],datadikaer[i][8]]);
+    datajizuobiao.push([r,therta,datadikaer[i][2],datadikaer[i][3],datadikaer[i][4],datadikaer[i][5],datadikaer[i][6],datadikaer[i][7]]);
 
 }
 
 
 
 
-function jizuobiao()
-{
-    if (zuobiaoxi==0)
+    function jizuobiao()
     {
-        zuobiaoxi=1;
+        if (zuobiaoxi==0)
+        {
+            zuobiaoxi=1;
 
-        selected=[];  //选择清空
-
-        for (var i = 0; i < datadikaer.length; i++) {
-            for (var j = 2; j < 9; j++)
-
-                datajizuobiao[i][j] = datadikaer[i][j];
+            var tempselected=[];   //在极坐标中标记选中的点
+        for(var n=0;n<selected.length;n++)
+        {
+            tempselected.push([   datajizuobiao[selected[n][2]][0],  datajizuobiao[selected[n][2]][1], selected[n][2] ]);
 
         }
 
-        data = datajizuobiao;
 
-        refreshscatter();
+            selected=tempselected;
+
+
+         //   selected=[];//选择清空
+
+            for (var i = 0; i < datadikaer.length; i++) {
+                for (var j = 2; j < 9; j++)
+
+                    datajizuobiao[i][j] = datadikaer[i][j];
+
+            }
+
+            data = datajizuobiao;      //data指向极坐标
+
+            refreshscatter();
+        }
+
+
     }
-
-
-}
 
 function dikaer()
 {
     if(zuobiaoxi==1) {
 
 zuobiaoxi=0;
-        selected=[];  //选择清空
+
+        var tempselected=[];   //在笛卡尔坐标中标记选中的点
+        for(var n=0;n<selected.length;n++)
+        {
+            tempselected.push([   datadikaer[selected[n][2]][0],  datadikaer[selected[n][2]][1], selected[n][2] ]);
+
+        }
+
+
+        selected=tempselected;
+
+
+
+
+      //  selected=[];  //选择清空
         for (var i = 0; i < datadikaer.length; i++) {
             for (var j = 2; j < 9; j++)
 
@@ -383,14 +329,13 @@ zuobiaoxi=0;
 
         }
 
-        data = datadikaer;
+        data = datadikaer;   //data指向笛卡尔
 
         refreshscatter();
     }
 }
 
 
->>>>>>> refs/remotes/origin/master
 
 
 
@@ -518,7 +463,6 @@ zuobiaoxi=0;
 
 
 
-
         var selectchange =1;
         var deepcopy=[];
 
@@ -547,7 +491,7 @@ zuobiaoxi=0;
     //------------------------聚类一万次---------------------------
 
 
-    function yiwanci()
+        function yiwanci()
     {
 
 
@@ -556,7 +500,7 @@ zuobiaoxi=0;
         for(var n=0;n<96;n++){
 
 
-            data[n][2]=data[n][3]=data[n][4]=data[n][5]=data[n][6]=data[n][7]=0;
+            data[n][3]=data[n][4]=data[n][5]=data[n][6]=data[n][7]=0;
 
 
         }
@@ -595,15 +539,6 @@ zuobiaoxi=0;
         //refreshscatter();
 
 
-<<<<<<< HEAD
-        colorscattortopanel();
-        refreshscatter();
-        refreshpanel();
-
-
-
-=======
->>>>>>> refs/remotes/origin/master
     }
 
 
@@ -611,110 +546,89 @@ zuobiaoxi=0;
 
 
 
-var result;
-var ordercentroids=[];
-var nnn=0;
+        var result;
+        var ordercentroids=[];
+        var nnn=0;
 
-    //--------------------聚类
+//--------------------聚类!!!!!!!!!!!!!!!!!!!!!!!!!-3类----------------------------------------
 
-<<<<<<< HEAD
-function clusteringonce()
-{
-
-    clustering();
-
-
-
-
-
-    colorscattortopanel();
-    refreshscatter();
-    refreshpanel();
-
-
-
-
-}
-
-
-function jizuobiaoclustering()
-
-{
-
-    result = ecStat.clustering.hierarchicalKMeans(data, 4, false);
-
-    for (var i = 0; i < 96; i++) {
-
-
-        data[i][2] = result.clusterAssment[i][0];
-
-
-    }
-
-    refreshscatter();
-
-
-}
-
-
-
-
-=======
->>>>>>> refs/remotes/origin/master
         function clustering() {
 
             var count = 0;
 
             console.log('clustering');
-            var clusterNumber = 4;
+            var clusterNumber = 3;
+            var dataclustering=[];//清空
 
-            result = ecStat.clustering.hierarchicalKMeans(data, clusterNumber, false);
+
+            //采集需要聚类的点放入dataclustering
+
+            // if(zuobiaoxi==0)
+            // {
+            //     data=datadikaer;
+            //
+            // }
+            // else
+            //     if(zuobiaoxi==1)
+            //     {
+            //         data=datajizuobiao
+            //
+            //     }
+            //
+
+
+            for (var i=0;i<data.length;i++)
+            {
+                if(data[i][2]>0)
+                    dataclustering.push([data[i][0]*1000,data[i][1]*1000,i]); //放大一千倍放进去聚类
+            }
+
+
+
+//console.log("stop");
+
+            result = ecStat.clustering.hierarchicalKMeans(dataclustering, clusterNumber, false);
 
 //有时候分出来不是四个组很奇怪。
 
 
-            for (var a = 0; a < result.centroids.length; a++) {
-                if (result.centroids[a].length > 0)
-                    count++;
-
-            }
+            // for (var a = 0; a < result.centroids.length; a++) {
+            //     if (result.centroids[a].length > 0)
+            //         count++;
+            //
+            // }
 
             // if (count<4)
             //     n++;
 
             //console.log(count);
 
-            if (count<4)    //变态的是 测试了很久很久 这个kmean聚类返回的结果可能不是4类 我也是醉了 小于4重来
-            {
-                clustering();
+            // if (count<3)    //变态的是 测试了很久很久 这个kmean聚类返回的结果可能不是4类 我也是醉了 小于3重来
+            // {
+            //     clustering();
+            //
+            // }
 
-            }
-
-            //----------------------------一下才是4组的处理内容
-            else
-            {
-
-
+            //----------------------------一下才是3组的处理内容
+//             else
+//             {
+//
+//
                 ordercentroids = [
-                    [result.centroids[0][0], result.centroids[0][1]],
-                    [result.centroids[1][0], result.centroids[1][1]],
-                    [result.centroids[2][0], result.centroids[2][1]],
-                    [result.centroids[3][0], result.centroids[3][1]]
+                    [result.centroids[0][1]/result.centroids[0][0],0],
+                    [result.centroids[1][1]/result.centroids[1][0],1],
+                    [result.centroids[2][1]/result.centroids[2][0],2]
+                  //  [result.centroids[3][0], result.centroids[3][1]]
 
                 ];  //复制出来加一位
 
 
-                for (var i = 0; i < ordercentroids.length; i++)  //加一位 插入原始序号
 
-                {
-                    ordercentroids[i].push(i);  //原始序号
-
-                }
                 //
                 //=---------------------排序
 
                 ordercentroids.sort(function (a, b) {
-                    return a[0] - b[0];
+                    return b[0]-a[0];
                 });                            //按照x坐标排序 序号记录进入第四位
 
 
@@ -724,69 +638,70 @@ function jizuobiaoclustering()
                     ordercentroids[i].push(i);  //排序后序号
 
                 }
-
-
-                if (ordercentroids[0][1] > ordercentroids[1][1]) {
-                    ordercentroids[0][3] = 1;
-                    ordercentroids[1][3] = 0;
-
-                }
-
-
-                if (ordercentroids[2][1] > ordercentroids[3][1]) {
-                    ordercentroids[2][3] = 3;
-                    ordercentroids[3][3] = 2;
-
-                }
-
-//-----------------以下这个循环不是人类可以理解的 如果正确了 那么分组将按照顺序赋值给原始数据的分组项
-                //-----------------如果错了 我也想不出来怎么调试了 但是不幸的是 他对了
+//
+//
+                ordercentroids.sort(function (a, b) {
+                    return a[1]-b[1];
+                });                                              //在排回去
 
 
 
 
-                for (var i = 0; i < 96; i++) {
 
-                    //         console.log(result.clusterAssment[i][0]);
+//                 if (ordercentroids[0][1] > ordercentroids[1][1]) {
+//                     ordercentroids[0][3] = 1;
+//                     ordercentroids[1][3] = 0;
+//
+//                 }
+//
+//
+//                 if (ordercentroids[2][1] > ordercentroids[3][1]) {
+//                     ordercentroids[2][3] = 3;
+//                     ordercentroids[3][3] = 2;
+//
+//                 }
+//
+// //-----------------以下这个循环不是人类可以理解的 如果正确了 那么分组将按照顺序赋值给原始数据的分组项
+//                 //-----------------如果错了 我也想不出来怎么调试了 但是不幸的是 他对了
+//
+//
+//
+//
+//                 for (var i = 0; i < 96; i++) {
+//
+//                     //         console.log(result.clusterAssment[i][0]);
+//
+//                     //        data[i][2]=result.clusterAssment[i][0];
+//
+//
+//                     for (var n = 0; n < ordercentroids.length; n++) {
+//                         if (result.clusterAssment[i][0] === ordercentroids[n][2]) {
+//                             data[i][2] = ordercentroids[n][3]
+//                         }
+//
+//                     }
+//
+//                 }
 
-                    //        data[i][2]=result.clusterAssment[i][0];
+//-----------------------------------------------------------------------------
+//                else
+
+            for (var n = 0; n < dataclustering.length; n++)                   //逆天的操作啊
+            {
+                data[dataclustering[n][2]][2]=ordercentroids[result.clusterAssment[n][0]][2]+1;   //分组的颜色直接染给对应的data
+
+            }
 
 
-
-
-                    for (var n = 0; n < ordercentroids.length; n++) {
-                        if (result.clusterAssment[i][0] === ordercentroids[n][2]) {
-<<<<<<< HEAD
-                            data[i][2] = ordercentroids[n][3];
-=======
-                            data[i][2] = ordercentroids[n][3]
->>>>>>> refs/remotes/origin/master
-                        }
-
-                    }
-
-                }
-
-
-
-
-<<<<<<< HEAD
-                // colorscattortopanel();
-                //
-                //
-                // refreshscatter();
-                // refreshpanel();
-=======
                 colorscattortopanel();
 
 
                 refreshscatter();
                 refreshpanel();
->>>>>>> refs/remotes/origin/master
              //   console.log(nnn++);
 
 
-            }
+
 
 
         }
@@ -916,15 +831,8 @@ function jizuobiaoclustering()
                     },
 
 
-                xAxis: {
+                xAxis: [{
                     type: 'value',
-<<<<<<< HEAD
-                    //min: 'dataMin',
-                 //   max: 'dataMax',
-                    name:'FAM'
-
-
-=======
                     scale: true,
                     min: function(value) {
                         return value.min-(value.max-value.min)*0.1 ;
@@ -945,20 +853,13 @@ function jizuobiaoclustering()
                         // lineHeight: ...,
 
                     }
->>>>>>> refs/remotes/origin/master
-                }
+                }]
                 ,
 
 
                 yAxis:
                     {
                         type: 'value',
-<<<<<<< HEAD
-                      //  min: 'dataMin',
-                    //    max: 'dataMax',
-                        name:'HEX'
-
-=======
                         scale: true,
                         min: function(value) {
                             return value.min-(value.max-value.min)*0.1 ;
@@ -978,7 +879,6 @@ function jizuobiaoclustering()
                             // lineHeight: ...,
 
                         }
->>>>>>> refs/remotes/origin/master
                     }
                 ,
 
@@ -989,17 +889,6 @@ function jizuobiaoclustering()
 
                     {   // 这个dataZoom组件，也控制x轴。
                         type: 'inside', // 这个 dataZoom 组件是 inside 型 dataZoom 组件
-<<<<<<< HEAD
-                        xAxisIndex: 0
-                        // start: 10,      // 左边在 10% 的位置。
-                        // end: 90         // 右边在 60% 的位置。
-                    },
-                    {
-                        type: 'inside',
-                        yAxisIndex: 0
-                        // start: 10,
-                        // end: 90
-=======
                         xAxisIndex: 0,
                         filterMode: 'empty',
                          // start: 10,      // 左边在 10% 的位置。
@@ -1011,7 +900,6 @@ function jizuobiaoclustering()
                         filterMode: 'empty',
                          // start: 10,
                          // end: 110
->>>>>>> refs/remotes/origin/master
                     }
 
 
@@ -1031,7 +919,7 @@ function jizuobiaoclustering()
                         itemStyle: {
                             color: '#000000'
                         },
-                       // symbol:'rect',
+                        symbol:'rect',
 
                     },
 
@@ -1065,15 +953,9 @@ function jizuobiaoclustering()
 
                         itemStyle: {
                             color: '#008cba'
-<<<<<<< HEAD
-                        }
-
-
-=======
                         },
 
-                        symbol:'rect',
->>>>>>> refs/remotes/origin/master
+                     //   symbol:'rect',
 
                     },
 
@@ -1090,11 +972,7 @@ function jizuobiaoclustering()
                         itemStyle: {
                             color: '#b80af4'
                         },
-<<<<<<< HEAD
-
-=======
-                        symbol: 'triangle'
->>>>>>> refs/remotes/origin/master
+                    //    symbol: 'triangle'
 
 
                     },
@@ -1175,6 +1053,36 @@ function jizuobiaoclustering()
         }
 
 
+
+myChart.on('brush', function ()          //这个事件用来出发清除panel选框
+{
+
+
+    hahaha=[
+        [0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0]
+
+
+    ];
+
+
+
+
+
+
+
+});
+
+
+
+
         myChart.on('brushSelected', function (params) {
             //var brushComponent = params.batch[0];
 
@@ -1191,7 +1099,7 @@ function jizuobiaoclustering()
    //         refreshscatter();
 
 
-            console.log('hahaha');
+            //console.log('hahaha');
             for (var sIdx = 0; sIdx < zhuadaode.selected.length-1; sIdx++)   //减一的目的是吧select的序列减去
             {
                 // 对于每个 series：
@@ -1226,11 +1134,7 @@ function jizuobiaoclustering()
 
             var num=obj.id;
 
-<<<<<<< HEAD
-          //  console.log(num);
-=======
             console.log(num);
->>>>>>> refs/remotes/origin/master
 
 
             //去跟新到每个点序列里面
@@ -1302,17 +1206,17 @@ function colorscattortopanel() {
 
 function selectscattortopanel() {
 
-    hahaha = [
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-    ];  //panel先清空
+    // hahaha = [
+    //     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    //     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    //     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    //     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    //     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    //     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    //     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    //     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    //     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    // ];  //panel先清空
 
 
     for (var i = 0; i < deepcopy.length; i++) {

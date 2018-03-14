@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc6ae1c1-fa5a-4119-806c-544e51897db4" name="Default" comment="">
+<<<<<<< HEAD
       <change beforePath="" afterPath="$PROJECT_DIR$/test-增加极坐标.html" />
+=======
+      <change beforePath="" afterPath="$PROJECT_DIR$/test-改成聚成3类.html" />
+>>>>>>> refs/remotes/origin/master
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/test-增加x轴y轴数值设定加panel-完成.html" afterPath="$PROJECT_DIR$/test-增加x轴y轴数值设定加panel-完成.html" />
     </list>
@@ -21,8 +25,13 @@
       <file leaf-file-name="test-增加panel行列选中.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test-增加panel行列选中.html">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="26">
               <caret line="1408" column="64" lean-forward="false" selection-start-line="1408" selection-start-column="64" selection-end-line="1408" selection-end-column="64" />
+=======
+            <state relative-caret-position="7590">
+              <caret line="1417" column="59" lean-forward="false" selection-start-line="1417" selection-start-column="59" selection-end-line="1417" selection-end-column="59" />
+>>>>>>> refs/remotes/origin/master
               <folding>
                 <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="e#5403#5416#0" expanded="false" />
@@ -46,6 +55,7 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="test-增加极坐标.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test-增加极坐标.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -60,11 +70,84 @@
                 <element signature="e#10847#11181#0" expanded="false" />
                 <element signature="e#11274#12022#0" expanded="false" />
                 <element signature="e#16507#22559#0" expanded="false" />
+=======
+      <file leaf-file-name="test-改成聚成3类.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test-改成聚成3类.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="293">
+              <caret line="1357" column="53" lean-forward="false" selection-start-line="1357" selection-start-column="52" selection-end-line="1357" selection-end-column="53" />
+              <folding>
+                <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="e#3224#3677#0" expanded="false" />
+                <element signature="e#3697#4177#0" expanded="false" />
+                <element signature="e#4202#4695#0" expanded="false" />
+                <element signature="e#6148#6476#0" expanded="false" />
+                <element signature="e#6813#6826#0" expanded="false" />
+                <element signature="e#11674#12008#0" expanded="false" />
+                <element signature="e#12105#12769#0" expanded="false" />
+                <element signature="e#16835#17596#0" expanded="false" />
+                <element signature="e#18013#25284#0" expanded="false" />
+                <element signature="e#25437#25803#0" expanded="false" />
+                <element signature="e#25864#26862#0" expanded="false" />
+                <element signature="e#27005#27838#0" expanded="false" />
+                <element signature="e#27872#28495#0" expanded="false" />
+                <element signature="e#27888#28336#0" expanded="false" />
+                <element signature="e#28529#29236#0" expanded="false" />
+                <element signature="e#29301#29674#0" expanded="false" />
+                <element signature="e#29385#29648#0" expanded="false" />
+                <element signature="e#29753#30054#0" expanded="false" />
+                <element signature="e#30079#30379#0" expanded="false" />
+                <element signature="e#30420#30720#0" expanded="false" />
+                <element signature="e#35113#40285#0" expanded="false" />
+>>>>>>> refs/remotes/origin/master
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+=======
+      <file leaf-file-name="ecStat.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ecStat.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-22579">
+              <caret line="353" column="39" lean-forward="true" selection-start-line="353" selection-start-column="39" selection-end-line="353" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="echarts.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/echarts.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="33494" column="14" lean-forward="false" selection-start-line="33494" selection-start-column="12" selection-end-line="33494" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lib.es5.d.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="13869">
+              <caret line="616" column="4" lean-forward="false" selection-start-line="616" selection-start-column="4" selection-end-line="616" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lib.dom.d.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="106444">
+              <caret line="4641" column="10" lean-forward="false" selection-start-line="4641" selection-start-column="10" selection-end-line="4641" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+>>>>>>> refs/remotes/origin/master
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -76,11 +159,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>bbb</find>
-      <find>setcolor</find>
-      <find>initcanvaspanel</find>
-      <find>setcolorscatter</find>
-      <find>data[a][2]</find>
       <find>oncanvas</find>
       <find>oldloca</find>
       <find>preX</find>
@@ -88,7 +166,6 @@
       <find>paneltos</find>
       <find>nonono[</find>
       <find>nonono</find>
-      <find>hahaha</find>
       <find>setcol</find>
       <find>data1</find>
       <find>script</find>
@@ -101,9 +178,22 @@
       <find>toolbox</find>
       <find>restore()</find>
       <find>cococo</find>
+<<<<<<< HEAD
       <find>xAxis</find>
       <find>data</find>
       <find>jizuobiao</find>
+=======
+      <find>clustering</find>
+      <find>9</find>
+      <find>select</find>
+      <find>selected</find>
+      <find>x</find>
+      <find>xAxis</find>
+      <find>zoom</find>
+      <find>hierarchicalKMeans</find>
+      <find>[8]</find>
+      <find>hahaha</find>
+>>>>>>> refs/remotes/origin/master
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -131,7 +221,11 @@
         <option value="$PROJECT_DIR$/test-聚类-一万次-加阈值判定加panel.html" />
         <option value="$PROJECT_DIR$/test-增加x轴y轴数值设定加panel.html" />
         <option value="$PROJECT_DIR$/test-增加x轴y轴数值设定加panel-完成.html" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/test-增加极坐标.html" />
+=======
+        <option value="$PROJECT_DIR$/test-改成聚成3类.html" />
+>>>>>>> refs/remotes/origin/master
       </list>
     </option>
   </component>
@@ -246,7 +340,13 @@
       <workItem from="1520733422532" duration="11737000" />
       <workItem from="1520754934526" duration="358000" />
       <workItem from="1520759794520" duration="15641000" />
+<<<<<<< HEAD
       <workItem from="1520869401859" duration="6751000" />
+=======
+      <workItem from="1520819922068" duration="12257000" />
+      <workItem from="1520841530220" duration="13959000" />
+      <workItem from="1520912262994" duration="23630000" />
+>>>>>>> refs/remotes/origin/master
     </task>
     <task id="LOCAL-00001" summary="准备加入一个滑块">
       <created>1520695847114</created>
@@ -269,11 +369,47 @@
       <option name="project" value="LOCAL" />
       <updated>1520779974716</updated>
     </task>
+<<<<<<< HEAD
     <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="130885000" />
+=======
+    <task id="LOCAL-00004" summary="双向选择确定">
+      <created>1520827495058</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1520827495059</updated>
+    </task>
+    <task id="LOCAL-00005" summary="双向选择确定 没问题了">
+      <created>1520831925915</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1520831925915</updated>
+    </task>
+    <task id="LOCAL-00006" summary="质心升序">
+      <created>1520856481417</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1520856481417</updated>
+    </task>
+    <task id="LOCAL-00007" summary="增加极坐标 设置其实xy轴位置">
+      <created>1520920161520</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1520920161520</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="173980000" />
+>>>>>>> refs/remotes/origin/master
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
@@ -308,7 +444,15 @@
     <MESSAGE value="准备加入一个滑块" />
     <MESSAGE value="增加阈值判定 并优化kmean" />
     <MESSAGE value="增加了x y值设定" />
+<<<<<<< HEAD
     <option name="LAST_COMMIT_MESSAGE" value="增加了x y值设定" />
+=======
+    <MESSAGE value="双向选择确定" />
+    <MESSAGE value="双向选择确定 没问题了" />
+    <MESSAGE value="质心升序" />
+    <MESSAGE value="增加极坐标 设置其实xy轴位置" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加极坐标 设置其实xy轴位置" />
+>>>>>>> refs/remotes/origin/master
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -348,12 +492,32 @@
           <line>187</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/test-增加x轴y轴数值设定加panel-完成.html</url>
+          <line>694</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/test-改成聚成3类.html</url>
+          <line>1153</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
       </breakpoints>
+<<<<<<< HEAD
       <option name="time" value="27" />
+=======
+      <option name="time" value="28" />
+>>>>>>> refs/remotes/origin/master
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/test3.html" />
+>>>>>>> refs/remotes/origin/master
     <entry file="file://$PROJECT_DIR$/canvas画布-背景选中.html" />
     <entry file="file://$PROJECT_DIR$/test2.html" />
     <entry file="file://$PROJECT_DIR$/test3.html" />
@@ -408,7 +572,6 @@
     <entry file="file://$PROJECT_DIR$/canvas画布-背景选中.html" />
     <entry file="file://$PROJECT_DIR$/test2.html" />
     <entry file="file://$PROJECT_DIR$/混合显示1.html" />
-    <entry file="file://$PROJECT_DIR$/ecStat.js" />
     <entry file="file://$PROJECT_DIR$/test-聚类.html" />
     <entry file="file://$PROJECT_DIR$/test-聚类-成功！.html" />
     <entry file="file://$PROJECT_DIR$/test-聚类-一万次-正确.html" />
@@ -439,7 +602,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/echarts.js" />
     <entry file="file://$PROJECT_DIR$/test-聚类-一万次-加阈值判定.html" />
     <entry file="file://$PROJECT_DIR$/test-增加x轴y轴数值设定加panel.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -512,12 +674,18 @@
     </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="27378">
           <caret line="1066" column="21" lean-forward="false" selection-start-line="1066" selection-start-column="21" selection-end-line="1066" selection-end-column="21" />
+=======
+        <state relative-caret-position="106444">
+          <caret line="4641" column="10" lean-forward="false" selection-start-line="4641" selection-start-column="10" selection-end-line="4641" selection-end-column="10" />
+>>>>>>> refs/remotes/origin/master
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/test-增加x轴y轴数值设定加panel-完成.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="551">
@@ -525,14 +693,70 @@
           <folding>
             <element signature="e#3658#4138#0" expanded="false" />
             <element signature="e#4163#4656#0" expanded="false" />
+=======
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13869">
+          <caret line="616" column="4" lean-forward="false" selection-start-line="616" selection-start-column="4" selection-end-line="616" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-增加x轴y轴数值设定加panel-完成.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1081">
+          <caret line="694" column="21" lean-forward="false" selection-start-line="694" selection-start-column="21" selection-end-line="694" selection-end-column="21" />
+          <folding>
+            <element signature="e#3233#3686#0" expanded="false" />
+            <element signature="e#3706#4186#0" expanded="false" />
+            <element signature="e#4211#4704#0" expanded="false" />
+            <element signature="e#6721#6734#0" expanded="false" />
+            <element signature="e#12049#12145#0" expanded="false" />
+            <element signature="e#15577#16338#0" expanded="false" />
+            <element signature="e#16376#16401#0" expanded="false" />
+            <element signature="e#16755#24026#0" expanded="false" />
+            <element signature="e#25312#26145#0" expanded="false" />
+            <element signature="e#26179#26802#0" expanded="false" />
+            <element signature="e#26836#27510#0" expanded="false" />
+            <element signature="e#26852#27299#0" expanded="false" />
+            <element signature="e#27575#27948#0" expanded="false" />
+            <element signature="e#28027#28328#0" expanded="false" />
+            <element signature="e#28353#28653#0" expanded="false" />
+            <element signature="e#28694#28994#0" expanded="false" />
+            <element signature="e#29079#33284#0" expanded="false" />
+            <element signature="e#33387#38559#0" expanded="false" />
+>>>>>>> refs/remotes/origin/master
           </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/test-增加panel行列选中.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="1408" column="64" lean-forward="false" selection-start-line="1408" selection-start-column="64" selection-end-line="1408" selection-end-column="64" />
+=======
+    <entry file="file://$PROJECT_DIR$/echarts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="33494" column="14" lean-forward="false" selection-start-line="33494" selection-start-column="12" selection-end-line="33494" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ecStat.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-22579">
+          <caret line="353" column="39" lean-forward="true" selection-start-line="353" selection-start-column="39" selection-end-line="353" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test-增加panel行列选中.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="1408" column="64" lean-forward="false" selection-start-line="1408" selection-start-column="64" selection-end-line="1408" selection-end-column="64" />
+        <state relative-caret-position="7590">
+          <caret line="1417" column="59" lean-forward="false" selection-start-line="1417" selection-start-column="59" selection-end-line="1417" selection-end-column="59" />
+>>>>>>> refs/remotes/origin/master
           <folding>
             <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
             <element signature="e#5403#5416#0" expanded="false" />
@@ -555,6 +779,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/test-增加极坐标.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-489">
@@ -568,6 +793,35 @@
             <element signature="e#10847#11181#0" expanded="false" />
             <element signature="e#11274#12022#0" expanded="false" />
             <element signature="e#16507#22559#0" expanded="false" />
+=======
+    <entry file="file://$PROJECT_DIR$/test-改成聚成3类.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="1357" column="53" lean-forward="false" selection-start-line="1357" selection-start-column="52" selection-end-line="1357" selection-end-column="53" />
+          <folding>
+            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="e#3224#3677#0" expanded="false" />
+            <element signature="e#3697#4177#0" expanded="false" />
+            <element signature="e#4202#4695#0" expanded="false" />
+            <element signature="e#6148#6476#0" expanded="false" />
+            <element signature="e#6813#6826#0" expanded="false" />
+            <element signature="e#11674#12008#0" expanded="false" />
+            <element signature="e#12105#12769#0" expanded="false" />
+            <element signature="e#16835#17596#0" expanded="false" />
+            <element signature="e#18013#25284#0" expanded="false" />
+            <element signature="e#25437#25803#0" expanded="false" />
+            <element signature="e#25864#26862#0" expanded="false" />
+            <element signature="e#27005#27838#0" expanded="false" />
+            <element signature="e#27872#28495#0" expanded="false" />
+            <element signature="e#27888#28336#0" expanded="false" />
+            <element signature="e#28529#29236#0" expanded="false" />
+            <element signature="e#29301#29674#0" expanded="false" />
+            <element signature="e#29385#29648#0" expanded="false" />
+            <element signature="e#29753#30054#0" expanded="false" />
+            <element signature="e#30079#30379#0" expanded="false" />
+            <element signature="e#30420#30720#0" expanded="false" />
+            <element signature="e#35113#40285#0" expanded="false" />
+>>>>>>> refs/remotes/origin/master
           </folding>
         </state>
       </provider>
