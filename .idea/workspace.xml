@@ -20,7 +20,7 @@
       <file leaf-file-name="ecStat.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ecStat.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="7613">
               <caret line="331" column="13" lean-forward="false" selection-start-line="331" selection-start-column="13" selection-end-line="331" selection-end-column="13" />
               <folding />
             </state>
@@ -30,8 +30,8 @@
       <file leaf-file-name="test-384的数据拉出来用.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test-384的数据拉出来用.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="644" column="0" lean-forward="true" selection-start-line="644" selection-start-column="0" selection-end-line="644" selection-end-column="0" />
+            <state relative-caret-position="3680">
+              <caret line="644" column="0" lean-forward="false" selection-start-line="644" selection-start-column="0" selection-end-line="644" selection-end-column="0" />
               <folding>
                 <element signature="e#3283#3736#0" expanded="false" />
                 <element signature="e#3756#4236#0" expanded="false" />
@@ -46,9 +46,20 @@
       <file leaf-file-name="test-384的数据拉出来用xxxxxx.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test-384的数据拉出来用xxxxxx.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1217">
-              <caret line="654" column="0" lean-forward="true" selection-start-line="654" selection-start-column="0" selection-end-line="654" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="301">
+              <caret line="2281" column="13" lean-forward="false" selection-start-line="2281" selection-start-column="13" selection-end-line="2281" selection-end-column="13" />
+              <folding>
+                <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#5057#5510#0" expanded="false" />
+                <element signature="e#5530#6010#0" expanded="false" />
+                <element signature="e#6035#6633#0" expanded="false" />
+                <element signature="e#7740#63431#0" expanded="false" />
+                <element signature="e#63829#65683#0" expanded="false" />
+                <element signature="e#74207#81883#0" expanded="false" />
+                <marker date="1521195955241" expanded="false" signature="2984:2994" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -64,11 +75,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>nonono</find>
-      <find>setcol</find>
-      <find>data1</find>
-      <find>data</find>
-      <find>script</find>
       <find>javascript</find>
       <find>centroids</find>
       <find>ordercentroids</find>
@@ -84,16 +90,21 @@
       <find>selected</find>
       <find>x</find>
       <find>xAxis</find>
-      <find>zoom</find>
       <find>hierarchicalKMeans</find>
       <find>[8]</find>
       <find>hahaha</find>
-      <find>fresh</find>
       <find>co</find>
       <find>coordinate</find>
       <find>*1000</find>
       <find>*100</find>
       <find>%</find>
+      <find>parseint</find>
+      <find>panel</find>
+      <find>datar</find>
+      <find>fresh</find>
+      <find>zoom</find>
+      <find>data[a][8]</find>
+      <find>daochu</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -181,7 +192,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.test-改成聚成3类.html">
+  <component name="RunManager">
     <configuration name="混合显示1-scatter加ctrl-aaa--aaaaaaa.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/scatter/混合显示1-scatter加ctrl-aaa--aaaaaaa.html" />
     <configuration name="混合显示1.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/scatter/混合显示1.html" />
     <configuration name="test-聚类-一万次.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/scatter/test-聚类-一万次.html" />
@@ -190,19 +201,18 @@
     <configuration name="test-聚类.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/scatter/test-聚类.html" />
     <configuration name="test-增加x轴y轴数值设定.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/scatter/test-增加x轴y轴数值设定.html" />
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.混合显示1.html" />
-      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.混合显示1-scatter加ctrl-aaa--aaaaaaa.html" />
-      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.test-聚类-一万次.html" />
-      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.test-增加x轴y轴数值设定.html" />
-      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.test-改成聚成3类.html" />
+      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.test-聚类.html" />
+      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.混合显示1.html" />
+      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.混合显示1-scatter加ctrl-aaa--aaaaaaa.html" />
+      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.test-聚类-一万次.html" />
+      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.test-增加x轴y轴数值设定.html" />
     </list>
     <recent_temporary>
-      <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.test-改成聚成3类.html" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.test-增加x轴y轴数值设定.html" />
-        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.test-聚类-一万次.html" />
-        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.混合显示1.html" />
-        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.混合显示1-scatter加ctrl-aaa--aaaaaaa.html" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.test-增加x轴y轴数值设定.html" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.test-聚类-一万次.html" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.混合显示1.html" />
+        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.混合显示1-scatter加ctrl-aaa--aaaaaaa.html" />
       </list>
     </recent_temporary>
   </component>
@@ -244,6 +254,9 @@
       <workItem from="1520912262994" duration="30321000" />
       <workItem from="1520994311919" duration="4693000" />
       <workItem from="1521006380851" duration="7471000" />
+      <workItem from="1521082447987" duration="6623000" />
+      <workItem from="1521171125433" duration="14282000" />
+      <workItem from="1521189050079" duration="3608000" />
     </task>
     <task id="LOCAL-00001" summary="准备加入一个滑块">
       <created>1520695847114</created>
@@ -312,10 +325,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="192835000" />
+    <option name="totallyTimeSpent" value="217348000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -404,16 +418,14 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/test-384的数据拉出来用.html</url>
           <line>257</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="28" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="29" />
+      <option name="time" value="30" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test2.html" />
     <entry file="file://$PROJECT_DIR$/test3.html" />
     <entry file="file://$PROJECT_DIR$/混合显示1.html" />
     <entry file="file://$PROJECT_DIR$/canvas画布-可框选-完成(1)(1).html" />
@@ -561,7 +573,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="106444">
           <caret line="4641" column="10" lean-forward="false" selection-start-line="4641" selection-start-column="10" selection-end-line="4641" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -569,7 +580,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="13869">
           <caret line="616" column="4" lean-forward="false" selection-start-line="616" selection-start-column="4" selection-end-line="616" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -646,7 +656,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ecStat.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="7613">
           <caret line="331" column="13" lean-forward="false" selection-start-line="331" selection-start-column="13" selection-end-line="331" selection-end-column="13" />
           <folding />
         </state>
@@ -654,8 +664,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test-384的数据拉出来用.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="644" column="0" lean-forward="true" selection-start-line="644" selection-start-column="0" selection-end-line="644" selection-end-column="0" />
+        <state relative-caret-position="3680">
+          <caret line="644" column="0" lean-forward="false" selection-start-line="644" selection-start-column="0" selection-end-line="644" selection-end-column="0" />
           <folding>
             <element signature="e#3283#3736#0" expanded="false" />
             <element signature="e#3756#4236#0" expanded="false" />
@@ -666,11 +676,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/FileSaver.js-master/src/FileSaver.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="25" column="12" lean-forward="false" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test-384的数据拉出来用xxxxxx.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1217">
-          <caret line="654" column="0" lean-forward="true" selection-start-line="654" selection-start-column="0" selection-end-line="654" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="301">
+          <caret line="2281" column="13" lean-forward="false" selection-start-line="2281" selection-start-column="13" selection-end-line="2281" selection-end-column="13" />
+          <folding>
+            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#5057#5510#0" expanded="false" />
+            <element signature="e#5530#6010#0" expanded="false" />
+            <element signature="e#6035#6633#0" expanded="false" />
+            <element signature="e#7740#63431#0" expanded="false" />
+            <element signature="e#63829#65683#0" expanded="false" />
+            <element signature="e#74207#81883#0" expanded="false" />
+            <marker date="1521195955241" expanded="false" signature="2984:2994" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
