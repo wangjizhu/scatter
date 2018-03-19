@@ -3290,6 +3290,16 @@ var cococo=[
                 ctx.strokeRect(0, (i-1) * panelsize+0.4*panelsize, 0.4*panelsize, panelsize);
 
 
+                ctx.font ='18px 微软雅黑 bold';
+                ctx.fillStyle = '#000000';
+                var Ax=String.fromCharCode(64+i);
+
+                ctx.textAlign="center";
+
+                ctx.fillText(Ax ,0.2*panelsize, i * panelsize);
+
+
+
                 if (hahaha[i][0]>0 || nonono[i][0]>0)  //如果整个行被选中
                 {
 
@@ -3297,7 +3307,7 @@ var cococo=[
                    // console.log(i);
                     ctx.fillStyle =ctx.strokeStyle = 'rgba(55,55,55,0.5)';
 
-                    ctx.fillRect(0, (i-1) * panelsize+0.4*panelsize, 0.4*panelsize, panelsize);
+                    ctx.fillRect(0, (i-1) * panelsize+0.4*panelsize, 0.4*panelsize, panelsize); //表头
 
                 }
 
@@ -3313,6 +3323,16 @@ var cococo=[
                 ctx.beginPath();
                 ctx.lineWidth=2;
                 ctx.strokeRect((j-1) * panelsize+0.4*panelsize, 0, panelsize, 0.4*panelsize);
+
+                ctx.font ='18px 微软雅黑 bold';
+                ctx.fillStyle = '#000000';
+                var Ax=j.toString();
+
+                ctx.textAlign="end";
+
+                ctx.fillText(Ax ,j*panelsize, 0.3*panelsize);
+
+
 
                 if (hahaha[0][j]>0 || nonono[0][j]>0)  //如果整个被选中
                 {
@@ -3340,13 +3360,13 @@ var cococo=[
                     ctx.lineWidth=2;
                     ctx.strokeRect(j * panelsize, i * panelsize, panelsize, panelsize);  //画框框
                     //出点点
-                    ctx.font ='1px 微软雅黑 bold';
-                    ctx.fillStyle = '#000000';
-                    var Ax=String.fromCharCode(64+i+1)+(j+1).toString();
-
-                    ctx.textAlign="end";
-
-                    ctx.fillText(Ax ,j * panelsize+panelsize-1, i * panelsize+panelsize-2);
+                    // ctx.font ='1px 微软雅黑 bold';
+                    // ctx.fillStyle = '#000000';
+                    // var Ax=String.fromCharCode(64+i+1)+(j+1).toString();
+                    //
+                    // ctx.textAlign="end";
+                    //
+                    // ctx.fillText(Ax ,j * panelsize+panelsize-1, i * panelsize+panelsize-2);
 
 
 
