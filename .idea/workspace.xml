@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc6ae1c1-fa5a-4119-806c-544e51897db4" name="Default" comment="改成3类聚类 然后升序染色 完成">
+      <change beforePath="" afterPath="$PROJECT_DIR$/test-weiyumeihuatu.html" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/test-384的数据拉出来用xxxxxx.html" afterPath="$PROJECT_DIR$/test-384的数据拉出来用xxxxxx.html" />
+      <change beforePath="$PROJECT_DIR$/test-yangsujiehuatu.html" afterPath="$PROJECT_DIR$/test-yangsujiehuatu.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -43,23 +45,52 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test-384的数据拉出来用xxxxxx.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test-384的数据拉出来用xxxxxx.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test-384的数据拉出来用xxxxxx.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="2281" column="13" lean-forward="false" selection-start-line="2281" selection-start-column="13" selection-end-line="2281" selection-end-column="13" />
+            <state relative-caret-position="23">
+              <caret line="161" column="4" lean-forward="false" selection-start-line="161" selection-start-column="4" selection-end-line="161" selection-end-column="4" />
               <folding>
                 <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#5057#5510#0" expanded="false" />
-                <element signature="e#5530#6010#0" expanded="false" />
-                <element signature="e#6035#6633#0" expanded="false" />
-                <element signature="e#7740#63431#0" expanded="false" />
-                <element signature="e#63829#65683#0" expanded="false" />
-                <element signature="e#74207#81883#0" expanded="false" />
-                <marker date="1521195955241" expanded="false" signature="2984:2994" ph="..." />
+                <element signature="e#5074#5527#0" expanded="false" />
+                <element signature="e#5547#6027#0" expanded="false" />
+                <element signature="e#6052#6650#0" expanded="false" />
+                <element signature="e#7757#63448#0" expanded="false" />
+                <element signature="e#63846#65700#0" expanded="false" />
+                <element signature="e#74224#81900#0" expanded="false" />
+                <marker date="1521198606201" expanded="false" signature="2984:2994" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test-yangsujiehuatu.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test-yangsujiehuatu.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="385">
+              <caret line="176" column="5" lean-forward="true" selection-start-line="176" selection-start-column="5" selection-end-line="176" selection-end-column="5" />
+              <folding>
+                <element signature="e#5174#5627#0" expanded="false" />
+                <element signature="e#5647#6127#0" expanded="false" />
+                <element signature="e#7167#7228#0" expanded="false" />
+                <element signature="e#7939#63630#0" expanded="false" />
+                <element signature="e#63650#112412#0" expanded="false" />
+                <element signature="e#131098#131464#0" expanded="false" />
+                <element signature="e#133533#134156#0" expanded="false" />
+                <element signature="e#134190#134897#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="demo.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/demo.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="278">
+              <caret line="26" column="29" lean-forward="false" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -75,10 +106,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>javascript</find>
-      <find>centroids</find>
-      <find>ordercentroids</find>
-      <find>k</find>
       <find>data[i][2]=</find>
       <find>Zoom</find>
       <find>toolbox</find>
@@ -87,7 +114,6 @@
       <find>clustering</find>
       <find>9</find>
       <find>select</find>
-      <find>selected</find>
       <find>x</find>
       <find>xAxis</find>
       <find>hierarchicalKMeans</find>
@@ -105,6 +131,11 @@
       <find>zoom</find>
       <find>data[a][8]</find>
       <find>daochu</find>
+      <find>hang</find>
+      <find>jizuobiao[</find>
+      <find>datajizuobiao[</find>
+      <find>selected</find>
+      <find>init</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -136,6 +167,8 @@
         <option value="$PROJECT_DIR$/test-改成聚成3类.html" />
         <option value="$PROJECT_DIR$/test-384的数据拉出来用.html" />
         <option value="$PROJECT_DIR$/test-384的数据拉出来用xxxxxx.html" />
+        <option value="$PROJECT_DIR$/test-yangsujiehuatu.html" />
+        <option value="$PROJECT_DIR$/demo.html" />
       </list>
     </option>
   </component>
@@ -256,7 +289,8 @@
       <workItem from="1521006380851" duration="7471000" />
       <workItem from="1521082447987" duration="6623000" />
       <workItem from="1521171125433" duration="14282000" />
-      <workItem from="1521189050079" duration="3608000" />
+      <workItem from="1521189050079" duration="6226000" />
+      <workItem from="1521429236005" duration="20055000" />
     </task>
     <task id="LOCAL-00001" summary="准备加入一个滑块">
       <created>1520695847114</created>
@@ -321,11 +355,18 @@
       <option name="project" value="LOCAL" />
       <updated>1521022206374</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="改成3类聚类 然后升序染色 完成">
+      <created>1521196369194</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1521196369194</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="217348000" />
+    <option name="totallyTimeSpent" value="240021000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
@@ -420,14 +461,18 @@
           <line>257</line>
           <option name="timeStamp" value="28" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/test-yangsujiehuatu.html</url>
+          <line>4309</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="30" />
+      <option name="time" value="32" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test3.html" />
-    <entry file="file://$PROJECT_DIR$/混合显示1.html" />
     <entry file="file://$PROJECT_DIR$/canvas画布-可框选-完成(1)(1).html" />
     <entry file="file://$PROJECT_DIR$/混合显示1.html" />
     <entry file="file://$PROJECT_DIR$/test2.html" />
@@ -685,19 +730,44 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test-384的数据拉出来用xxxxxx.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="2281" column="13" lean-forward="false" selection-start-line="2281" selection-start-column="13" selection-end-line="2281" selection-end-column="13" />
+        <state relative-caret-position="23">
+          <caret line="161" column="4" lean-forward="false" selection-start-line="161" selection-start-column="4" selection-end-line="161" selection-end-column="4" />
           <folding>
             <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#5057#5510#0" expanded="false" />
-            <element signature="e#5530#6010#0" expanded="false" />
-            <element signature="e#6035#6633#0" expanded="false" />
-            <element signature="e#7740#63431#0" expanded="false" />
-            <element signature="e#63829#65683#0" expanded="false" />
-            <element signature="e#74207#81883#0" expanded="false" />
-            <marker date="1521195955241" expanded="false" signature="2984:2994" ph="..." />
+            <element signature="e#5074#5527#0" expanded="false" />
+            <element signature="e#5547#6027#0" expanded="false" />
+            <element signature="e#6052#6650#0" expanded="false" />
+            <element signature="e#7757#63448#0" expanded="false" />
+            <element signature="e#63846#65700#0" expanded="false" />
+            <element signature="e#74224#81900#0" expanded="false" />
+            <marker date="1521198606201" expanded="false" signature="2984:2994" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="26" column="29" lean-forward="false" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-yangsujiehuatu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="176" column="5" lean-forward="true" selection-start-line="176" selection-start-column="5" selection-end-line="176" selection-end-column="5" />
+          <folding>
+            <element signature="e#5174#5627#0" expanded="false" />
+            <element signature="e#5647#6127#0" expanded="false" />
+            <element signature="e#7167#7228#0" expanded="false" />
+            <element signature="e#7939#63630#0" expanded="false" />
+            <element signature="e#63650#112412#0" expanded="false" />
+            <element signature="e#131098#131464#0" expanded="false" />
+            <element signature="e#133533#134156#0" expanded="false" />
+            <element signature="e#134190#134897#0" expanded="false" />
           </folding>
         </state>
       </provider>

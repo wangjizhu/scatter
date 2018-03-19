@@ -69,7 +69,7 @@
 <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
 <div>
     <!--//id=1 2 3 直接用户数组小标 不用判断-->
-    <button id="0" class="button_color button0" onclick="setcolorscatter(this)">Black</button>
+    <button id="0" class="button_color button0" onclick="setcolorscatter(this)">NTC</button>
     <button id="1" class="button_color button1" onclick="setcolorscatter(this)">Green</button>
     <button id="2" class="button_color button2" onclick="setcolorscatter(this)">Blue</button>
     <button id="3" class="button_color button3" onclick="setcolorscatter(this)">red</button>
@@ -149,20 +149,7 @@ function exportCSV (aLink) {
 
     data=datadikaer;
 
-
-
-
-
-
-
-
-
     var str="Numon384,Well96,SNP,FAM,HEX,result\n";
-
-    
-
-
-
     for (var a=0;a<data.length;a++)
     {
         var SNP;
@@ -2850,6 +2837,10 @@ var weizhi2=0;
                 xAxis: [{
                     type: 'value',
                     scale: true,
+                    splitNumber: 9,
+
+
+
                     min: function(value) {
                         return value.min-(value.max-value.min)*0.1 ;
                     },
@@ -2877,6 +2868,9 @@ var weizhi2=0;
                     {
                         type: 'value',
                         scale: true,
+                        splitNumber: 9,
+
+
                         min: function(value) {
                             return value.min-(value.max-value.min)*0.1 ;
                         },
@@ -3463,9 +3457,10 @@ var cococo=[
                         ctx.arc(panelsize / 2 + j * panelsize, panelsize / 2 + i * panelsize, panelsize * 0.38, 0, Math.PI * 2, true); //画圈圈
                         ctx.fill();
                     }
+
                     if(cococo[i+1][j+1]==4) {
 
-                        ctx.strokeStyle = "#000000";
+                        ctx.strokeStyle = "#ff1d2d";
                         ctx.moveTo(j * panelsize,i * panelsize);
                         ctx.lineTo(j * panelsize+ panelsize,i* panelsize+panelsize);
                         ctx.moveTo(j * panelsize,i* panelsize+panelsize);
