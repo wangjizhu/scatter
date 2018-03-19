@@ -108,28 +108,28 @@
     <!--Ystart: <input type="text" id="y1" value="700"/>-->
     <!--Yend: <input type="text" id="y2" value="800"/>-->
     <!--<button id="8" class="change" onclick="changY()">改变Y轴</button>-->
-<div>
-    <form id="list1" method="post" action="">
-        <p\>五张板子
-        <input type="radio" name="banzi" value="0">0
-        <input type="radio" name="banzi" value="1">1
-        <input type="radio" name="banzi" value="2">2
-        <input type="radio" name="banzi" value="3">3
-        <input type="radio" name="banzi" value="4">4
-    </form>
+<!--<div>-->
+    <!--<form id="list1" method="post" action="">-->
+        <!--<p\>五张板子-->
+        <!--<input type="radio" name="banzi" value="0">0-->
+        <!--<input type="radio" name="banzi" value="1">1-->
+        <!--<input type="radio" name="banzi" value="2">2-->
+        <!--<input type="radio" name="banzi" value="3">3-->
+        <!--<input type="radio" name="banzi" value="4">4-->
+    <!--</form>-->
 
-    <form id="list2" method="post" action="">
-        四个通道<input type="radio" name="tongdao" value="1">00
-        <input type="radio" name="tongdao" value="1">01
-        <input type="radio" name="tongdao" value="2">10
-        <input type="radio" name="tongdao" value="3">11
-    </form>
-
-
-    <button id="9" onclick="choose()">选择</button>
+    <!--<form id="list2" method="post" action="">-->
+        <!--四个通道<input type="radio" name="tongdao" value="1">00-->
+        <!--<input type="radio" name="tongdao" value="1">01-->
+        <!--<input type="radio" name="tongdao" value="2">10-->
+        <!--<input type="radio" name="tongdao" value="3">11-->
+    <!--</form>-->
 
 
-</div>
+    <!--<button id="9" onclick="choose()">选择</button>-->
+
+
+<!--</div>-->
 
 </div>
 
@@ -2294,70 +2294,7 @@ var weizhi2=0;
         }
 
 
-        function choose () {
-            var m, n,a,b;
-        data=[];
 
-
-            var radios = document.getElementById("list1").banzi;//获取id为list下的所有name为user的值的集合
-            for (var i = 0; i < radios.length; i++) {//循环值得集合
-                if (radios[i].checked) {//通过checked属性判断是否被选中
-                    m = radios[i].value//将被选择的radio的值赋给变量userid
-                }
-            }
-
-
-            radios = document.getElementById("list2").banzi;
-            for (var i = 0; i < radios.length; i++) {//循环值得集合
-                if (radios[i].checked) {//通过checked属性判断是否被选中
-                    n = radios[i].value//将被选择的radio的值赋给变量userid
-                }
-
-            }
-
-            switch (n) {
-                case "0":
-                    a = 0;
-                    b = 0;
-                    break;
-                case "1":
-                    a = 0;
-                    b = 1;
-                    break;
-                case "2":
-                    a = 1;
-                    b = 0;
-                    break;
-                case "3":
-                    a = 1;
-                    b = 1;
-                    break;
-            }
-
-
-
-            for (var a=0;a<datarawseries[m].length;a++)
-            {
-                if((Math.floor(a/24))%2==a&&(a%24)%2==b)
-                    data.push([datarawseries[m][a][0],datarawseries[m][a][1],5,0,0,0,0,1,a]);
-
-            }
-
-
-
-            var datadikaer =data;       //datadikaer初始化
-
-            for (var i=0;i<datadikaer.length;i++)    //datajizuobiao初始化
-            {
-                r=Math.log10((Math.sqrt(datadikaer[i][0]*datadikaer[i][0]+datadikaer[i][1]*datadikaer[i][1])));
-                therta=Math.atan(datadikaer[i][1]/datadikaer[i][0]);
-
-                datajizuobiao.push([r,therta,datadikaer[i][2],datadikaer[i][3],datadikaer[i][4],datadikaer[i][5],datadikaer[i][6],datadikaer[i][7]]);
-
-            }
-
-
-        }
 
         // for ( i = 0; i < 4; i++) {
         //     data.push([random(990), random(990),5,0,0,0,0,1,0]);
@@ -2580,7 +2517,7 @@ var weizhi2=0;
 
             for (var i=0;i<data.length;i++)
             {
-                if(data[i][2]>0)
+                if(data[i][2]!=0&&data[i][2]!=4)   //NTC和叉叉不参与聚类
                     dataclustering.push([data[i][0]*1000,data[i][1]*1000,i]); //放大一千倍放进去聚类
             }
 
@@ -3342,22 +3279,25 @@ var cococo=[
             var ctx = oncanvas.getContext('2d');
 
 
-            ctx.clearRect(0,0,1000,1000);
+            ctx.clearRect(0,0,1000,1000);   //这里应该是获取画布的长和宽
 
         //----------------------------画边框
 
-            for (var i = 0; i < hang; i++)
+            for (var i = 1; i <= hang; i++)
             {
                 ctx.beginPath();
                 ctx.lineWidth=2;
-                ctx.strokeRect(0, i * panelsize+0.4*panelsize, 0.4*panelsize, panelsize);
+                ctx.strokeRect(0, (i-1) * panelsize+0.4*panelsize, 0.4*panelsize, panelsize);
 
 
-                if (hahaha[i][0]>0)  //如果整个行被选中
+                if (hahaha[i][0]>0 || nonono[i][0]>0)  //如果整个行被选中
                 {
+
+
+                   // console.log(i);
                     ctx.fillStyle =ctx.strokeStyle = 'rgba(55,55,55,0.5)';
 
-                    ctx.fillRect(0, i * panelsize+0.4*panelsize, 0.4*panelsize, panelsize);
+                    ctx.fillRect(0, (i-1) * panelsize+0.4*panelsize, 0.4*panelsize, panelsize);
 
                 }
 
@@ -3366,24 +3306,25 @@ var cococo=[
             }
 
 
-            for (var j = 0; j < lie; j++)
+            for (var j = 1; j <= lie; j++)
             {
 
 
                 ctx.beginPath();
                 ctx.lineWidth=2;
-                ctx.strokeRect(j * panelsize+0.4*panelsize, 0, panelsize, 0.4*panelsize);
+                ctx.strokeRect((j-1) * panelsize+0.4*panelsize, 0, panelsize, 0.4*panelsize);
+
+                if (hahaha[0][j]>0 || nonono[0][j]>0)  //如果整个被选中
+                {
+                   // console.log(i);
+                    ctx.fillStyle =ctx.strokeStyle = 'rgba(55,55,55,0.5)';
+
+                    ctx.fillRect((j-1) * panelsize+0.4*panelsize,0,panelsize, 0.4*panelsize);
+
+                }
                 ctx.closePath();
 
-
             }
-
-
-
-
-
-
-
 
             //---------------------------画面板
             ctx.save();
@@ -3535,6 +3476,34 @@ var cococo=[
                 nonono[balldownY1+1][balldownX1+1]=1;
 
 
+                // hahaha=[];
+                for (var a = 1; a <= hang; a++)
+                {
+                    if (nonono[a][0]>0)  //如果整个行被选中
+                    {
+                        //console.log("test");
+                        for(var b=1;b<=lie;b++)
+                        {
+                            nonono[a][b]=1;
+                        }
+                    }
+
+                }
+                for (var b = 1; b <= lie; b++)
+                {
+                    if (nonono[0][b]>0)  //如果整个行被选中
+                    {
+                        //console.log("test");
+                        for(var a=1;a<=hang;a++)
+                        {
+                            nonono[a][b]=1;
+                        }
+                    }
+
+                }
+
+
+
 
 
 
@@ -3582,6 +3551,32 @@ var cococo=[
                         for (j = y1; j <= y2; j++)
                             nonono[j+1][i+1] = 1;
 
+
+                    for (var a = 1; a <= hang; a++)
+                    {
+                        if (nonono[a][0]>0)  //如果整个行被选中
+                        {
+                            console.log("test");
+                            for(var b=1;b<=lie;b++)
+                            {
+                                nonono[a][b]=1;
+                            }
+                        }
+
+                    }
+                    for (var b = 1; b <= lie; b++)
+                    {
+                        if (nonono[0][b]>0)  //如果整个行被选中
+                        {
+                            //console.log("test");
+                            for(var a=1;a<=hang;a++)
+                            {
+                                nonono[a][b]=1;
+                            }
+                        }
+
+                    }
+
                     refreshpanel();
 
 
@@ -3622,25 +3617,25 @@ var cococo=[
                     //如果按了control就添加 否则就以选中为准
                     if(ev.ctrlKey)
                     {
-                        for (var i = 0; i < hang; i++) {
-                            for (var j = 0; j < lie; j++) {
-                                if(hahaha[i+1][j+1]+nonono[i+1][j+1]>=1)
-                                    hahaha[i+1][j+1] = 1;
+                        for (var i = 0; i < hang+1; i++) {
+                            for (var j = 0; j < lie+1; j++) {
+                                if(hahaha[i][j]+nonono[i][j]>=1)
+                                    hahaha[i][j] = 1;
                                 else
-                                    hahaha[i+1][j+1]=0;
-                                nonono[i+1][j+1] = 0;
+                                    hahaha[i][j]=0;
+                                nonono[i][j] = 0;
                             }
                         }
                     }
                     else
                     {
-                        for (var i = 0; i < hang; i++) {
-                            for (var j = 0; j < lie; j++) {
+                        for (var i = 0; i < hang+1; i++) {
+                            for (var j = 0; j < lie+1; j++) {
                                 //if(hahaha[i][j]+nonono[i][j]>=1)
-                                hahaha[i+1][j+1] = nonono[i+1][j+1];
+                                hahaha[i][j] = nonono[i][j];
                                 // else
                                 //     hahaha[i][j]=0;
-                                nonono[i+1][j+1] = 0;
+                                nonono[i][j] = 0;
                             }
                         }
                     }
