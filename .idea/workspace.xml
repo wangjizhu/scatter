@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bc6ae1c1-fa5a-4119-806c-544e51897db4" name="Default" comment="改成3类聚类 然后升序染色 完成">
-      <change beforePath="" afterPath="$PROJECT_DIR$/test-weiyumeihuatu.html" />
+    <list default="true" id="bc6ae1c1-fa5a-4119-806c-544e51897db4" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/test-384的数据拉出来用xxxxxx.html" afterPath="$PROJECT_DIR$/test-384的数据拉出来用xxxxxx.html" />
-      <change beforePath="$PROJECT_DIR$/test-yangsujiehuatu.html" afterPath="$PROJECT_DIR$/test-yangsujiehuatu.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -48,7 +45,7 @@
       <file leaf-file-name="test-384的数据拉出来用xxxxxx.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test-384的数据拉出来用xxxxxx.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
+            <state relative-caret-position="2507">
               <caret line="161" column="4" lean-forward="false" selection-start-line="161" selection-start-column="4" selection-end-line="161" selection-end-column="4" />
               <folding>
                 <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
@@ -69,8 +66,8 @@
       <file leaf-file-name="test-yangsujiehuatu.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test-yangsujiehuatu.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="176" column="5" lean-forward="true" selection-start-line="176" selection-start-column="5" selection-end-line="176" selection-end-column="5" />
+            <state relative-caret-position="-995">
+              <caret line="81" column="25" lean-forward="false" selection-start-line="81" selection-start-column="22" selection-end-line="81" selection-end-column="25" />
               <folding>
                 <element signature="e#5174#5627#0" expanded="false" />
                 <element signature="e#5647#6127#0" expanded="false" />
@@ -88,7 +85,7 @@
       <file leaf-file-name="demo.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/demo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
+            <state relative-caret-position="598">
               <caret line="26" column="29" lean-forward="false" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
               <folding />
             </state>
@@ -290,7 +287,8 @@
       <workItem from="1521082447987" duration="6623000" />
       <workItem from="1521171125433" duration="14282000" />
       <workItem from="1521189050079" duration="6226000" />
-      <workItem from="1521429236005" duration="20055000" />
+      <workItem from="1521429236005" duration="20080000" />
+      <workItem from="1521466880730" duration="361000" />
     </task>
     <task id="LOCAL-00001" summary="准备加入一个滑块">
       <created>1520695847114</created>
@@ -362,15 +360,21 @@
       <option name="project" value="LOCAL" />
       <updated>1521196369194</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="走了">
+      <created>1521466603618</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1521466603618</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="240021000" />
+    <option name="totallyTimeSpent" value="240407000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -406,7 +410,8 @@
     <MESSAGE value="质心升序" />
     <MESSAGE value="增加极坐标 设置其实xy轴位置" />
     <MESSAGE value="改成3类聚类 然后升序染色 完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="改成3类聚类 然后升序染色 完成" />
+    <MESSAGE value="走了" />
+    <option name="LAST_COMMIT_MESSAGE" value="走了" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -464,7 +469,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/test-yangsujiehuatu.html</url>
           <line>4309</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="30" />
         </line-breakpoint>
       </breakpoints>
@@ -730,7 +734,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test-384的数据拉出来用xxxxxx.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
+        <state relative-caret-position="2507">
           <caret line="161" column="4" lean-forward="false" selection-start-line="161" selection-start-column="4" selection-end-line="161" selection-end-column="4" />
           <folding>
             <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
@@ -749,7 +753,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/demo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
+        <state relative-caret-position="598">
           <caret line="26" column="29" lean-forward="false" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
           <folding />
         </state>
@@ -757,8 +761,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test-yangsujiehuatu.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="176" column="5" lean-forward="true" selection-start-line="176" selection-start-column="5" selection-end-line="176" selection-end-column="5" />
+        <state relative-caret-position="-995">
+          <caret line="81" column="25" lean-forward="false" selection-start-line="81" selection-start-column="22" selection-end-line="81" selection-end-column="25" />
           <folding>
             <element signature="e#5174#5627#0" expanded="false" />
             <element signature="e#5647#6127#0" expanded="false" />
