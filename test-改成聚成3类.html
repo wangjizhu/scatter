@@ -270,6 +270,41 @@ function flitter() {
 
 
 
+<<<<<<< HEAD
+    function jizuobiao()
+    {
+        if (zuobiaoxi==0)
+        {
+            zuobiaoxi=1;
+
+            var tempselected=[];   //在极坐标中标记选中的点
+        for(var n=0;n<selected.length;n++)
+        {
+            tempselected.push([   datajizuobiao[selected[n][2]][0],  datajizuobiao[selected[n][2]][1], selected[n][2] ]);
+
+        }
+
+
+            selected=tempselected;
+
+
+         //   selected=[];//选择清空
+
+            for (var i = 0; i < datadikaer.length; i++) {
+                for (var j = 2; j < 9; j++)
+
+                    datajizuobiao[i][j] = datadikaer[i][j];
+
+            }
+
+            data = datajizuobiao;      //data指向极坐标
+
+            refreshscatter();
+        }
+
+
+    }
+=======
 
         function jizuobiao()
         {
@@ -291,12 +326,34 @@ function flitter() {
                 refreshscatter();
             }
 
+>>>>>>> refs/remotes/origin/master
 
         }
 
+<<<<<<< HEAD
+zuobiaoxi=0;
+
+        var tempselected=[];   //在笛卡尔坐标中标记选中的点
+        for(var n=0;n<selected.length;n++)
+        {
+            tempselected.push([   datadikaer[selected[n][2]][0],  datadikaer[selected[n][2]][1], selected[n][2] ]);
+
+        }
+
+
+        selected=tempselected;
+
+
+
+
+      //  selected=[];  //选择清空
+        for (var i = 0; i < datadikaer.length; i++) {
+            for (var j = 2; j < 9; j++)
+=======
         function dikaer()
         {
             if(zuobiaoxi==1) {
+>>>>>>> refs/remotes/origin/master
 
         zuobiaoxi=0;
                 selected=[];  //选择清空
@@ -487,7 +544,11 @@ function flitter() {
 
 
             data[n][3]=data[n][4]=data[n][5]=data[n][6]=data[n][7]=0;
+<<<<<<< HEAD
+
+=======
            //黑色
+>>>>>>> refs/remotes/origin/master
 
         }
 
@@ -1100,7 +1161,7 @@ myChart.on('brush', function ()          //这个事件用来出发清除panel�
    //         refreshscatter();
 
 
-            console.log('hahaha');
+            //console.log('hahaha');
             for (var sIdx = 0; sIdx < zhuadaode.selected.length-1; sIdx++)   //减一的目的是吧select的序列减去
             {
                 // 对于每个 series：

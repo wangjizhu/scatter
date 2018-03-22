@@ -75,12 +75,21 @@
     <button id="3" class="button_color button3" onclick="setcolorscatter(this)">red</button>
     <button id="4" class="button_color button4" onclick="setcolorscatter(this)">打叉叉</button>
 
+<<<<<<< HEAD
+    <button id="5" onclick="clusteringonce()">聚类</button>
+    <button id="6" onclick="yiwanci()">一万次</button>
+
+    <button id="8" onclick="dikaer()">笛卡尔</button>
+    <button id="7" onclick="jizuobiao()">极坐标</button>
+
+=======
     <button id="5" onclick="clustering()">聚类</button>
     <button id="6" onclick="yiwanci()">一万次</button>
     <button id="8" onclick="dikaer()">笛卡尔</button>
     <button id="7" onclick="jizuobiao()">极坐标</button>
 
 
+>>>>>>> refs/remotes/origin/master
     <!--<button class="button">Button</button>-->
 </div>
 
@@ -219,6 +228,17 @@ function flitter() {
     var cishu=500;
     var quanlity=0.80;
 
+<<<<<<< HEAD
+
+
+
+
+
+
+
+
+var data=[];
+=======
 var zuobiaoxi=0; //目前选择的状态标记0表示笛卡尔 1表示极坐标
 
 
@@ -228,11 +248,73 @@ var zuobiaoxi=0; //目前选择的状态标记0表示笛卡尔 1表示极坐标
 
 var data=[];
 var datajizuobiao=[];
+>>>>>>> refs/remotes/origin/master
     var random = function (max){
         return ((Math.random()*max));
     };
 
    // 将数据装载到数组中
+<<<<<<< HEAD
+    for (var i = 0; i < 8; i++) {
+        data.push([random(2)+10, random(2)+10,5,0,0,0,0,1,0]);
+    };
+    for (var i = 0; i < 24; i++) {
+        data.push([random(10)+10, random(20)+30,5,0,0,0,0,1,0]);
+    };
+    for (var i = 0; i < 40; i++) {
+        var a=random(10)
+        data.push([random(10)+a+30, random(10)+a+30,5,0,0,0,0,1,0]);
+    };
+    for (var i = 0; i < 24; i++) {
+        data.push([random(20)+30, random(10)+10,5,0,0,0,0,1,0]);
+    };
+
+
+
+
+var datadikaer=data;
+
+var datajizuobiao=[];
+{
+
+    for (var i=0;i<datadikaer.length;i++)
+    {
+        var x0=datadikaer[i][0];
+        var y0=datadikaer[i][1];
+
+        var r=Math.sqrt(x0*x0+y0*y0);
+
+        var therta=Math.atan(y0/x0)*500;
+
+        datajizuobiao.push([Math.r,therta,datadikaer[i][2],datadikaer[i][3],datadikaer[i][4],datadikaer[i][5],datadikaer[i][6],datadikaer[i][7],datadikaer[i][8]]);
+
+    }
+
+
+
+}
+
+
+
+
+
+         function jizuobiao()
+        {
+
+            data=datajizuobiao;
+            refreshscatter();
+        }
+
+        function dikaer()
+        {
+
+
+            data=datadikaer;
+            refreshscatter();
+
+        }
+
+=======
     for (var i = 0; i < 5; i++) {
         data.push([random(20)+100, random(20)+100,5,0,0,0,0,1,0]);
     };
@@ -308,6 +390,7 @@ zuobiaoxi=0;
 }
 
 
+>>>>>>> refs/remotes/origin/master
 
 
 
@@ -512,6 +595,15 @@ zuobiaoxi=0;
         //refreshscatter();
 
 
+<<<<<<< HEAD
+        colorscattortopanel();
+        refreshscatter();
+        refreshpanel();
+
+
+
+=======
+>>>>>>> refs/remotes/origin/master
     }
 
 
@@ -525,6 +617,50 @@ var nnn=0;
 
     //--------------------聚类
 
+<<<<<<< HEAD
+function clusteringonce()
+{
+
+    clustering();
+
+
+
+
+
+    colorscattortopanel();
+    refreshscatter();
+    refreshpanel();
+
+
+
+
+}
+
+
+function jizuobiaoclustering()
+
+{
+
+    result = ecStat.clustering.hierarchicalKMeans(data, 4, false);
+
+    for (var i = 0; i < 96; i++) {
+
+
+        data[i][2] = result.clusterAssment[i][0];
+
+
+    }
+
+    refreshscatter();
+
+
+}
+
+
+
+
+=======
+>>>>>>> refs/remotes/origin/master
         function clustering() {
 
             var count = 0;
@@ -620,7 +756,11 @@ var nnn=0;
 
                     for (var n = 0; n < ordercentroids.length; n++) {
                         if (result.clusterAssment[i][0] === ordercentroids[n][2]) {
+<<<<<<< HEAD
+                            data[i][2] = ordercentroids[n][3];
+=======
                             data[i][2] = ordercentroids[n][3]
+>>>>>>> refs/remotes/origin/master
                         }
 
                     }
@@ -630,11 +770,19 @@ var nnn=0;
 
 
 
+<<<<<<< HEAD
+                // colorscattortopanel();
+                //
+                //
+                // refreshscatter();
+                // refreshpanel();
+=======
                 colorscattortopanel();
 
 
                 refreshscatter();
                 refreshpanel();
+>>>>>>> refs/remotes/origin/master
              //   console.log(nnn++);
 
 
@@ -770,6 +918,13 @@ var nnn=0;
 
                 xAxis: {
                     type: 'value',
+<<<<<<< HEAD
+                    //min: 'dataMin',
+                 //   max: 'dataMax',
+                    name:'FAM'
+
+
+=======
                     scale: true,
                     min: function(value) {
                         return value.min-(value.max-value.min)*0.1 ;
@@ -790,6 +945,7 @@ var nnn=0;
                         // lineHeight: ...,
 
                     }
+>>>>>>> refs/remotes/origin/master
                 }
                 ,
 
@@ -797,6 +953,12 @@ var nnn=0;
                 yAxis:
                     {
                         type: 'value',
+<<<<<<< HEAD
+                      //  min: 'dataMin',
+                    //    max: 'dataMax',
+                        name:'HEX'
+
+=======
                         scale: true,
                         min: function(value) {
                             return value.min-(value.max-value.min)*0.1 ;
@@ -816,6 +978,7 @@ var nnn=0;
                             // lineHeight: ...,
 
                         }
+>>>>>>> refs/remotes/origin/master
                     }
                 ,
 
@@ -826,6 +989,17 @@ var nnn=0;
 
                     {   // 这个dataZoom组件，也控制x轴。
                         type: 'inside', // 这个 dataZoom 组件是 inside 型 dataZoom 组件
+<<<<<<< HEAD
+                        xAxisIndex: 0
+                        // start: 10,      // 左边在 10% 的位置。
+                        // end: 90         // 右边在 60% 的位置。
+                    },
+                    {
+                        type: 'inside',
+                        yAxisIndex: 0
+                        // start: 10,
+                        // end: 90
+=======
                         xAxisIndex: 0,
                         filterMode: 'empty',
                          // start: 10,      // 左边在 10% 的位置。
@@ -837,6 +1011,7 @@ var nnn=0;
                         filterMode: 'empty',
                          // start: 10,
                          // end: 110
+>>>>>>> refs/remotes/origin/master
                     }
 
 
@@ -890,9 +1065,15 @@ var nnn=0;
 
                         itemStyle: {
                             color: '#008cba'
+<<<<<<< HEAD
+                        }
+
+
+=======
                         },
 
                         symbol:'rect',
+>>>>>>> refs/remotes/origin/master
 
                     },
 
@@ -909,7 +1090,11 @@ var nnn=0;
                         itemStyle: {
                             color: '#b80af4'
                         },
+<<<<<<< HEAD
+
+=======
                         symbol: 'triangle'
+>>>>>>> refs/remotes/origin/master
 
 
                     },
@@ -1041,7 +1226,11 @@ var nnn=0;
 
             var num=obj.id;
 
+<<<<<<< HEAD
+          //  console.log(num);
+=======
             console.log(num);
+>>>>>>> refs/remotes/origin/master
 
 
             //去跟新到每个点序列里面
