@@ -31,7 +31,7 @@
 <script type="text/javascript">
 
 
-        var panelsize=70; //panel棋盘边长可调节
+        var panelsize=80; //panel棋盘边长可调节
 
         var hang=8,lie=12;  //棋盘行列数 可调节
 
@@ -115,11 +115,14 @@
             for (var j = 0; j <= lie; j++)
                 temp.push(9);
 
+            temp=[];
             cococo.push(temp);
 
         }
 
-
+        cococo[3][5]=3;
+        cococo[3][8]=4;
+        cococo[3][2]=2;
 
 
         var selected=[]; //这个全局数组标志
@@ -213,13 +216,13 @@
                 ctx.fillStyle = '#000000';
                 var Ax=j.toString();
 
-                ctx.textAlign="end";
+                ctx.textAlign="center";
 
-                ctx.fillText(Ax ,j*panelsize, 0.3*panelsize);
+                ctx.fillText(Ax ,(j-0.1)*panelsize, 0.3*panelsize);
 
 
 
-                if (hahaha[0][j]>0 || nonono[0][j]>0)  //如果整个被选中
+                if (hahaha[0][j]>0 || nonono[0][j]>0)  //如果整个被选中s
                 {
                    // console.log(i);
                     ctx.fillStyle =ctx.strokeStyle = 'rgba(55,55,55,0.5)';
@@ -238,10 +241,7 @@
             {
                 for (var j = 0; j < lie; j++)
                 {
-                    ctx.fillStyle = "#000000";
-                    ctx.font =(0.15* panelsize).toString()+'px 仿宋 bold';
-                    ctx.textAlign="center";
-                    ctx.fillText("Hello" ,(j+0.5)*panelsize, (i+0.5)*panelsize);
+
 
 
 
@@ -330,6 +330,17 @@
                         // ctx.fill();
                     }
 
+
+
+                    ctx.fillStyle = "#000000";
+                    ctx.font =(0.15* panelsize).toString()+'px 仿宋 bold';
+                    ctx.textAlign="center";
+                    ctx.fillText("Sample" ,(j+0.5)*panelsize, (i+0.5)*panelsize);
+
+
+
+
+
                     ctx.closePath();
 
 
@@ -342,9 +353,20 @@
 
             ctx.restore();
 
+        }
+
+
+        function setstring(n,samplename)
+        {
+
+
+
+
+
 
 
         }
+
 
 
         //--------------------这个函数在于不去绘制任何图形只是操作数据结构而已
