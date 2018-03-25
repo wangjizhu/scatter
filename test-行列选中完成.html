@@ -162,6 +162,7 @@ function exportCSV (aLink) {
             case 3 : resultfh="XX"; break;
             case 4 : resultfh="Undetermined"; break;
             case 5 : resultfh="Undefined"; break;
+            case 6 : resultfh="Empty"; break;
 
 
         }
@@ -2288,7 +2289,20 @@ var weizhi2=0;
         for (var a=0;a<datarawseries[fanyingban].length;a++)
         {
             if((Math.floor(a/24))%2==weizhi1&&(a%24)%2==weizhi2)
-                data.push([datarawseries[fanyingban][a][0],datarawseries[fanyingban][a][1],5,0,0,0,0,1,a]);
+            {
+
+
+                data.push([datarawseries[fanyingban][a][0], datarawseries[fanyingban][a][1], 5, 0, 0, 0, 0, 1, a]); //5是灰色的还没有聚类状态
+
+
+
+
+            }
+
+
+
+
+
 
 
         }
