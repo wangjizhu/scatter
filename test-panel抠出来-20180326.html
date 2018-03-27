@@ -6,7 +6,7 @@
 
 
     <style>
-        canvas { border: 1px solid black; }
+        /*canvas { border: 1px solid black; }*/
 
     </style>
 
@@ -30,6 +30,23 @@
 
         var hang=8,lie=12;  //棋盘行列数 可调节
 
+        var color_ground;
+
+        var color_black='#000000';
+
+        var color_green="#4caf50";
+
+        var color_blue="#008cba";
+
+        var color_red="#b80af4";
+
+        var color_cross="#ff1d2d";
+
+        var color_gray ='rgba(55,55,55,0.5)';
+
+
+
+
         // var hahaha=[
         //     [0,0,0,0,0,0,0,0,0,0,0,0,0],
         //     [0,0,0,0,0,0,0,0,0,0,0,0,0],
@@ -45,8 +62,6 @@
         // ];//panel被选中数组
         var hahaha=[];
         var temp=[];
-
-
         for (var i=0;i<=hang;i++)
         {
 
@@ -114,7 +129,7 @@
             cococo.push(temp);
             temp=[];
         }
-
+        cococo[1][1]=0;
         cococo[3][5]=3;
         cococo[3][8]=4;
         cococo[3][2]=2;
@@ -188,7 +203,7 @@
 
 
             ctx.clearRect(0,0,1000,1000);   //这里应该是获取画布的长和宽
-
+            ctx.fillStyle =ctx.strokeStyle= '#000000';
         //----------------------------画边框
 
             for (var i = 1; i <= hang; i++)
@@ -213,7 +228,7 @@
 
 
                    // console.log(i);
-                    ctx.fillStyle =ctx.strokeStyle = 'rgba(55,55,55,0.5)';
+                    ctx.fillStyle  = 'rgba(55,55,55,0.5)';
 
                     ctx.fillRect(0, (i-1) * panelsize+0.4*panelsize, 0.4*panelsize, panelsize); //表头
 
@@ -245,7 +260,7 @@
                 if (hahaha[0][j]>0 || nonono[0][j]>0)  //如果整个被选中s
                 {
                    // console.log(i);
-                    ctx.fillStyle =ctx.strokeStyle = 'rgba(55,55,55,0.5)';
+                    ctx.fillStyle  = 'rgba(55,55,55,0.5)';
 
                     ctx.fillRect((j-1) * panelsize+0.4*panelsize,0,panelsize, 0.4*panelsize);
                     
@@ -253,6 +268,29 @@
                 ctx.closePath();
 
             }
+
+
+
+
+            //-----------------------画盘面缺口------------------
+            {
+
+
+                ctx.beginPath();
+                ctx.lineWidth = 2;
+
+                ctx.moveTo(panelsize*0.4,0);
+                ctx.lineTo(0,0.4* panelsize);
+                ctx.stroke();
+
+                ctx.closePath();
+                // ctx.clearRect(0,0,0.4*panelsize,0.4*panelsize);
+
+
+            }
+
+
+
 
             //---------------------------画面板 加颜色
             ctx.save();
@@ -299,36 +337,63 @@
                         ctx.fillRect(j * panelsize, i * panelsize, panelsize, panelsize);
                     if(hahaha[i+1][j+1]>0)  //被选中
                         ctx.fillRect(j * panelsize, i * panelsize, panelsize, panelsize);
+
+
+
+
+                    // {
+                    //     ctx.fillStyle = 'rgba(100,100,100,0.5)';
+                    //     ctx.arc(panelsize / 2 + j * panelsize, panelsize / 2 + i * panelsize, panelsize * 0.38, 0, Math.PI * 2, true); //画圈圈
+                    //     ctx.fill();
+                    //
+                    // }
+
+
+
+
+
+
+
+
+
                     if(cococo[i+1][j+1]==0) {
 
-                        ctx.fillStyle = "#000000";
 
-                        ctx.fillRect(j * panelsize+0.15* panelsize, i * panelsize+0.15* panelsize, panelsize-0.3* panelsize, panelsize-0.3* panelsize);
+                        ctx.fillStyle = 'rgba(100,100,100,0.5)';
+                        ctx.arc(panelsize / 2 + j * panelsize, panelsize / 2 + i * panelsize, panelsize * 0.38, 0, Math.PI * 2, true); //画圈圈
+                        ctx.fill();
 
+                        ctx.fillStyle = color_black;
+
+                        ctx.fillRect(j * panelsize, i * panelsize, (j+1) *panelsize-0.7* panelsize, (i+1)*panelsize-0.7* panelsize);
+                        ctx.fillStyle ="#ffffff";
+                        ctx.font =(0.25* panelsize).toString()+'px 微软雅黑 bold';
+                        ctx.textAlign="end";
+                        ctx.fillText("N" , (j+1) *panelsize-0.75* panelsize, (i+1)*panelsize-0.75* panelsize);
                         // ctx.arc(panelsize / 2 + j * panelsize, panelsize / 2 + i * panelsize, panelsize * 0.38, 0, Math.PI * 2, true); //画圈圈
                         // ctx.fill();
                     }
                     if(cococo[i+1][j+1]==1) {
 
-                        ctx.fillStyle = "#4caf50";
+                        ctx.fillStyle = color_green;
                         ctx.arc(panelsize / 2 + j * panelsize, panelsize / 2 + i * panelsize, panelsize * 0.38, 0, Math.PI * 2, true); //画圈圈
                         ctx.fill();
                     }
                     if(cococo[i+1][j+1]==2) {
 
-                        ctx.fillStyle = "#008cba";
+                        ctx.fillStyle = color_blue;
                         ctx.arc(panelsize / 2 + j * panelsize, panelsize / 2 + i * panelsize, panelsize * 0.38, 0, Math.PI * 2, true); //画圈圈
                         ctx.fill();
                     }
                     if(cococo[i+1][j+1]==3) {
 
-                        ctx.fillStyle = "#b80af4";
+                        ctx.fillStyle = color_red;
                         ctx.arc(panelsize / 2 + j * panelsize, panelsize / 2 + i * panelsize, panelsize * 0.38, 0, Math.PI * 2, true); //画圈圈
                         ctx.fill();
                     }
                     if(cococo[i+1][j+1]==4) {
 
-                        ctx.strokeStyle = "#ff1d2d";
+                        ctx.strokeStyle = color_cross;
                         ctx.moveTo(j * panelsize,i * panelsize);
                         ctx.lineTo(j * panelsize+ panelsize,i* panelsize+panelsize);
                         ctx.moveTo(j * panelsize,i* panelsize+panelsize);
@@ -342,13 +407,32 @@
                     }
                     if(cococo[i+1][j+1]==6) {
 
-                        ctx.fillStyle = 'rgba(55,55,55,0.5)';
+                        ctx.fillStyle = color_gray;
 
                         ctx.fillRect(j * panelsize, i * panelsize, panelsize, panelsize);
 
                         // ctx.arc(panelsize / 2 + j * panelsize, panelsize / 2 + i * panelsize, panelsize * 0.38, 0, Math.PI * 2, true); //画圈圈
                         // ctx.fill();
                     }
+
+
+                    if(cococo[i+1][j+1]==7) {
+
+                        ctx.fillStyle = 'rgba(100,100,100,0.5)';
+                        ctx.arc(panelsize / 2 + j * panelsize, panelsize / 2 + i * panelsize, panelsize * 0.38, 0, Math.PI * 2, true); //画圈圈
+                        ctx.fill();
+                    }
+
+
+
+
+
+
+
+
+
+
+
 
 
                     //-------------------------------------下面显示名字samplename---------------------
@@ -393,10 +477,24 @@
         function setname(n,sampleone)
         {
             samplename[Math.floor(n/lie)][n%lie]=sampleone;
+            cococo[Math.floor(n/lie)+1][n%lie+1]=7;
+            refreshpanel();
 
         }
 
-        // setname(12,"xxx");
+         setname(12,"xxx");
+        setname(0,"xxx");
+
+
+        function setNTC(n) {
+
+            cococo[Math.floor(n/lie)+1][n%lie+1]=0;
+            refreshpanel();
+
+        }
+
+setNTC(0);
+
 
         //--------------------这个函数在于不去绘制任何图形只是操作数据结构而已
         function initcanvaspanel()

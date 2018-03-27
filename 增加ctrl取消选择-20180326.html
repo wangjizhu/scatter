@@ -86,14 +86,27 @@
     <!--<button class="button">Button</button>-->
 </div>
 
+
+
 <div style="float:left">
-    <div id="main" style="width: 600px;height:600px;"></div>
+    <canvas id="bbb" width="500" height="500"></canvas>
+</div>
+
+
+
+
+
+
+
+
+<div style="float:left">
+    <div id="main" style="width: 700px;height:700px;"></div>
     <div style="float:left">
         <input type="range" id="myRange" value ="90" min="50" max="100" step="0.01" oninput="flitter()"/>
     </div>
-    <div style="float:left">
-        <p id="flitter">90.0%</p>
-    </div>
+    <!--<div style="float:left">-->
+        <!--<p id="flitter">90.0%</p>-->
+    <!--</div>-->
 
 <!--<button oninput="flitter()">flitter</button>-->
 
@@ -135,9 +148,7 @@
 </div>
 
 
-<div style="float:left">
-    <canvas id="bbb" width="800" height="600"></canvas>
-</div>
+
 
 <script type="text/javascript">
 
@@ -6120,25 +6131,35 @@ myChart.on('brush', function ()          //这个事件用来出发清除panel�
 {
 
 
-    hahaha=[
-        [0,0,0,0,0,0,0,0,0,0,0,0,0],
-        [0,0,0,0,0,0,0,0,0,0,0,0,0],
-        [0,0,0,0,0,0,0,0,0,0,0,0,0],
-        [0,0,0,0,0,0,0,0,0,0,0,0,0],
-        [0,0,0,0,0,0,0,0,0,0,0,0,0],
-        [0,0,0,0,0,0,0,0,0,0,0,0,0],
-        [0,0,0,0,0,0,0,0,0,0,0,0,0],
-        [0,0,0,0,0,0,0,0,0,0,0,0,0],
-        [0,0,0,0,0,0,0,0,0,0,0,0,0]
+    // hahaha=[
+    //     [0,0,0,0,0,0,0,0,0,0,0,0,0],
+    //     [0,0,0,0,0,0,0,0,0,0,0,0,0],
+    //     [0,0,0,0,0,0,0,0,0,0,0,0,0],
+    //     [0,0,0,0,0,0,0,0,0,0,0,0,0],
+    //     [0,0,0,0,0,0,0,0,0,0,0,0,0],
+    //     [0,0,0,0,0,0,0,0,0,0,0,0,0],
+    //     [0,0,0,0,0,0,0,0,0,0,0,0,0],
+    //     [0,0,0,0,0,0,0,0,0,0,0,0,0],
+    //     [0,0,0,0,0,0,0,0,0,0,0,0,0]
+    //
+    //
+    // ];
 
+     hahaha=[];
+    var temp=[];
+    for (var i=0;i<=hang;i++)
+    {
 
-    ];
+        for (var j = 0; j <= lie; j++)
+            temp.push(0);
 
+        hahaha.push(temp);
+        temp=[];
+    }
 
-
-
-
-
+    //console.log('???');
+//     selected=[];
+// refreshscatter();
 
 });
 
@@ -6150,6 +6171,34 @@ myChart.on('brush', function ()          //这个事件用来出发清除panel�
 
             //var sum = 0; // 统计选中项的数据值的和
            // var xuhao;
+           //  hahaha=[
+           //      [0,0,0,0,0,0,0,0,0,0,0,0,0],
+           //      [0,0,0,0,0,0,0,0,0,0,0,0,0],
+           //      [0,0,0,0,0,0,0,0,0,0,0,0,0],
+           //      [0,0,0,0,0,0,0,0,0,0,0,0,0],
+           //      [0,0,0,0,0,0,0,0,0,0,0,0,0],
+           //      [0,0,0,0,0,0,0,0,0,0,0,0,0],
+           //      [0,0,0,0,0,0,0,0,0,0,0,0,0],
+           //      [0,0,0,0,0,0,0,0,0,0,0,0,0],
+           //      [0,0,0,0,0,0,0,0,0,0,0,0,0]
+           //
+           //
+           //  ];
+
+            //  hahaha=[];
+            // var temp=[];
+            // for (var i=0;i<=hang;i++)
+            // {
+            //
+            //     for (var j = 0; j <= lie; j++)
+            //         temp.push(0);
+            //
+            //     hahaha.push(temp);
+            //     temp=[];
+            // }
+
+
+
 
 
             selectchange=1;
@@ -6161,7 +6210,7 @@ myChart.on('brush', function ()          //这个事件用来出发清除panel�
    //         refreshscatter();
 
 
-            console.log('hahaha');
+            //console.log('hahaha');
             for (var sIdx = 0; sIdx < zhuadaode.selected.length-1; sIdx++)   //减一的目的是吧select的序列减去
             {
                 // 对于每个 series：
@@ -6240,18 +6289,32 @@ myChart.on('brush', function ()          //这个事件用来出发清除panel�
 
 function colorscattortopanel() {
 
-    cococo = [
-        [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
-        [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
-        [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
-        [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
-        [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
-        [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
-        [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
-        [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
-        [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9]
+    // cococo = [
+    //     [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
+    //     [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
+    //     [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
+    //     [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
+    //     [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
+    //     [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
+    //     [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
+    //     [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
+    //     [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9]
+    //
+    // ];//面板标记颜色清空
 
-    ];//面板标记颜色清空
+
+    cococo=[];
+    temp=[];
+    for (var i=0;i<=hang;i++)
+    {
+
+        for (var j = 0; j <= lie; j++)
+            temp.push(9);
+
+        cococo.push(temp);
+        temp=[];
+    }
+
 
 
     for (var a = 0; a < data.length; a++) {
@@ -6330,7 +6393,7 @@ function selectpaneltoscatter() {
 }
 
 
-var panelsize=55; //panel棋盘边长可调节
+var panelsize=40; //panel棋盘边长可调节
 var hang=8,lie=12;  //棋盘行列数 可调节
 // var hahaha=[
 //     [0,0,0,0,0,0,0,0,0,0,0,0,0],
@@ -6436,7 +6499,7 @@ var hang=8,lie=12;  //棋盘行列数 可调节
                 ctx.strokeRect(0, (i-1) * panelsize+0.4*panelsize, 0.4*panelsize, panelsize);
 
 
-                ctx.font ='18px 微软雅黑 bold';
+                ctx.font =(panelsize*0.4).toString()+'px 微软雅黑 bold';
                 ctx.fillStyle = '#000000';
                 var Ax=String.fromCharCode(64+i);
 
@@ -6470,13 +6533,13 @@ var hang=8,lie=12;  //棋盘行列数 可调节
                 ctx.lineWidth=2;
                 ctx.strokeRect((j-1) * panelsize+0.4*panelsize, 0, panelsize, 0.4*panelsize);
 
-                ctx.font ='18px 微软雅黑 bold';
+                ctx.font =(panelsize*0.4).toString()+'px 微软雅黑 bold';
                 ctx.fillStyle = '#000000';
                 var Ax=j.toString();
 
-                ctx.textAlign="end";
+                ctx.textAlign="center";
 
-                ctx.fillText(Ax ,j*panelsize, 0.3*panelsize);
+                ctx.fillText(Ax ,((j-1)+0.9)*panelsize, 0.35*panelsize);
 
 
 
