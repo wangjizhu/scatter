@@ -6201,29 +6201,44 @@ var weizhi2=0;
 
         }
 
+        //
+        // var shenqi=-1;
 
-        var shenqi=[0,0];
 
 
-
-        myChart.on('mouseover', function (params) {
-            var n;
-
-            // console.log(n=params.data[2]);
-
-            shenqi=[1,n];
-
-        });
-        myChart.on('mouseout', function (params) {
-
-            // console.log(n=params);
-            shenqi=[0,0];
-
-        });
+        // myChart.on('mouseover', function (params) {
+        //     // var nn;
+        //
+        //       // console.log(params.data[2]);
+        //
+        //     shenqi=params.data[2];
+        //     refreshpanel();
+        //
+        // });
+        // myChart.on('mouseout', function (params) {
+        //     // var n;
+        //     // console.log(n=params);
+        //     shenqi=-1;
+        // refreshpanel();
+        //
+        // });
 
         myChart.on('click', function (params) {
             var n;
              console.log(n=parseInt(params.data[2]));
+
+            hahaha=[];
+            var temp=[];
+            for (var i=0;i<=hang;i++)
+            {
+
+                for (var j = 0; j <= lie; j++)
+                    temp.push(0);
+
+                hahaha.push(temp);
+                temp=[];
+            }
+            deepcopy=[];
 
             if(hahaha[parseInt(n/ lie) + 1][n % lie + 1] == 1)
                 hahaha[parseInt(n/ lie) + 1][n % lie + 1] =0;
@@ -6614,7 +6629,16 @@ var hang=8,lie=12;  //棋盘行列数 可调节
 
             ctx.clearRect(0,0,1000,1000);   //这里应该是获取画布的长和宽
 
-        //----------------------------画边框
+
+
+
+
+
+
+
+
+
+            //----------------------------画边框
 
             for (var i = 1; i <= hang; i++)
             {
@@ -6708,10 +6732,30 @@ var hang=8,lie=12;  //棋盘行列数 可调节
 
 
 
-
             //---------------------------画面板 加颜色
             ctx.save();
             ctx.translate(panelsize*0.4,panelsize*0.4);
+
+
+            // if(shenqi>-1)
+            // {
+            //     console.log(shenqi);
+            //     ctx.beginPath();
+            //
+            //     // hahaha[parseInt(a / lie) + 1][a % lie + 1] = 1;
+            //     ctx.strokeStyle = "#000000";
+            //     ctx.lineWidth=3;
+            //     ctx.arc(panelsize / 2 + shenqi % lie * panelsize, panelsize / 2 + parseInt(shenqi / lie) * panelsize, panelsize * 0.4, 0, Math.PI * 2, true); //画圈圈
+            //     ctx.stroke();
+            //
+            //     ctx.closePath();
+            //
+            // }
+
+
+
+
+
             for (var i = 0; i < hang; i++)
             {
                 for (var j = 0; j < lie; j++)
