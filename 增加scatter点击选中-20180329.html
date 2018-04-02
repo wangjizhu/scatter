@@ -147,7 +147,9 @@
 
 </div>
 
-
+<div>
+    <textarea row="10" col="20" id="datatext">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</textarea>
+</div>
 
 
 <script type="text/javascript">
@@ -5804,14 +5806,14 @@ var weizhi2=0;
                     itemSize: 25,
                     top: 5,
                     feature: {
-                        myTool1: {
-                            show: true,
-                            title: '保存图片',
-                            icon: 'image://http://echarts.baidu.com/images/favicon.png',
-                            //onclick: savepic()
-
-
-                        },
+                        // myTool1: {
+                        //     show: true,
+                        //     title: '保存图片',
+                        //     icon: 'image://http://echarts.baidu.com/images/favicon.png',
+                        //     //onclick: savepic()
+                        //
+                        //
+                        // },
 
                         // brush:{
                         //     type: 'rect',
@@ -6082,7 +6084,8 @@ var weizhi2=0;
                             color: '#ff1736'
                         },
 
-                        symbol: 'triangle',
+                        // symbol: 'triangle',
+                        symbol:'path://M56.039,54.267h-5.506l-6.209-7.945l-6.212,7.945h-5.504l9.223-10.574l-8.494-9.786h5.506l5.482,7.119l5.481-7.119h5.506l-8.493,9.748L56.039,54.267z',
                         emphasis: {
 
                             itemStyle: {
@@ -6171,14 +6174,16 @@ var weizhi2=0;
                         name: 'select',
                         type: 'scatter',
                         symbolSize: 15,
-                        z: '-20',
+                        z: '0',
 
                         data: selected,
 
 
                         itemStyle: {
-                            color: '#00faff',
-
+                             color: 'rgba(200,0,0,0)',
+                            borderColor: '#000',
+                            borderWidth: 2,
+                            borderType: 'solid',
                             opacity: 1
 
                         },
@@ -6227,22 +6232,47 @@ var weizhi2=0;
             var n;
              console.log(n=parseInt(params.data[2]));
 
-            hahaha=[];
-            var temp=[];
-            for (var i=0;i<=hang;i++)
-            {
 
-                for (var j = 0; j <= lie; j++)
-                    temp.push(0);
-
-                hahaha.push(temp);
-                temp=[];
-            }
             deepcopy=[];
 
             if(hahaha[parseInt(n/ lie) + 1][n % lie + 1] == 1)
-                hahaha[parseInt(n/ lie) + 1][n % lie + 1] =0;
+            {
+
+                hahaha=[];
+                var temp=[];
+                for (var i=0;i<=hang;i++)
+                {
+
+                    for (var j = 0; j <= lie; j++)
+                        temp.push(0);
+
+                    hahaha.push(temp);
+                    temp=[];
+                }
+
+
+
+
+              //  hahaha[parseInt(n/ lie) + 1][n % lie + 1] =0;
+            }
+
             else {
+
+                hahaha=[];
+                var temp=[];
+                for (var i=0;i<=hang;i++)
+                {
+
+                    for (var j = 0; j <= lie; j++)
+                        temp.push(0);
+
+                    hahaha.push(temp);
+                    temp=[];
+                }
+
+
+
+
                 hahaha[parseInt(n / lie) + 1][n % lie + 1] = 1;
                 deepcopy.push(n);
 
@@ -6845,7 +6875,7 @@ var hang=8,lie=12;  //棋盘行列数 可调节
                     }
                     if(cococo[i+1][j+1]==6) {
 
-                        ctx.fillStyle = 'rgba(55,55,55,0.5)';
+                        ctx.fillStyle = 'rgba(150,150,150,0.5)';
 
                         ctx.fillRect(j * panelsize, i * panelsize, panelsize, panelsize);
 
