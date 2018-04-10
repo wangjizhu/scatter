@@ -26,9 +26,9 @@
 <script type="text/javascript">
 
 
-        var panelsize=70; //panel棋盘边长可调节
+        var panelsize=20; //panel棋盘边长可调节
 
-        var hang=8,lie=12;  //棋盘行列数 可调节
+        var hang=32,lie=48;  //棋盘行列数 可调节
 
         var color_ground;
 
@@ -149,7 +149,8 @@
 
             for (var j = 1; j <= lie; j++)
             {
-                temp.push("Sample" + samplenum.toString());
+                // temp.push("Sample" + samplenum.toString());
+                temp.push("");
                 samplenum++;
             }
 
@@ -556,9 +557,9 @@
 
         }
 
-          setname(12,"xxx");
-         setname(0,"xxx");
-        setname(18,"杨博士的口水");
+        //   setname(12,"xxx");
+        //  setname(0,"xxx");
+        // setname(18,"杨博士的口水");
 
         function setNTC(n) {
 
@@ -570,7 +571,7 @@
 
 
 
-setNTC(25);
+// setNTC(25);
 
 
         // for (var i=0;1<96;i++)
@@ -585,7 +586,7 @@ setNTC(25);
 
         }
 
-        setP1(10);
+        // setP1(10);
 
         function setP2(n) {
 
@@ -594,7 +595,7 @@ setNTC(25);
 
         }
 
-        setP2(88);
+        // setP2(88);
 
         function setP3(n) {
 
@@ -602,8 +603,8 @@ setNTC(25);
             refreshpanel();
 
         }
-        setP3(40);
-        setP3(17);
+        // setP3(40);
+        // setP3(17);
 
 
         function setunknown(n) {
@@ -612,8 +613,8 @@ setNTC(25);
             refreshpanel();
 
         }
-        setunknown(15);
-        setunknown(16);
+        // setunknown(15);
+        // setunknown(16);
 
 
 
